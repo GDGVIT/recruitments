@@ -22,7 +22,7 @@
                         <p>{{$problemStatement->problem_statement}}</p>
                         <h3><b>Comments</b></h3>
                         <p>{{$problemStatement->comments}}</p>
-                      
+
                     </div>
                     </div>
                     @endforeach

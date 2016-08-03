@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProblemStatement;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class UserController extends Controller
     /**
      * Create a new controller instance.
      *
-     
+
      */
     public function __construct()
     {
@@ -71,6 +72,17 @@ class UserController extends Controller
     }
 
     /*
+     *Show all the problem statements related to the user's domain
+     * */
+
+    public function showProblems()
+    {
+        $domain = Auth::user()->domain;
+        $problems = ProblemStatement::where('domain',$domain)->get();
+        return view('User.showProblems',compact('problems'));
+    }
+
+    /*
      * Admin related Functions
      * */
 
@@ -83,4 +95,6 @@ class UserController extends Controller
         $users = User::all();
         return $users;
     }
+
+
 }
