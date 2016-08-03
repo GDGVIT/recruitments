@@ -70,10 +70,11 @@ class ProblemController extends Controller
     {
         $userId = Auth::user()->id;
         $questionId = $request->get('questionId');
+        $question = ProblemStatement::where('id',$questionId);
         $query = Submission::where(['user_id'=>$userId,'problem_id'=>$questionId])->first();
         if($query)
         {
-            return 'bhai kitna karega?';
+            return view('errors.limit');
         }
         else
         {
