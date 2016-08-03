@@ -95,6 +95,16 @@ class UserController extends Controller
         $users = User::all();
         return $users;
     }
+    
+    /*
+     * Show all the submissions done by user
+     * */
+    
+    public function viewUserSubmissions($id)
+    {
+        $user = User::where('id',$id)->get();
+        return $user->submissions();
+    }
 
 
 }

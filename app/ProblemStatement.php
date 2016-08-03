@@ -19,6 +19,6 @@ class ProblemStatement extends Model
 
     public function user()
     {
-        $this->belongsTo();
+        return $this->belongsTo('App\ProblemStatement');
     }
 }

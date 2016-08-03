@@ -40,3 +40,4 @@ Route::get('/admin/show/users','UserController@showUsers');
 Route::get('/admin/problem/add','ProblemController@add');
 Route::post('/admin/problem/add', 'ProblemController@insert');
 Route::get('/admin/problems/all','ProblemController@showAll');
+Route::get('/user/{id}/submissions','UserController@viewUserSubmissions');

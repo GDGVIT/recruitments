@@ -26,6 +26,6 @@ class User extends Authenticatable
 
     public function submissions()
     {
-        $this->hasMany();
+        return $this->hasMany('Submission');
     }
 }

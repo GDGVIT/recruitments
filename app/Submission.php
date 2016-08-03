@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\User;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,7 +19,7 @@ class Submission extends Model
     
     public function user()
     {
-        $this->belongsTo();
+        return $this->belongsTo('User');
     }
 
 }
