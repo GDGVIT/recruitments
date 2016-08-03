@@ -15,7 +15,7 @@ class ProblemController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('isAdmin', ['only' => ['add']]);
+        $this->middleware('isAdmin', ['only' => ['add','insert','showAll']]);
 
     }
 
@@ -38,5 +38,16 @@ class ProblemController extends Controller
         $problemStatement->save();
         return back();
 
+    }
+
+    /*
+     * Function to show all problem statements (all domains)
+     * Middleware -> isAdmin
+     * */
+
+    public function showAll()
+    {
+        $problemStatements = ProblemStatement::all();
+        return view('User.Admin.showAllProblems',compact('problemStatements'));
     }
 }
