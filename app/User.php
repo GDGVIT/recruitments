@@ -26,6 +26,10 @@ class User extends Authenticatable
 
     public function submissions()
     {
-        return $this->hasMany('Submission');
+        return $this->hasMany('App\Submission');
+    }
+    public function problemStatements()
+    {
+        return $this->hasMany('App\ProblemStatement');
     }
 }

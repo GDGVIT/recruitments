@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ProblemStatement;
 use App\User;
+use App\Submission;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -102,8 +103,8 @@ class UserController extends Controller
     
     public function viewUserSubmissions($id)
     {
-        $user = User::where('id',$id)->get();
-        return $user->submissions();
+        $user = User::where('id',$id)->first();
+        return $user->submissions;
     }
 
 
