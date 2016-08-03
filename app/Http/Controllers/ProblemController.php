@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProblemStatement;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -25,5 +26,17 @@ class ProblemController extends Controller
     public function add()
     {
         return view('User.Admin.addProblem');
+    }
+
+    public function insert(Request $request)
+    {
+        $problemStatement = new ProblemStatement();
+        $problemStatement->domain = $request->domain;
+        $problemStatement->problem_statement = $request->problem_statement;
+        $problemStatement->display = 1;
+        $problemStatement->comments = $request->comments;
+        $problemStatement->save();
+        return back();
+
     }
 }

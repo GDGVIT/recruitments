@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Login</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/problem/insert') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/problem/add') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('domain') ? ' has-error' : '' }}">
