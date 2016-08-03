@@ -24,7 +24,13 @@ Route::get('/home', 'HomeController@index');
  * */
 Route::get('/user/profile','UserController@viewProfile');
 Route::get('/user/dashboard', 'UserController@dashboard');
+
+/*
+ * Problem Statement Routes
+ * */
 Route::get('/problems','UserController@showProblems');
+Route::get('/problem/show/{id}','ProblemController@showIndividualProblem');
+Route::post('/problem/upload','ProblemController@uploadSubmission');
 
 /*
  * Admin routes

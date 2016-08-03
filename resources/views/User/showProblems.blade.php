@@ -7,7 +7,10 @@
 
                 @foreach($problems as $problemStatement)
                     <div class="panel panel-default">
-                        <div class="panel-heading">Problem</div>
+                        <div class="panel-heading">
+
+                            <button class="btn btn-primary" onclick="window.location.href='problem/show/{{$problemStatement->id}}'">Attempt Problem</button>
+                        </div>
 
                         <div class="panel-body">
                             <h3><b>Problem Statement</b></h3>
