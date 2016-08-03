@@ -18,6 +18,8 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('isAdmin', ['only' => ['']]);
+
     }
     
     
@@ -38,4 +40,8 @@ class UserController extends Controller
             return view('errors.404');
         }
     }
+
+    /*
+     * 
+     * */
 }
