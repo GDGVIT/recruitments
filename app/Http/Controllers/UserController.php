@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,12 +14,12 @@ class UserController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     
      */
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('isAdmin', ['only' => ['']]);
+        $this->middleware('isAdmin', ['only' => ['showUsers']]);
 
     }
     
@@ -42,6 +43,44 @@ class UserController extends Controller
     }
 
     /*
-     * 
+     * User Dashboard
      * */
+
+    public function Dashboard()
+    {
+        $user = Auth::user();
+        $domain = $user->domain;
+        if($domain==1)
+        {
+            $domain = 'Technical';
+        }
+        elseif ($domain==2)
+        {
+            $domain = 'Management';
+        }
+        elseif($domain==3)
+        {
+            $domain = 'Design';
+        }
+        else
+        {
+            return view('errors.503');
+        }
+        
+        return view('User.dashboard',compact('user','domain'));
+    }
+
+    /*
+     * Admin related Functions
+     * */
+
+    /*
+     *Show registered users
+     *  */
+
+    public function showUsers()
+    {
+        $users = User::all();
+        return $users;
+    }
 }

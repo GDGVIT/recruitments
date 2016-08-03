@@ -23,3 +23,11 @@ Route::get('/home', 'HomeController@index');
  * User related routes here
  * */
 Route::get('/user/profile','UserController@viewProfile');
+Route::get('/user/dashboard', 'UserController@dashboard');
+
+/*
+ * Admin routes
+ * */
+
+Route::get('/admin/show/users','UserController@showUsers');
+Route::get('/admin/problem/add','ProblemController@add');
