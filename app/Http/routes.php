@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+/*
+ * User related routes here
+ * */
+Route::get('/user/profile','UserController@viewProfile');
