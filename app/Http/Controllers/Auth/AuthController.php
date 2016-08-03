@@ -67,6 +67,15 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'role' => 0,
+            'domain'  =>$data['domain'],
+            'regno' =>$data['regno'],
+            'experience' =>$data['experience'],
+            'why_gdg' =>$data['why_gdg'],
+            'linkedin' =>$data['linkedin'],
+            'github' =>$data['github'],
+            'behance' =>$data['behance'],
+            'selected' => 0
         ]);
     }
 }
