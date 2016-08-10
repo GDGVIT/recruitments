@@ -36,7 +36,8 @@ class UserController extends Controller
         $user = Auth::user();
         if($user)
         {
-            return view('User.profile',compact('user'));
+            $totalMarks = Submission::where('user_id',$user->id)->sum('marks');
+            return view('User.profile',compact('user','totalMarks'));
         }
         else
         {
@@ -148,18 +149,19 @@ class UserController extends Controller
 
     public function awardMarks(Request $request)
     {
-        $requestedData = $request->all();
         $userId = $request->get('userId');
         $questionId = $request->get('questionId');
-        $marks = $request->get('marks');
+
+        $marks = floatval($request->get('marks'));
         $submission = Submission::where(['user_id'=>$userId,'problem_id'=>$questionId,'checked'=>0])->first();
-        if($submission) {
+        if($submission && (is_float($marks)) && $marks>0) {
 
 
             $submission->marks = $marks;
             $submission->checked = 1;
             $submission->save();
-            return $submission;
+            $url = '/user/'.$userId.'/submissions';
+            return redirect($url);
         }
         else return 'some issue';
     }
