@@ -123,5 +123,27 @@ class ProblemController extends Controller
 
 
     }
+    
+    /*
+     * Function to soft-delete any question(Won't be visible)
+     * */
+    public  function softDelete($id)
+    {
+        $problem = ProblemStatement::find($id);
+        $problem->display  = 0;
+        $problem->save();
+        return back();
+    }
 
+    /*
+     * Undo Soft Delete
+     * */
+
+    public function recoverSoftDelete($id)
+    {
+        $problem = ProblemStatement::find($id);
+        $problem->display = 1;
+        $problem->save();
+        return back();
+    }
 }

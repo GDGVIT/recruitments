@@ -97,7 +97,7 @@ class UserController extends Controller
     public function showProblems()
     {
         $domain = Auth::user()->domain;
-        $problems = ProblemStatement::where('domain',$domain)->get();
+        $problems = ProblemStatement::where(['domain'=>$domain,'display'=>1])->get();
         return view('User.showProblems',compact('problems'));
     }
 
