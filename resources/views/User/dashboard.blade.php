@@ -3,29 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-6 ">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
 
-                    <div class="panel-body">
-                        <p>Name :{{$user->name}}</p>
-                        <p>Regno :{{$user->regno}}</p>
-                        <p>Domain :{{$domain}}</p>
-                        <p>Why GDG :{{$user->why_gdg}}</p>
-                        <p>experience :{{$user->experience}}</p>
-                        <p>LinkedIn :{{$user->linkedin}}</p>
-                        <p>Github :{{$user->github}}</>
-                        <p>behance :{{$user->behance}}</p>
-                        @if($user->selected)
-                            <p>Selected for the next round</p>
-                        @else
-                            <p>Selected - No status</>
-                        @endif
-
-
-                    </div>
-                </div>
-            </div>
             <div class="col-md-6 ">
                 <div class="panel panel-default">
                     <div class="panel-heading">Checked Problems</div>
@@ -77,6 +55,44 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            {{--
+            Playing with charts
+            --}}
+
+            <div class="col-md-6 ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Checked/UnChecked Problems</div>
+
+                    <div class="panel-body">
+                        <div  id="piechart_3d" style="width: 100%; height: 500px;"></div>
+
+                    </div>
+                </div>
+            </div>
+
+
     </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Checked vs Un-Checked Problems'],
+                ['Checked',     {{count($checkedProblems)}}],
+                ['Unchecked',      {{count($unCheckedProblems)}}]
+
+            ]);
+
+            var options = {
+                title: 'Checked v/s Un-Checked Problems',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+    </script>
 @endsection

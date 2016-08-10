@@ -21,7 +21,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('isAdmin', ['only' => ['showUsers']]);
+        $this->middleware('isAdmin', ['only' => ['showUsers','adminDashboard']]);
 
     }
     
@@ -76,18 +76,23 @@ class UserController extends Controller
 
 
         /*
-         * User's attempted problems
+         * User's checked problems
          * */
 
-        $checkedProblems = Submission::where(['user_id'=>$user->id,'checked'=>1.00])->get();
+        $checkedProblems = $user->submissions->where('checked','1.00');
 
         /*
-         * User's unattempted problems
+         * User's unchecked problems
          * */
-//        return $attemptedProblems;
-        $unCheckedProblems = Submission::where(['user_id'=>$user->id,'checked'=>0.00])->get();
-        
-        return view('User.dashboard',compact('user','domain','checkedProblems','unCheckedProblems'));
+        $unCheckedProblems = $user->submissions->where('checked','0.00');
+
+        /*
+         * Attempted Problems
+         * */
+
+        $attemptedProblems = $user->submissions;
+
+        return view('User.dashboard',compact('user','domain','checkedProblems','unCheckedProblems','attemptedProblems'));
     }
 
     /*
@@ -159,5 +164,21 @@ class UserController extends Controller
         else return 'some issue';
     }
 
+    /*
+     * Admin Dashboard
+     * */
+
+    public function adminDashboard()
+    {
+        $technicalRegistrations = User::where('domain',1)->count();
+        $managementRegistrations = User::where('domain',2)->count();
+        $designRegistrations = User::where('domain',3)->count();
+        $totalProblemStatements = ProblemStatement::all()->count();
+        $totalSubmissions = Submission::all()->count();
+        $checkedSubmissions = Submission::where('checked',1.00)->count();
+        $uncheckedSubmissions = $totalSubmissions-$checkedSubmissions;
+        
+        return view('User.Admin.dashboard',compact('technicalRegistrations','managementRegistrations','designRegistrations','checkedSubmissions','uncheckedSubmissions'));
+    }
 
 }

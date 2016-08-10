@@ -45,3 +45,4 @@ Route::post('/admin/update/marks', 'UserController@awardMarks');
 Route::get('/admin/award/marks', 'UserController@award');
 Route::get('/admin/problem/delete/{id}','ProblemController@softDelete');
 Route::get('/admin/problem/undelete/{id}','ProblemController@recoverSoftDelete');
+Route::get('/admin/dashboard','UserController@adminDashboard');

@@ -19,8 +19,14 @@
                         <div class="panel-body">
                             <h3><b>Problem Statement</b></h3>
                             <p>{{$problemStatement->problem_statement}}</p>
-                            <h3><b>Comments</b></h3>
-                            <p>{{$problemStatement->comments}}</p>
+                            @if($problemStatement->domain!=2)
+                                <h3><b>Comments</b></h3>
+                                <p>{{$problemStatement->comments}}</p>
+                            @else
+                            <h3><b>Rules</b></h3>
+                                <p style="color: green;">Write a report on the following topic in about 500 words.</p>
+                                <p style="color: green;">You can upload a doc/ppt file or you can share the link of the Google Document uploaded.</p>
+                            @endif
 
                         </div>
                     </div>
