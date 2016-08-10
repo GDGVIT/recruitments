@@ -98,7 +98,7 @@ class ProblemController extends Controller
                     $fileName = $userId.'_'.$questionId;
                     $extension = $request->file('submission')->getClientOriginalExtension();
                     $request->file('submission')->move($path , $fileName.'.'.$extension);
-                    $url = '/public/uploads/submissions/'.$fileName.'.'.$extension;
+                    $url = '/uploads/submissions/'.$fileName.'.'.$extension;
 
 
                     $submission = new Submission();

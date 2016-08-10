@@ -41,3 +41,5 @@ Route::get('/admin/problem/add','ProblemController@add');
 Route::post('/admin/problem/add', 'ProblemController@insert');
 Route::get('/admin/problems/all','ProblemController@showAll');
 Route::get('/user/{id}/submissions','UserController@viewUserSubmissions');
+Route::post('/admin/update/marks', 'UserController@awardMarks');
+Route::get('/admin/award/marks', 'UserController@award');

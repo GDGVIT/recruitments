@@ -104,7 +104,29 @@ class UserController extends Controller
     public function viewUserSubmissions($id)
     {
         $user = User::where('id',$id)->first();
-        return $user->submissions;
+        $submissions = $user->submissions;
+        $userName = $user->name;
+        return view('User.Admin.showUserSubmissions',compact('submissions','userName'));
+    }
+
+
+    /*
+     * Award Marks for submission
+     * */
+    public function award(Request $request)
+    {
+        $userMarks = $request->all();
+        return view('User.Admin.awardMarks',compact('userMarks'));
+    }
+
+    /*
+     * Award or Update marks
+     * */
+
+    public function awardMarks(Request $request)
+    {
+        $requestedData = $request->all();
+        return $requestedData;
     }
 
 
