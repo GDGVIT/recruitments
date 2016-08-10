@@ -35,6 +35,8 @@
                         <form action="/problem/upload" method="POST" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <p style="color: red">You can either upload your file or can give the link below</p>
+                            <p style="color: red">You can only submit your solution <b>once</b></p>
+
                             <input type="file"  name="submission">
                             <input type="hidden" name="questionId" value="{{$problemStatement->id}}">
                             <br>

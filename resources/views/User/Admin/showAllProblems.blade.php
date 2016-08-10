@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-
+                @if(count($problemStatements)>0)
                     @foreach($problemStatements as $problemStatement)
                     <div class="panel panel-default">
                         @if($problemStatement->domain==1)
@@ -26,6 +26,14 @@
                     </div>
                     </div>
                     @endforeach
+                @else
+                <div>
+                    <p style="color: red">No problems for your domain is available</p>
+                </div>
+                @endif
+                {{--
+                This <p> tag is not working... Have to fix it back..
+                --}}
 
             </div>
         </div>

@@ -21,4 +21,9 @@ class ProblemStatement extends Model
     {
         return $this->belongsTo('App\ProblemStatement');
     }
+    public function submissions()
+    {
+        return $this->hasMany('All\Submission');
+    }
+    
 }

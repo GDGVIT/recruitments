@@ -48,9 +48,14 @@ class UserController extends Controller
      * User Dashboard
      * */
 
-    public function Dashboard()
+    public function dashboard()
     {
         $user = Auth::user();
+
+        /*
+         * User Domain
+         * */
+
         $domain = $user->domain;
         if($domain==1)
         {
@@ -68,8 +73,21 @@ class UserController extends Controller
         {
             return view('errors.503');
         }
+
+
+        /*
+         * User's attempted problems
+         * */
+
+        $checkedProblems = Submission::where(['user_id'=>$user->id,'checked'=>1.00])->get();
+
+        /*
+         * User's unattempted problems
+         * */
+//        return $attemptedProblems;
+        $unCheckedProblems = Submission::where(['user_id'=>$user->id,'checked'=>0.00])->get();
         
-        return view('User.dashboard',compact('user','domain'));
+        return view('User.dashboard',compact('user','domain','checkedProblems','unCheckedProblems'));
     }
 
     /*
