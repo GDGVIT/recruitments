@@ -17,6 +17,8 @@ class CreateSubmissionsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('problem_id')->unsigned();
             $table->float('marks');
+            $table->text('url');
+            $table->float('checked')->default(0);
             $table->timestamps();
         });
     }

@@ -94,7 +94,7 @@ class UserController extends Controller
     public function showUsers()
     {
         $users = User::all();
-        return $users;
+        return view('User.Admin.showAllUsers',compact('users'));
     }
     
     /*
@@ -126,7 +126,19 @@ class UserController extends Controller
     public function awardMarks(Request $request)
     {
         $requestedData = $request->all();
-        return $requestedData;
+        $userId = $request->get('userId');
+        $questionId = $request->get('questionId');
+        $marks = $request->get('marks');
+        $submission = Submission::where(['user_id'=>$userId,'problem_id'=>$questionId,'checked'=>0])->first();
+        if($submission) {
+
+
+            $submission->marks = $marks;
+            $submission->checked = 1;
+            $submission->save();
+            return $submission;
+        }
+        else return 'some issue';
     }
 
 
