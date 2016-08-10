@@ -39,8 +39,9 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    GDG Recruitments
+
+
+                <a class="navbar-brand" href="{{ url('/') }}"> GDG VIT Vellore
                 </a>
             </div>
 
@@ -57,6 +58,20 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
+                        @if(\Illuminate\Support\Facades\Auth::user()->role==1)
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Admin Panel <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+
+                                    <li><a href="{{ url('/admin/show/users') }}">Show all users</a></li>
+                                    <li><a href="{{ url('/admin/problem/add') }}">Add Problem</a></li>
+                                    <li><a href="{{ url('/admin/problems/all') }}">All Problems</a></li>
+                                </ul>
+                            </li>
+                        @endif
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>

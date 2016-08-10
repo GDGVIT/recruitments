@@ -5,6 +5,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
 
+                @if(count($submissions)>0)
                     @foreach($submissions as $submission)
                     <div class="panel panel-default">
 
@@ -15,7 +16,7 @@
                         <p>Marks Awarded : {{$submission->marks}}</p>
                             <p>Submitted at : {{$submission->created_at}}</p>
                             <p>Link : <a href="{{$submission->url}}">Here</a> </p>
-                            @if(!$submission->checked)
+                            @if($submission->checked!=1.00)
                             <form action = "/admin/award/marks" method="GET">
                                 {{csrf_field()}}
                                 <input type="hidden" name="userId" value="{{$submission->user_id}}">
@@ -26,7 +27,11 @@
                     </div>
                     </div>
                     @endforeach
-
+                    @else
+                        <div>
+                            <p style="color: red">No submissions from the user till now</p>
+                        </div>
+                    @endif
             </div>
         </div>
     </div>
