@@ -46,3 +46,5 @@ Route::get('/admin/award/marks', 'UserController@award');
 Route::get('/admin/problem/delete/{id}','ProblemController@softDelete');
 Route::get('/admin/problem/undelete/{id}','ProblemController@recoverSoftDelete');
 Route::get('/admin/dashboard','UserController@adminDashboard');
+Route::get('/admin/users/shortlist','UserController@shortlist');
+Route::post('/admin/users/shortlist','UserController@getShortlistedCandidates');

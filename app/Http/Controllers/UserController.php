@@ -161,6 +161,14 @@ class UserController extends Controller
             $submission->checked = 1;
             $submission->save();
             $url = '/user/'.$userId.'/submissions';
+            /*
+             * Update Marks in Users table.
+             *
+             * */
+            $user = User::find($userId);
+            $userMarks = $user->marks;
+            $user->marks = $userMarks+$marks;
+            $user->save();
             return redirect($url);
         }
         else return 'some issue';
@@ -183,4 +191,22 @@ class UserController extends Controller
         return view('User.Admin.dashboard',compact('technicalRegistrations','managementRegistrations','designRegistrations','checkedSubmissions','uncheckedSubmissions'));
     }
 
+    /*
+     * Function to shortlist people Domain-wise
+     * */
+
+    public function shortlist()
+    {
+        return view('User.Admin.shortListForm');
+    }
+
+    public function getShortlistedCandidates(Request $request)
+    {
+        $domain = $request->domain;
+        $number = $request->number;
+        $people = User::where('domain',$domain)->orderBy('marks', 'desc')->take($number)->get();
+        return view('User.Admin.getShortlistedCandidates',compact('people'));
+        
+    }
 }
+

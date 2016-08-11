@@ -48,9 +48,11 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/problems') }}">Problem Statements</a></li>
-                    <li><a href="{{ url('/user/dashboard') }}">Dashboard</a></li>
+                    @if(\Illuminate\Support\Facades\Auth::user())
+                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ url('/problems') }}">Problem Statements</a></li>
+                        <li><a href="{{ url('/user/dashboard') }}">Dashboard</a></li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -70,7 +72,9 @@
 
                                     <li><a href="{{ url('/admin/show/users') }}">Show all users</a></li>
                                     <li><a href="{{ url('/admin/problem/add') }}">Add Problem</a></li>
-                                    <li><a href="{{ url('/admin/problems/all') }}">All Problems</a></li>
+                                    <li><a href="{{ url('/admin/problem/add') }}">Add Problem</a></li>
+                                    <li><a href="{{ url('/admin/dashboard') }}">Admin Dashboard</a></li>
+                                    <li><a href="{{ url('/admin/users/shortlist') }}">Shortlist</a></li>
                                 </ul>
                             </li>
                         @endif
