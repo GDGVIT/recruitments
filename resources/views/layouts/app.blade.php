@@ -5,15 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>GDG Recruitments</title>
+    <title>GDG Recruitments 2016</title>
+     <link rel="stylesheet" href="css/sweetalert2.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/postlogin.css">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet ' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
         body {
@@ -23,85 +27,69 @@
         .fa-btn {
             margin-right: 6px;
         }
+        .text-center{
+            text-align: center;
+        }
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
+    <nav>
+  <div class="nav-wrapper">
+    <a href="{{ url('/') }}" class="brand-logo hide-on-med-and-up">GDG VIT Vellore</a>
+     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <div class="row">
+      <div class="col m10 l10 s12 push-l1 m1">
+        <ul class="left hide-on-med-and-down">
+        @if(\Illuminate\Support\Facades\Auth::user())
+          <li class="navbar-tabs" id="nav-logo"><a href="{{ url('/home') }}">GDG VIT Vellore</a></li>
+          <li class="navbar-tabs"><a href="{{ url('/problems') }}">Problem Statements</a></li>
+          <li class="navbar-tabs"><a href="{{ url('/user/dashboard') }}">Dashboard</a></li>
+           @endif
+        </ul>
+        <ul class="right hide-on-med-and-down">
+          <!-- Dropdown Trigger -->
+            @if(\Illuminate\Support\Facades\Auth::user()->role==1)
+          <li class="navbar-tabs"><a class="dropdown-button" href="#!" data-activates="dropdown2">Admin Panel</a></li>
+          <li class="navbar-tabs"><a class="dropdown-button" id="uname-dropdown" href="{{ url('/user/profile') }}" data-activates="dropdown1">{{ Auth::user()->name }}</a></li>
+           @endif
+        </ul>
+      </div>
+    </div>
 
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-
-
-                <a class="navbar-brand" href="{{ url('/') }}"> GDG VIT Vellore
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    @if(\Illuminate\Support\Facades\Auth::user())
-                        <li><a href="{{ url('/home') }}">Home</a></li>
-                        <li><a href="{{ url('/problems') }}">Problem Statements</a></li>
-                        <li><a href="{{ url('/user/dashboard') }}">Dashboard</a></li>
-                    @endif
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
-                        @if(\Illuminate\Support\Facades\Auth::user()->role==1)
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Admin Panel <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-
-                                    <li><a href="{{ url('/admin/show/users') }}">Show all users</a></li>
-                                    <li><a href="{{ url('/admin/problem/add') }}">Add Problem</a></li>
-                                    <li><a href="{{ url('/admin/problem/add') }}">Add Problem</a></li>
-                                    <li><a href="{{ url('/admin/dashboard') }}">Admin Dashboard</a></li>
-                                    <li><a href="{{ url('/admin/users/shortlist') }}">Shortlist</a></li>
-                                </ul>
-                            </li>
-                        @endif
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-
-                                <li><a href="{{ url('/user/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a></li>
-
-
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    <ul class="side-nav" id="mobile-demo">
+     @if(\Illuminate\Support\Facades\Auth::user())
+        <li><a href="{{ url('/problems') }}">Problem Statement</a></li>
+        <li><a href="#">Dashboard</a></li>
+        @endif
+        @if(\Illuminate\Support\Facades\Auth::user()->role==1)
+        <li><a onclick='$("#admin-panel-nav").toggleClass("invisible");'>Admin Panel</a>
+          <ul class="invisible" id="admin-panel-nav">
+            <li><a href="{{ url('/admin/show/users') }}">Show all Users</a></li>
+            <li><a href="{{ url('/admin/problem/add') }}">Add Problem</a></li>
+            <li><a href="{{ url('/admin/dashboard') }}">Admin Dashboard</a></li>
+            <li><a href="{{ url('/admin/users/shortlist') }}">Shortlist</a></li>
+          </ul>
+        </li>
+        @endif
+        <li><a onclick='$("#logout-nav").toggleClass("invisible");'>{{ Auth::user()->name }}</a>
+          <ul class="invisible" id="logout-nav">
+            <li><a href="{{ url('/logout') }}">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+  </div>
+</nav>
+<br>
+<br>
+  
     @yield('content')
 
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/visible.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

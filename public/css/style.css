@@ -1,0 +1,88 @@
+body{
+  background: rgb(51,51,51);
+  font-family: 'Segoe UI';
+  color: white;
+  overflow-y: hidden;
+}
+.main-content{
+  margin-top: 0%;
+  padding: 3%;
+}
+.left-content, .right-content{
+  min-height: 100vh;
+  max-height: 500vh;
+  border-top: 1px solid rgba(255,255,255,0.5);
+}
+.right-content{
+  padding: 2%!important;
+}
+.right-content img{
+  margin-top: -1%;
+  width: 100%;
+}
+.content{
+  min-height: 100vh;
+  margin-top: -17%!important;
+  height: 100vh;
+  overflow-y: scroll;
+  border-right: 1px solid rgba(255,255,255,0.2);
+}
+::-webkit-scrollbar{
+  display: none;
+}
+.custom-button,.register-button{
+  background: rgb(69,133,234);
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  min-width: 30%;
+  padding: 1%!important;
+  margin-top: -10%;
+}
+.custom-button:focus{
+  background: rgb(69,133,234);
+  border: none;
+  outline: none;
+}
+.custom-button:hover,.custom-facebook:hover,.register-button:hover{
+  box-shadow: 5px 10px 10px rgba(31,31,31,1);
+  transition: 0.3s;
+}
+.custom-facebook,.custom-facebook:focus{
+  color: white;
+  margin-left: -4%;
+  margin-top: -7%;
+  font-weight: 700;
+  font-size: 150%;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: rgb(70,114,175);
+  border: none;
+}
+.register-button,.register-button:focus{
+  background: rgb(196,60,54);
+  color: white;
+}
+.links img{
+  width: 10%;
+}
+.links{
+  position: relative!important;
+  left: 42.5vw;
+  top: 30vh;
+  z-index: 2000;
+}
+.links a img{
+  display: block;
+}
+.first-content,.third-content, .second-content{
+  height: 100vh;
+  margin-top: 0%;
+}
+
+@media only screen and (min-device-width: 1350px) and (max-device-width: 1920px){
+  .links{
+        left: 43.5vw;
+  }
+}

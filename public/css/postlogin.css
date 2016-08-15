@@ -1,0 +1,245 @@
+body
+{
+  background:#F5F6F7;
+  font-family: 'Montserrat', sans-serif;
+}
+nav
+{
+  background:#333333;
+}
+.dropdown-button
+{
+  color:rgb(245,245,245);
+}
+.dropdown-content li a
+{
+  color:black;
+  padding:7px;
+  padding-left:10px;
+  padding-right:40px;
+  font-size:91%;
+}
+.navbar-tabs a
+{
+  font-size:91%;
+}
+#nav-logo a
+{
+  font-size:130%;
+}
+.dropdown-content li a:hover
+{
+  background: rgb(240,240,240);
+}
+.dropdown-content li
+{
+  min-height:0;
+}
+.data-card
+{
+  background:white;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border: 1px solid rgb(220,220,220);
+}
+.card-head
+{
+  padding: 10px;
+  padding-left:20px;
+  font-weight:bold;
+  color:rgb(100,100,100);
+  border-bottom: 1px solid rgb(220,220,220);
+}
+.card-body
+{
+  padding:0;
+  min-height:80px;
+}
+.user-name
+{
+  font-size:200%;
+}
+.user-details p
+{
+  margin-top:0;
+  margin-bottom:0;
+  font-family: 'Lato', sans-serif;
+}
+#user-data
+{
+  background:white;
+  transition: 1s all;
+}
+.user-data-expanded
+{
+  padding-bottom: 100px;
+  transition: 1s all
+}
+#user-data-line
+{
+  margin-left:-1%;
+  width:90%;
+}
+.user-data-head
+{
+  color:#5690cf;
+}
+#cards-row
+{
+  margin-top:-63px;
+}
+#show-more-user-data
+{
+  padding:5px;
+  background:#5690cf;
+  color:white;
+  border-radius: 25px;
+  font-size:80%;
+  padding-left:10px;
+  padding-right:10px;
+  cursor:pointer;
+}
+#user-data-split-line
+{
+  margin-bottom:20px;
+  display: block;
+   height: 1px;
+   border: 0;
+   border-top: 1px solid rgb(240,240,240);
+   margin: 1em 0;
+   padding: 0;
+}
+.card-body-content
+{
+  padding-left:20px;
+  padding-right:20px;
+  padding-top:12px;
+  padding-bottom:12px;
+  border-bottom: 1px solid rgb(240,240,240);
+  cursor:pointer;
+}
+.card-body-content:hover
+{
+  background:rgb(250,250,250);
+}
+
+
+#problemstatement .card-body p
+{
+  padding-left:0px;
+  padding-bottom:15px;
+  border-bottom : 1px solid rgb(240,240,240);
+  margin-left:20px;
+  margin-right:20px;
+}
+.card-comment
+{
+  font-weight:bold;
+  padding-left:20px;
+}
+#comment
+{
+  margin-bottom:0 !important;
+}
+.blue-button
+{
+  background:#5690cf;
+  color:white;
+  font-weight:normal;
+  padding:5px;
+  padding-left:10px;
+  padding-right:10px;
+  font-size:70%;
+  margin-top:-1px;
+  border-radius:25px;
+  cursor:pointer;
+  text-align:center;
+}
+.upload-text
+{
+  color:red;
+  border-bottom:none !important;
+  padding-bottom:0px !important;
+  font-size:80%;
+  margin-bottom:0 !important;
+  margin-top:0;
+}
+.upload-text-holder
+{
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.upload-file
+{
+  padding-left:20px;
+  font-size:80%;
+}
+.upload-link
+{
+  margin-left:10px !important;
+}
+.upload-link input
+{
+  font-size:80%;
+}
+.link-to-file
+{
+  border-bottom:none !important;
+  margin-bottom:-10px !important;
+  padding-bottom:0 !important;
+  font-size:70%;
+}
+.upload-btn
+{
+  margin-top:17px;
+  width:90%;
+  text-align:center;
+}
+.visible
+{
+  display:block;
+}
+.invisible
+{
+  display:none;
+}
+#admin-panel-nav a,#logout-nav a
+{
+  font-size:90%;
+  padding-left:60px;
+}
+.brand-logo
+{
+  font-size:150% !important;
+}
+.show-user-p
+{
+  padding-top:0;
+  padding-bottom:0 !important;
+  border:none !important;
+}
+.prob-field
+{
+  text-align:right;
+  margin-top:20px;
+}
+ .select-dropdown
+{
+  margin-top:-10px !important;
+  font-size:90%;
+}
+ .select-dropdown li span
+ {
+   color:black;
+ }
+ #problemstatement-textarea, #comments-textarea
+ {
+   padding-top:0;
+ }
+@media(max-width:600px)
+{
+  #attempt span
+  {
+    display:none;
+  }
+}
