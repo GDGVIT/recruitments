@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-6 ">
+            <div class="col m6 ">
                 <div class="panel panel-default">
                     <div class="panel-heading">Checked Problems</div>
 
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 ">
+            <div class="col m6 ">
                 <div class="panel panel-default">
                     <div class="panel-heading">UnChecked Problems</div>
 
@@ -60,7 +60,7 @@
             Playing with charts
             --}}
 
-            <div class="col-md-6 ">
+            <div class="col m6 ">
                 <div class="panel panel-default">
                     <div class="panel-heading">Checked/UnChecked Problems</div>
 

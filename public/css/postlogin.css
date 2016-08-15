@@ -243,3 +243,7 @@ nav
     display:none;
   }
 }
+.input-field input:focus, .materialize-textarea:focus{
+  border-bottom: 1px solid #5690cf!important;
+  box-shadow: 0 1px 0 0 #5690cf!important;
+}

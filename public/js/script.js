@@ -1,6 +1,4 @@
 $(document).ready(function(){
-  $('#second-content').css('display','none');
-  $('#third-content').css('display','none');
   $('#modal-trigger').click(function(){
     swal({
       title: '',
@@ -32,11 +30,4 @@ $(document).ready(function(){
       $(this).addClass('active-link');
     }
   });
-  $.fn.scrollStopped = function(callback) {
-    var that = this, $this = $(that);
-    $this.scroll(function(ev) {
-      clearTimeout($this.data('scrollTimeout'));
-      $this.data('scrollTimeout', setTimeout(callback.bind(that), 100, ev));
-    });
-  };
 });

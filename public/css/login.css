@@ -1,0 +1,62 @@
+body{
+  background: rgb(51,51,51);
+}
+
+.gdg-logo{
+  padding: 2%;
+}
+form{
+  margin-left: -12%;
+}
+.custom-button{
+  background: rgb(69,133,234);
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  min-width: 30%;
+  padding: 1%!important;
+  margin-top: 5%;
+  color: white;
+}
+input, .materialize-textarea{
+  color: white!important;
+}
+.input-field input:focus + label, .materialize-textarea:focus + label{
+  color: white!important;
+}
+.input-field input:focus, .materialize-textarea:focus{
+  border-bottom: 1px solid white!important;
+  box-shadow: 0 1px 0 0 white!important;
+}
+input[type="checkbox"].filled-in:checked + label:after{
+  border: 2px solid white!important;
+  background-color: transparent!important;
+}
+.custom-button:focus{
+  background: rgb(69,133,234);
+  border: none;
+  outline: none;
+}
+.custom-button:hover{
+  box-shadow: 5px 10px 10px rgba(31,31,31,1);
+  transition: 0.3s;
+}
+.select-dropdown li, .select-dropdown li span{
+  background: rgb(51,51,51);
+  color: rgb(145,145,145)!important;
+}
+.select-wrapper input{
+  color: rgb(145,145,145)!important;
+  text-indent: 2%;
+}
+.select-wrapper .caret{
+  color: rgb(145,145,145)!important;
+}
+.select-dropdown li, .select-dropdown li span:hover{
+  background: rgb(40,40,40);
+  transition: 0.3s;
+}
+.select-dropdown li.disabled span{
+  background: rgb(51,51,51);
+  color: rgb(145,145,145)!important;
+}

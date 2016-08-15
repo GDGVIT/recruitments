@@ -2,7 +2,35 @@
 
 <!-- Main Content -->
 @section('content')
-<div class="container">
+<div class="row gdg-logo">
+    </div>
+    <div class="row login-form">
+      <div class="center">
+      <h3>Reset Password</h3>
+       @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+        <form  method="POST" action="{{ url('/password/email') }}">
+        {{ csrf_field() }}
+          <div class="input-field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <input type="email" name="email" value="{{ old('email') }} id="email">
+            <label for="email">Email
+          </div>
+          @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+          <div class="row"><div class="col s12 m12 l12 push-m4 push-l4 push-s4"><button class="custom-button" type="submit">Send Password Reset Link</button></div></div>
+        </form>
+      </div>
+    </div>
+
+@endsection
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -43,5 +71,4 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+</div> -->

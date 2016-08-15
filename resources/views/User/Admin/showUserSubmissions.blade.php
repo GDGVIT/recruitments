@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col m10 offset-m1">
 
                 @if(count($submissions)>0)
                     @foreach($submissions as $submission)

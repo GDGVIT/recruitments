@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col m10 offset-m1">
 
                 <div class="col-md-12">
                     <p style="color: green;">Following people are shortlisted</p>

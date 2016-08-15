@@ -12,19 +12,21 @@ body{
   min-height: 100vh;
   max-height: 500vh;
   border-top: 1px solid rgba(255,255,255,0.5);
+  z-index: 100;
 }
 .right-content{
   padding: 2%!important;
 }
 .right-content img{
-  margin-top: -1%;
+  margin-top: -15%;
   width: 100%;
+  z-index: 0;
 }
 .content{
   min-height: 100vh;
   margin-top: -17%!important;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: hidden;
   border-right: 1px solid rgba(255,255,255,0.2);
 }
 ::-webkit-scrollbar{
@@ -80,9 +82,18 @@ body{
   height: 100vh;
   margin-top: 0%;
 }
-
+@media only screen and (max-device-width: 600px){
+  .links{
+    top: 15vh;
+  }
+}
 @media only screen and (min-device-width: 1350px) and (max-device-width: 1920px){
   .links{
-        left: 43.5vw;
+    left: 43vw;
+  }
+}
+@media only screen and (min-device-width: 1920px) and (max-device-width: 2000px){
+  .links{
+    left: 43.5vw;
   }
 }
