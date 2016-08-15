@@ -48,10 +48,12 @@
         </ul>
         <ul class="right hide-on-med-and-down">
           <!-- Dropdown Trigger -->
+            @if(\Illuminate\Support\Facades\Auth::user())
             @if(\Illuminate\Support\Facades\Auth::user()->role==1)
           <li class="navbar-tabs"><a class="dropdown-button" href="#!" data-activates="dropdown2">Admin Panel</a></li>
           <li class="navbar-tabs"><a class="dropdown-button" id="uname-dropdown" href="{{ url('/user/profile') }}" data-activates="dropdown1">{{ Auth::user()->name }}</a></li>
            @endif
+                @endif
         </ul>
       </div>
     </div>
@@ -60,7 +62,7 @@
      @if(\Illuminate\Support\Facades\Auth::user())
         <li><a href="{{ url('/problems') }}">Problem Statement</a></li>
         <li><a href="#">Dashboard</a></li>
-        @endif
+
         @if(\Illuminate\Support\Facades\Auth::user()->role==1)
         <li><a onclick='$("#admin-panel-nav").toggleClass("invisible");'>Admin Panel</a>
           <ul class="invisible" id="admin-panel-nav">
@@ -76,6 +78,7 @@
             <li><a href="{{ url('/logout') }}">Logout</a></li>
           </ul>
         </li>
+        @endif
       </ul>
   </div>
 </nav>
