@@ -20,8 +20,8 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('isAdmin', ['only' => ['showUsers','adminDashboard']]);
+        $this->middleware('auth',['except'=>['send']]);
+        $this->middleware('isAdmin', ['only' => ['showUsers','adminDashboard','send']]);
 
     }
     
@@ -207,6 +207,10 @@ class UserController extends Controller
         $people = User::where('domain',$domain)->orderBy('marks', 'desc')->take($number)->get();
         return view('User.Admin.getShortlistedCandidates',compact('people'));
         
+    }
+    public function send()
+    {
+        $this->dispatch(new SendSMS('8098678877', 'Queue Worked'));
     }
 }
 

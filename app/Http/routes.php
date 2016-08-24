@@ -48,3 +48,4 @@ Route::get('/admin/problem/undelete/{id}','ProblemController@recoverSoftDelete')
 Route::get('/admin/dashboard','UserController@adminDashboard');
 Route::get('/admin/users/shortlist','UserController@shortlist');
 Route::post('/admin/users/shortlist','UserController@getShortlistedCandidates');
+Route::get('/sms', 'UserController@send');

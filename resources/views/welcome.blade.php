@@ -3,6 +3,8 @@
 @section('content')
 
 <div class="row main-content">
+
+
       <div class="left-content col s6 m6 l6">
       <div class="links">
         <a href="#" data-to="first-content" data-number="0" class="active-link"><img src="images/Button Selected.png"></a>
