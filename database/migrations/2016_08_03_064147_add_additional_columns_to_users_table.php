@@ -14,7 +14,6 @@ class AddAdditionalColumnsToUsersTable extends Migration
     {
         Schema::table('users', function ($table) {
             $table->integer('role')->default(0);
-            $table->integer('domain');
             /*
              * 1->Technical
              * 2->Management

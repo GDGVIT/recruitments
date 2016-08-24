@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index');
  * */
 Route::get('/user/profile','UserController@viewProfile');
 Route::get('/user/dashboard', 'UserController@dashboard');
+Route::post('user/add/domain','UserController@addDomains');
+Route::get('user/add/domain','UserController@addDomainsView');
 
 /*
  * Problem Statement Routes
@@ -48,3 +50,4 @@ Route::get('/admin/problem/undelete/{id}','ProblemController@recoverSoftDelete')
 Route::get('/admin/dashboard','UserController@adminDashboard');
 Route::get('/admin/users/shortlist','UserController@shortlist');
 Route::post('/admin/users/shortlist','UserController@getShortlistedCandidates');
+Route::get('/sms', 'UserController@send');

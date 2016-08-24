@@ -13,6 +13,7 @@
             <input type="text" name="name" value="{{ old('name') }}" id="name">
             <label for="name">Name
           </div>
+            {{csrf_field()}}
           @if ($errors->has('name'))
               <span class="help-block">
                   <strong>{{ $errors->first('name') }}</strong>
