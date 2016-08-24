@@ -55,19 +55,17 @@
                   <strong>{{ $errors->first('password_confirmation') }}</strong>
               </span>
           @endif
-          <div class="input-field form-group{{ $errors->has('domain') ? ' has-error' : '' }}">
-            <select  name="domain">
-              <option value="" disabled selected>Domain</option>
-              <option value="1">Technical</option>
-              <option value="2">Management</option>
-              <option value="3">Design</option>
-            </select>
-          </div>
-          @if ($errors->has('domain'))
-              <span class="help-block">
-                  <strong>{{ $errors->first('domain') }}</strong>
+
+            <div class="input-field form-group{{ $errors->has('contact') ? ' has-error' : '' }}">
+                <input type="text" name="contact" id="contact">
+                <label for="contact">Contact Number
+            </div>
+            @if ($errors->has('contact'))
+                <span class="help-block">
+                  <strong>{{ $errors->first('contact') }}</strong>
               </span>
-          @endif
+            @endif
+
           <div class="input-field form-group{{ $errors->has('why_gdg') ? ' has-error' : '' }}">
             <textarea name="why_gdg" class="materialize-textarea"></textarea>
             <label for="why_gdg">Why GDG?

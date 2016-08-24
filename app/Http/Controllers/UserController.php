@@ -21,8 +21,8 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth',['except'=>['send']]);
-        $this->middleware('isAdmin', ['only' => ['showUsers','adminDashboard','send']]);
+        $this->middleware('auth',['except'=>['send','notifyUser']]);
+        $this->middleware('isAdmin', ['only' => ['showUsers','adminDashboard']]);
 
     }
     
@@ -38,7 +38,8 @@ class UserController extends Controller
         if($user)
         {
             $totalMarks = Submission::where('user_id',$user->id)->sum('marks');
-            return view('User.profile',compact('user','totalMarks'));
+            $domains = DB::table('user_domains')->where('user_id',$user->id)->get();
+            return view('User.profile',compact('user','totalMarks','domains'));
         }
         else
         {
@@ -235,9 +236,61 @@ class UserController extends Controller
         return view('User.Admin.getShortlistedCandidates',compact('people'));
         
     }
-    public function send()
+    public function send($contactNumber)
     {
-        $this->dispatch(new SendSMS('8098678877', 'Queue Worked'));
+        //Your authentication key
+        $authKey = env('MSG_API_KEY');
+
+        //Multiple mobiles numbers separated by comma
+        $mobileNumber = $contactNumber;
+
+        //Sender ID,While using route4 sender id should be 6 characters long.
+        $senderId = "GDGVIT";
+
+        //Your message to send, Add URL encoding here.
+        $message = urlencode("Thank You for registering! You'll be notified when our portal will be live.");
+
+        //Define route 
+        $route = "transactional";
+        //Prepare you post parameters
+        $postData = array(
+            'authkey' => $authKey,
+            'mobiles' => $mobileNumber,
+            'message' => $message,
+            'sender' => $senderId,
+            'route' => $route
+        );
+
+        //API URL
+        $url="https://control.msg91.com/api/sendhttp.php";
+
+        // init the resource
+        $ch = curl_init();
+        curl_setopt_array($ch, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $postData
+            //,CURLOPT_FOLLOWLOCATION => true
+        ));
+
+
+        //Ignore SSL certificate verification
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+
+        //get response
+        $output = curl_exec($ch);
+
+        //Print error if any
+        if(curl_errno($ch))
+        {
+            echo 'error:' . curl_error($ch);
+        }
+
+        curl_close($ch);
+
     }
 
     /*
@@ -256,6 +309,26 @@ class UserController extends Controller
     public function addDomainsView()
     {
         return view('User.addDomain');
+    }
+
+    /*
+     * Notify Users Function
+     * */
+
+    public function notifyUser(Request $request)
+    {
+        $contact = $request->contact;
+        $value = DB::table('subscribers')->where('contact',$contact)->get();
+        if($value)
+        {
+            return 'You are already subscribed. Chill';
+        }
+        else
+        {
+            DB::table('subscribers')->insert(['contact'=>$contact]);
+            $this->send($contact);
+            return 'Subscribed successfully';
+        }
     }
 }
 

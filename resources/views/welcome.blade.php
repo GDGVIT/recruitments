@@ -20,6 +20,20 @@
               If you would like to join <b>GDG VIT</b> you simply have
               to apply through this portal and fill out the necessary details.
               The first round will be conducted online and you will be informed about the subsequent rounds.
+
+              <form method="POST" action="{{ url('/notify') }}">
+                  {{ csrf_field() }}
+                  <div class="input-field form-group{{ $errors->has('contact') ? ' has-error' : '' }}">
+                      <input type="text" name="contact" id="contact">
+                      <label for="contact">Contact</label>
+                  </div>
+                  @if ($errors->has('contact'))
+                      <span class="help-block">
+                  <strong>{{ $errors->first('contact') }}</strong>
+              </span>
+                  @endif
+                  <div class="row"><div class="col s12 m12 l12 push-m4 push-l4 push-s4"><button class="custom-button" type="submit">Notify Me!</button></div></div>
+              </form>
             </p><br><br>
             <div class="row">
               <button class="custom-button col push-l4 push-s4 push-m4" id="modal-trigger">Let's Start</button>
@@ -53,4 +67,5 @@ We conduct events to generate awareness about Google's initiatives and bring out
           <a href="{{ url('/register') }}"><button class="register-button">Register</button></a>
         </div>
       </div>
+
 @endsection

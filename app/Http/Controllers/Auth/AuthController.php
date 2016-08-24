@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\UserController;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -52,6 +53,8 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'contact'=>'unique:users',
+            'regno' => 'unique:users'
         ]);
     }
 
@@ -63,7 +66,11 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        
+
+        /*
+         * Need to send after the user create transaction is done
+         * */
+        app('App\Http\Controllers\UserController')->send($data['contact']);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -75,6 +82,7 @@ class AuthController extends Controller
             'linkedin' =>$data['linkedin'],
             'github' =>$data['github'],
             'behance' =>$data['behance'],
+            'contact'=>$data['contact'],
             'selected' => 0
         ]);
     }

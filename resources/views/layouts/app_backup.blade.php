@@ -41,7 +41,8 @@
         <ul class="left hide-on-med-and-down">
         @if(\Illuminate\Support\Facades\Auth::user())
           <li class="navbar-tabs" id="nav-logo"><a href="{{ url('/home') }}">GDG VIT Vellore</a></li>
-
+          <li class="navbar-tabs"><a href="{{ url('/problems') }}">Problem Statements</a></li>
+          <li class="navbar-tabs"><a href="{{ url('/user/dashboard') }}">Dashboard</a></li>
            @endif
         </ul>
         <ul class="right hide-on-med-and-down">
@@ -58,6 +59,8 @@
 
     <ul class="side-nav" id="mobile-demo">
      @if(\Illuminate\Support\Facades\Auth::user())
+        <li><a href="{{ url('/problems') }}">Problem Statement</a></li>
+        <li><a href="#">Dashboard</a></li>
 
         @if(\Illuminate\Support\Facades\Auth::user()->role==1)
         <li><a onclick='$("#admin-panel-nav").toggleClass("invisible");'>Admin Panel</a>

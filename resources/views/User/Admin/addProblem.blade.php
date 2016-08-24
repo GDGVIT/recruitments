@@ -9,7 +9,7 @@
           <div class="col m12 l12">
             <div class="data-card">
               <div class="card-head">
-                Login
+                Add Problem
               </div>
               {{ csrf_field() }}
               <div class="card-body">
@@ -59,7 +59,7 @@
                   </div>
                   <div class="col m6 l6 s12">
                     <div class="input-field">
-                      <textarea id="comment-textarea" class="materialize-textarea" name="comment"></textarea>
+                      <textarea id="comment-textarea" class="materialize-textarea" name="comments"></textarea>
                     </div>
                     @if ($errors->has('comments'))
                         <span class="help-block">

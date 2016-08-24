@@ -10,7 +10,18 @@
                     <div class="panel-body">
                         <p>Name :{{$user->name}}</p>
                         <p>Regno :{{$user->regno}}</p>
-                        <p>Domain :{{$user->domain}}</p>
+                        <p>Domain :</p>
+                        <ul>
+                        @foreach($domains as $domain)
+                                @if($domain->domain_id=='1')
+                                    <li>- Technical</li>
+                                @elseif($domain->domain_id=='2')
+                                    <li>- Management</li>
+                                @elseif($domain->domain_id=='3')
+                                    <li>-   Design</li>
+                                @endif
+                        @endforeach
+                        </ul>
                         <p>Why GDG :{{$user->why_gdg}}<p/>
                         <p>experience :{{$user->experience}}</p>
                         <p>LinkedIn :{{$user->linkedin}}</p>

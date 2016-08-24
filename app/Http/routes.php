@@ -51,3 +51,11 @@ Route::get('/admin/dashboard','UserController@adminDashboard');
 Route::get('/admin/users/shortlist','UserController@shortlist');
 Route::post('/admin/users/shortlist','UserController@getShortlistedCandidates');
 Route::get('/sms', 'UserController@send');
+
+
+
+/*
+ * Guest Routes
+ * */
+
+Route::post('/notify','UserController@notifyUser');

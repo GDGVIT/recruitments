@@ -36,7 +36,7 @@ class SendSMS extends Job implements SelfHandling, ShouldQueue
     public function handle()
     {
         //Your authentication key
-        $authKey = "";
+        $authKey = env('MSG_API_KEY');
         //Define route
         $route = "4";
 
