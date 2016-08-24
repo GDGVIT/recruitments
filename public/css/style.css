@@ -2,7 +2,6 @@ body{
   background: rgb(51,51,51);
   font-family: 'Segoe UI';
   color: white;
-  overflow-y: hidden;
 }
 .main-content{
   margin-top: 0%;
@@ -39,7 +38,6 @@ body{
   border-radius: 20px;
   min-width: 30%;
   padding: 1%!important;
-  margin-top: -10%;
 }
 .custom-button:focus{
   background: rgb(69,133,234);

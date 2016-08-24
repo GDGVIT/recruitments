@@ -2,7 +2,8 @@
 
 <!-- Main Content -->
 @section('content')
-<div class="row gdg-logo">
+<div class="container">
+    <div class="row gdg-logo">
     </div>
     <div class="row login-form">
       <div class="center">
@@ -16,7 +17,7 @@
         <form  method="POST" action="{{ url('/password/email') }}">
         {{ csrf_field() }}
           <div class="input-field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-            <input type="email" name="email" value="{{ old('email') }} id="email">
+            <input type="email" name="email" value="{{ old('email') }}" id="email">
             <label for="email">Email
           </div>
           @if ($errors->has('email'))
@@ -28,6 +29,8 @@
         </form>
       </div>
     </div>
+</div>
+
 
 @endsection
 <!-- <div class="container">

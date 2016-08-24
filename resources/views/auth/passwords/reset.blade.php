@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row gdg-logo">
+<div class="container">
+      <div class="row gdg-logo">
       <div class="col s2 m2 l2 push-l5 push-m5 push-s6">
         <img src="images/logo-big.png">
       </div>
@@ -42,6 +43,8 @@
         </form>
       </div>
     </div>
+</div>
+
 @endsection
 <!-- <div class="container">
     <div class="row">

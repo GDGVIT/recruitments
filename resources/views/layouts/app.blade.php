@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>GDG Recruitments 2016</title>
-    <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/postlogin.css">
+    <link rel="stylesheet" href="{{ url ('css/materialize.min.css')}}">
+    <link rel="stylesheet" href="{{ url ('css/postlogin.css')}}">
 
     <!-- Fonts -->
     
@@ -17,7 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{url('css/style.css')}}">
     <style>
         body {
             font-family: 'Lato';
@@ -87,11 +87,11 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    <script src="js/jquery.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/sweetalert2.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/visible.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="{{ url('js/jquery.js')}}"></script>
+    <script src="{{ url('js/materialize.min.js')}}"></script>
+    <script src="{{ url('js/sweetalert2.min.js')}}"></script>
+    <script src="{{ url('js/smoothscroll.js')}}"></script>
+    <script src="{{ url('js/visible.min.js')}}"></script>
+    <script src="{{ url('js/script.js')}}"></script>
 </body>
 </html>
