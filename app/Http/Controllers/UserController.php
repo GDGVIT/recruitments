@@ -103,9 +103,35 @@ class UserController extends Controller
 
     public function showProblems()
     {
-        $domain = Auth::user()->domain;
-        $problems = ProblemStatement::where(['domain'=>$domain,'display'=>1])->get();
-        return view('User.showProblems',compact('problems'));
+
+        $technicalProblems=array();
+        $designProblems=array();
+        $managementProblems=array();
+        $problemArray = array();
+        $domain = DB::table('user_domains')->where(['user_id'=>Auth::user()->id])->get();
+        foreach ($domain as $item)
+        /*{
+            $userDomain = $item->domain_id;
+            if ($userDomain==1){
+                $technicalProblems = ProblemStatement::where(['domain'=>$item->domain_id,'display'=>1])->get();
+            }
+            elseif ($userDomain==2){
+                $managementProblems = ProblemStatement::where(['domain'=>$item->domain_id,'display'=>1])->get();
+            }
+            elseif($userDomain==3) {
+                $designProblems = ProblemStatement::where(['domain'=>$item->domain_id,'display'=>1])->get();
+            }
+        }*/
+
+        {
+            $problems = ProblemStatement::where(['domain'=>$item->domain_id,'display'=>1])->get();
+            array_push($problemArray,$problems);
+//            array_push($problemArray,['problems'=>$problems,'domain'=>$item->domain_id]);
+        }
+
+//        return $problemArray;
+        //$problems = ProblemStatement::where(['domain'=>$domain,'display'=>1])->get();
+        return view('User.showProblems',compact('problemArray'));
     }
 
     /*
