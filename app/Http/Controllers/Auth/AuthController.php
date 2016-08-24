@@ -29,7 +29,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new authentication controller instance.
@@ -53,8 +53,12 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'contact'=>'unique:users',
-            'regno' => 'unique:users'
+            'contact'=>'required|size:10|unique:users',
+            'regno' => 'required|unique:users',
+            'why_gdg' => 'required|min:25',
+            
+
+
         ]);
     }
 

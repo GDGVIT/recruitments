@@ -14,19 +14,36 @@
           <div class="first-content" id="first-content">
             <div class="row"><div class="text-center"><img src="images/logo-big.png"></div></div>
             <p style="padding: 10%;font-weight: 300;font-size: 110%;text-align: center">
-              If you would like to join <b>GDG VIT</b> you simply have
-              to apply through this portal and fill out the necessary details.
-              The first round will be conducted online and you will be informed about the subsequent rounds.
-            </p><br><br>
-            <div class="row">
-              <a href="{{ url('/problems') }}" class="custom-button col push-l4 push-s4 push-m4" id="modal-trigger">Go to Problem Statements</a>
-            </div>
+              Welcome to <b>GDG VIT</b>. You will be notified when we start our recruitments.<br>
+                Till then, you can prepare for the recruitments. To help you out, we have some useful links below.
+            </p>
+              <div class="list-group">
+                  <li><a href="https://developer.yahoo.com/everything.html" class="list-group-item">Publically available APIs</a></li>
+                  <li><a href="https://www.youtube.com/watch?v=U8GBXvdmHT4" class="list-group-item">Github Basics</a></li>
+                  <li> <a href="http://www.codeguru.com/csharp/csharp/cs_internet/displaying-real-time-data-using-html5-and-asp.net.htm" class="list-group-item">Displaying real time data</a></li>
+                  <li><a href="https://blog.kissmetrics.com/black-belt-adwords-techniques/" class="list-group-item">Google AdWords</a></li>
+                  <li> <a href="https://netbeans.org/kb/docs/php/wish-list-lesson1.html" class="list-group-item">Create a Database driven webapp</a></li>
+                  <li><a href="https://realpython.com/blog/python/python-web-applications/" class="list-group-item">Python Web Applications</a></li>
+                  <li><a href="http://www.oodesign.com/design-principles.html" class="list-group-item">Object Oriented Design Principals</a></li>
+
+              </div>
+
           </div>
           <div class="second-content" id="second-content">
             <div class="row"><div class="text-center"><img src="images/logo-big.png"></div></div>
             <p style="padding: 10%;font-weight: 300;font-size: 110%;text-align: center">
-              We are a chapter that is focussed on prototyping and developing open source products and solutions that are helpful to the community.
-We conduct events to generate awareness about Google's initiatives and bring out the best in the students.
+
+              <div class="list-group">
+                  <li><a href="https://developer.yahoo.com/everything.html" class="list-group-item">Publically available APIs</a></li>
+                  <li><a href="https://www.youtube.com/watch?v=U8GBXvdmHT4" class="list-group-item">Github Basics</a></li>
+                  <li> <a href="http://www.codeguru.com/csharp/csharp/cs_internet/displaying-real-time-data-using-html5-and-asp.net.htm" class="list-group-item">Displaying real time data</a></li>
+                  <li><a href="https://blog.kissmetrics.com/black-belt-adwords-techniques/" class="list-group-item">Google AdWords</a></li>
+                  <li> <a href="https://netbeans.org/kb/docs/php/wish-list-lesson1.html" class="list-group-item">Create a Database driven webapp</a></li>
+                  <li><a href="https://realpython.com/blog/python/python-web-applications/" class="list-group-item">Python Web Applications</a></li>
+                  <li><a href="http://www.oodesign.com/design-principles.html" class="list-group-item">Object Oriented Design Principals</a></li>
+
+              </div>
+
             </p><br><br>
           </div>
           <div class="third-content" id="third-content">

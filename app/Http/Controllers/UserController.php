@@ -208,9 +208,9 @@ class UserController extends Controller
 
     public function adminDashboard()
     {
-        $technicalRegistrations = User::where('domain',1)->count();
-        $managementRegistrations = User::where('domain',2)->count();
-        $designRegistrations = User::where('domain',3)->count();
+        $technicalRegistrations = DB::table('user_domains')->where('domain_id',1)->count();
+        $managementRegistrations = DB::table('user_domains')->where('domain_id',2)->count();
+        $designRegistrations = DB::table('user_domains')->where('domain_id',3)->count();
         $totalProblemStatements = ProblemStatement::all()->count();
         $totalSubmissions = Submission::all()->count();
         $checkedSubmissions = Submission::where('checked',1.00)->count();
@@ -318,16 +318,15 @@ class UserController extends Controller
     public function notifyUser(Request $request)
     {
         $contact = $request->contact;
-        $value = DB::table('subscribers')->where('contact',$contact)->get();
-        if($value)
-        {
-            return 'You are already subscribed. Chill';
-        }
-        else
-        {
-            DB::table('subscribers')->insert(['contact'=>$contact]);
-            $this->send($contact);
-            return 'Subscribed successfully';
+        if($contact!="") {
+            $value = DB::table('subscribers')->where('contact', $contact)->get();
+            if ($value) {
+                return 'You are already subscribed. Chill';
+            } else {
+                DB::table('subscribers')->insert(['contact' => $contact]);
+                $this->send($contact);
+                return 'Subscribed successfully';
+            }
         }
     }
 }

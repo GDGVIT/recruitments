@@ -12,6 +12,11 @@
 */
 
 Route::get('/', function () {
+    if (\Illuminate\Support\Facades\Auth::user())
+    {
+        return view('home');
+    }
+    else
     return view('welcome');
 });
 

@@ -10,7 +10,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
 
-                            <button class="btn btn-primary" onclick="window.location.href='problem/show/1'">Attempt Problem</button>
+                            <button class="btn btn-primary" onclick="window.location.href='problem/show/{{$problem->id}}'">Attempt Problem</button>
                         </div>
 
                         <div class="panel-body">
