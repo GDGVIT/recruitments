@@ -2,6 +2,7 @@
 
 @section('content')
 
+     <link rel="stylesheet" href="css/sweetalert2.css">
 <div class="row main-content">
       <div class="left-content col s6 m6 l6">
       <div class="links">

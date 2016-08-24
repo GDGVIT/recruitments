@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+     <link rel="stylesheet" href="css/sweetalert2.css">
 @section('content')
 <div class="row main-content">
       <div class="left-content col s6 m6 l6">

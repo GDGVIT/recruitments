@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<link rel="stylesheet" href="css/postlogin.css">
 @section('content')
 <div class="row gdg-logo">
       <div class="center">
