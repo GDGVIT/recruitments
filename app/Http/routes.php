@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index');
  * */
 Route::get('/user/profile','UserController@viewProfile');
 Route::get('/user/dashboard', 'UserController@dashboard');
+Route::post('user/add/domain','UserController@addDomains');
+Route::get('user/add/domain','UserController@addDomainsView');
 
 /*
  * Problem Statement Routes

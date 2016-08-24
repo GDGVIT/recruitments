@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -211,6 +212,24 @@ class UserController extends Controller
     public function send()
     {
         $this->dispatch(new SendSMS('8098678877', 'Queue Worked'));
+    }
+
+    /*
+     * Function to add domians
+     * */
+    public function addDomains(Request $request)
+    {
+        $myString = $request->domains;
+        $myArray = explode(',', $myString);
+        foreach ($myArray as $item) {
+            $domain = ((int)$item);
+            DB::table('user_domains')->insert(['user_id'=>Auth::user()->id,'domain_id'=>$domain]);
+        }
+        return 'All domains added successfully';
+    }
+    public function addDomainsView()
+    {
+        return view('User.addDomain');
     }
 }
 
