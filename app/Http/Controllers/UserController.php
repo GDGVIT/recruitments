@@ -25,13 +25,13 @@ class UserController extends Controller
         $this->middleware('isAdmin', ['only' => ['showUsers','adminDashboard']]);
 
     }
-    
-    
-    
+
+
+
     /*
      * View User Profile
      * */
-    
+
     public function viewProfile()
     {
         $user = Auth::user();
@@ -148,11 +148,11 @@ class UserController extends Controller
         $users = User::all();
         return view('User.Admin.showAllUsers',compact('users'));
     }
-    
+
     /*
      * Show all the submissions done by user
      * */
-    
+
     public function viewUserSubmissions($id)
     {
         $user = User::where('id',$id)->first();
@@ -212,10 +212,11 @@ class UserController extends Controller
         $managementRegistrations = DB::table('user_domains')->where('domain_id',2)->count();
         $designRegistrations = DB::table('user_domains')->where('domain_id',3)->count();
         $totalProblemStatements = ProblemStatement::all()->count();
+
         $totalSubmissions = Submission::all()->count();
         $checkedSubmissions = Submission::where('checked',1.00)->count();
         $uncheckedSubmissions = $totalSubmissions-$checkedSubmissions;
-        
+
         return view('User.Admin.dashboard',compact('technicalRegistrations','managementRegistrations','designRegistrations','checkedSubmissions','uncheckedSubmissions'));
     }
 
@@ -234,7 +235,7 @@ class UserController extends Controller
         $number = $request->number;
         $people = User::where('domain',$domain)->orderBy('marks', 'desc')->take($number)->get();
         return view('User.Admin.getShortlistedCandidates',compact('people'));
-        
+
     }
     public function send($contactNumber)
     {
@@ -250,7 +251,7 @@ class UserController extends Controller
         //Your message to send, Add URL encoding here.
         $message = urlencode("Thank You for registering! You'll be notified when our portal will be live.");
 
-        //Define route 
+        //Define route
         $route = "transactional";
         //Prepare you post parameters
         $postData = array(
@@ -329,5 +330,5 @@ class UserController extends Controller
             }
         }
     }
-}
 
+}

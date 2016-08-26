@@ -13,8 +13,9 @@
         <a href="#" data-to="third-content" data-number="2"><img src="images/Scroll Down.png"></a>
       </div>
         <div class="content">
-            <div class="text-center"><h3>Welcome to GDG-VIT Recruitments</h3></div>
+
           <div class="first-content" id="first-content">
+            <div class="text-center"><h3>Welcome to GDG-VIT Recruitments</h3></div>
             <div class="row"><div class="text-center"><img src="images/logo-big.png"></div></div>
             <p style="padding: 10%;font-weight: 300;font-size: 110%;text-align: center">
               If you would like to join <b>GDG VIT</b> you simply have
@@ -60,7 +61,7 @@ We conduct events to generate awareness about Google's initiatives and bring out
           <img src="images/illustration.png">
         </div>
       </div>
-      
+
       <div class="modal" id="login-modal">
         <div class="modal-content">
           <a href="{{ url('/login') }}" style="color: white"><button class="custom-button">Login</button></a>

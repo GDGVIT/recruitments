@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Submission extends Model
 {
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -16,7 +16,7 @@ class Submission extends Model
     protected $fillable = [
         'problem_id','user_id','marks','updated_at','url'
     ];
-    
+
     public function user()
     {
         return $this->belongsTo('App\User');
@@ -25,4 +25,5 @@ class Submission extends Model
     {
         return $this->belongsTo('App\ProblemStatement');
     }
+    
 }

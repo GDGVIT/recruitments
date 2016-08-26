@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\DomCrawler\Form;
+use Illuminate\Support\Facades\DB;
 
 class ProblemController extends Controller
 {
@@ -60,7 +61,13 @@ class ProblemController extends Controller
     public function showIndividualProblem($id)
     {
         $problemStatement = ProblemStatement::where('id',$id)->first();
-        return view('User.showIndividualProblem',compact('problemStatement'));
+        // return view('User.showIndividualProblem',compact('problemStatement'));
+        if(!$problemStatement)
+        {
+          $problemStatement = [];
+        }
+
+        return $problemStatement;
     }
 
     /*
@@ -123,7 +130,7 @@ class ProblemController extends Controller
 
 
     }
-    
+
     /*
      * Function to soft-delete any question(Won't be visible)
      * */
@@ -145,5 +152,33 @@ class ProblemController extends Controller
         $problem->display = 1;
         $problem->save();
         return back();
+    }
+
+    public function showAllProblemsAPI($domainId)
+    {
+      $questions = ProblemStatement::where('domain',$domainId)->get();
+      return $questions;
+    }
+    public function returnSubmittedProblemsCount()
+    {
+      $technicalSubmissions = DB::table('submissions')
+                              ->join('problem_statements','problem_statements.id','=','submissions.problem_id')
+                              ->where('problem_statements.domain',1)
+                              ->where('submissions.user_id','=',Auth::user()->id)
+                              ->count();
+      $managementSubmissions = DB::table('submissions')
+                              ->join('problem_statements','problem_statements.id','=','submissions.problem_id')
+                              ->where('problem_statements.domain',2)
+                              ->where('submissions.user_id','=',Auth::user()->id)
+                              ->count();
+
+      $designSubmissions = DB::table('submissions')
+                              ->join('problem_statements','problem_statements.id','=','submissions.problem_id')
+                              ->where('problem_statements.domain',3)
+                              ->where('submissions.user_id','=',Auth::user()->id)
+                              ->count();
+        $returnJSONArray = array();
+        array_push($returnJSONArray,$technicalSubmissions,$managementSubmissions,$designSubmissions);
+        return $returnJSONArray;
     }
 }

@@ -64,3 +64,11 @@ Route::get('/sms', 'UserController@send');
  * */
 
 Route::post('/notify','UserController@notifyUser');
+
+/*
+*API Routes
+*/
+
+Route::get('/api/problems/{domainId}','ProblemController@showAllProblemsAPI');
+Route::get('/api/user/problems/count','ProblemController@returnSubmittedProblemsCount');
+// /problem/show/id - Individual Problem
