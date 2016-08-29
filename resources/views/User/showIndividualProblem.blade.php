@@ -1,7 +1,97 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+ <div class="problems-nav row">
+      <a href="/home"><img src="images/gdglogo.png" alt="GDG VIT Vellore" style="width: 15%;"></a>
+      <a href="#" class="right" id="change-modal-trigger" style="color: white">Change Domain</a>
+      <a class='dropdown-button btn right problems-nav-options' href='#' data-activates='dropdown1'><b>Rajat Mukati</b><br>15BCE0529<span class="caret"></span></a>
+
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a class="modal-trigger" href="#instructions-modal">Instructions</a></li>
+        <li><a href="http://www.gdgvitvellore.com/" target="_blank">Contact Us</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+
+      <div id="instructions-modal" class="modal">
+        <div class="modal-content">
+          <h4>Instructions</h4>
+          <p>Here go the instructions for the recruitment process</p>
+        </div>
+        <div class="modal-footer">
+          <a class=" modal-action modal-close btn-flat">Close</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="question-card-container">
+      <div class="individual-question-card">
+        <div class="individual-card-header">
+          <a href="problems.html" style="color: black;font-size: 2rem;-webkit-text-stroke: 3px white;position: relative; top: 5px"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+          &nbsp;&nbsp;Back to question list
+          <span class="right question-difficulty">Difficulty: Easy | Not Answered</span>
+        </div>
+        <div class="question-content">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+        </div>
+      </div>
+      <div class="individual-question-submission row">
+        <form method="POST" action="/">
+          <div class="col s6 m6 l6"  style="border-right: 1px solid rgba(200,200,200,0.5);">
+            <div class="input-field link" style="text-align: center">
+              <input type="radio" name="submitting-link" id="submitting-link" class="with-gap">
+              <label for="submitting-link">Add link for solution
+            </div>
+            <div class="input-field" style="text-align: center">
+              <input type="text"  id="link" name="url">
+            </div>
+          </div>
+          <div class="col s6 m6 l6">
+            <div class="input-field file" style="text-align: center">
+              <input type="radio" name="submitting-link" id="submitting-file" class="with-gap">
+              <label for="submitting-file">Upload the solution file
+              </div>
+              <div style="text-align: center;margin-top: 5%">
+                <a href="#" class="file-upload">Upload</a>
+                <input type="file" name="submission" style="display: none;">
+              </div>
+            </div>
+            <button class="custom-submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div id="change-modal" class="modal">
+      <div class="modal-content">
+        <h4 style="text-align: center">Change Domain</h4>
+        <div class="input-field">
+          <input type="checkbox" class="filled-in" name="change-technical" id="change-technical">
+          <label for="change-technical">Technical
+        </div>
+        <div class="input-field">
+          <input type="checkbox" class="filled-in" name="change-management" id="change-management">
+          <label for="change-management">Management
+        </div>
+        <div class="input-field">
+          <input type="checkbox" class="filled-in" name="change-technical" id="change-design">
+          <label for="change-design">Design
+        </div>
+        <form action="http://localhost:8000/user/add/domain" method="POST">
+          <input type="text" name="domains" style="display: none">
+        </form>
+        <br>
+        <button class="custom-submit" type="submit">Submit</button>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+      $("input[name=submitting-file]").on('change', function(event) {
+          
+          $("#link").prop("disabled" , true);
+          /* Act on the event */
+      });
+  </script>
+   <!--  <div class="container">
         <div class="row">
             <div class="col m10 offset-m1">
 
@@ -65,5 +155,5 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
 @endsection
