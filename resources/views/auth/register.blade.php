@@ -1,9 +1,58 @@
 @extends('layouts.app')
 <link rel="stylesheet" href="{{url('css/register.css')}}">
-<style>
 
-</style>
 @section('content')
+<div class="home-container">
+<div class="navbar-fixed">
+  <nav class="home-nav">
+    <div class="nav-wrapper">
+      <a href="{{ url('/') }}" class="hide-on-med-and-up nav-logo-mob"><img src="images/gdglogo.png"></a>
+       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <div class="row">
+        <div class="col m10 l10 s12 push-l1 m1">
+          <ul class="left hide-on-med-and-down">
+          @if(\Illuminate\Support\Facades\Auth::user())
+            <li class="navbar-tabs nav-logo"><a href="{{url('/home')}}"><img src="images/gdglogo.png"></a></li>
+            
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <!-- Dropdown Trigger -->
+            <li class="navbar-tabs"><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
+            <li class="navbar-tabs"><a href="{{url('/logout')}}">Logout</a></li>
+          </ul>
+          @else
+          <li class="navbar-tabs nav-logo"><a href="{{url('/')}}"><img src="images/gdglogo.png"></a></li>
+            
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <!-- Dropdown Trigger -->
+            <li class="navbar-tabs"><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
+            <li class="navbar-tabs"><a href="{{url('/register')}}">Register</a></li>
+          </ul>
+           @endif
+        </div>
+      </div>
+
+      <ul class="side-nav" id="mobile-demo">
+           <li><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
+           @if(\Illuminate\Support\Facades\Auth::user())
+
+          <li><a href="{{url('/home')}}">Home</a></li>
+
+          <li><a href="{{url('/problems')}}">Problems</a></li>
+          <li><a href="{{url('/user/dashboard')}}">Dashboard</a></li>
+          <li><a href="{{url('/user/profile')}}">Profile</a></li>
+          <li><a href="{{url('/logout')}}">Logout</a></li>
+
+           @else
+
+          <li><a href="{{url('/register')}}">Register</a></li>
+          <li><a href="{{url('/login')}}">Login</a></li>
+          @endif
+      </ul>
+    </div>
+  </nav>
+</div>
     <div class="container-fluid">
         <div class="row">
             <div class="col m7 l7 s10 push-m3 push-l3 push-s1ex">

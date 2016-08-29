@@ -1,8 +1,8 @@
 @extends('layouts.app')
 <link rel="stylesheet" href="css/problems.css">
-    <link rel="stylesheet" href="css/individualproblem.css">
+
 <link href="css/modal.css" rel="stylesheet">
-<script src="js/individualproblem.js"></script>
+<script src="js/problemsLoader.js"></script>
 <script src="js/domainSelector.js"></script>
 <script src="https://use.fontawesome.com/8aa6edd1c8.js"></script>
   <script>
@@ -12,32 +12,92 @@
   $('.modal-trigger').leanModal();
   </script>
 @section('content')
+    <div class="problems-nav row">
+      <a href="/"><img src="images/gdglogo.png" alt="GDG VIT Vellore" style="width: 15%;"></a>
+      <a href="#" class="right" id="change-modal-trigger" style="color: white">Change Domain</a>
+      <a class='dropdown-button btn right problems-nav-options' href='#' data-activates='dropdown1'><b>Rajat Mukati</b><br>15BCE0529<span class="caret"></span></a>
+
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a class="modal-trigger" href="#instructions-modal">Instructions</a></li>
+        <li><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+
+      <div id="instructions-modal" class="modal">
+        <div class="modal-content">
+          <h4>Instructions</h4>
+          <p>Here go the instructions for the recruitment process</p>
+        </div>
+        <div class="modal-footer">
+          <a class=" modal-action modal-close btn-flat">Close</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="problems-tabs row">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#technical" data-value="1">Technical (<span class="number" data-domain="1">18</span>)</a></li>
+        <li class="tab col s3"><a href="#management" data-value="2">Management (<span class="number" data-domain="2">40</span>)</a></li>
+        <li class="tab col s3"><a href="#design" data-value="3">Design (<span class="number" data-domain="3">6</span>)</a></li>
+      </ul>
     <div class="container">
         <div class="row">
             <div class="col m10 offset-m1">
-
+                <div id="technical" class="col s12 questions" data-for="1">
                 @foreach($problemArray as $domainProblems)
                     @foreach($domainProblems as $problem)
-                    <div class="panel panel-default">
+                    <!-- <div class="panel panel-default">
                         <div class="panel-heading">
 
                             <button class="btn btn-primary" onclick="window.location.href='problem/show/{{$problem->id}}'">Attempt Problem</button>
                         </div>
-
-                        <div class="panel-body">
-                            <p><b>Problem Statement</b><br>
-                            {{$problem->problem_statement}}</p>
-                            <p><b>Comments</b><br>
-                            {{$problem->comments}}</p>
-
+                        <div class="question-card">
+                          <p class="question-card-header">Question title</p>
+                          <p class="question-description">{{$problem->problem_statement}}</p>
+                          <hr>
+                          <span class="question-difficulty">{{$problem->comments}}</span><span class="right question-answered">Answered</span>
                         </div>
-                    </div>
+                    </div> -->
+
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+        </div>
                     @endforeach
                 @endforeach
+                </div>
+                <div id="management" class="col s12 questions" data-for="2">
+                @foreach($problemArray as $domainProblems)
+                    @foreach($domainProblems as $problem)
 
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+        </div>
+                    @endforeach
+                @endforeach
+                </div>
+                <div id="design" class="col s12 questions" data-for="3">
+                @foreach($problemArray as $domainProblems)
+                    @foreach($domainProblems as $problem)
+
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+        </div>
+                    @endforeach
+                @endforeach
+                </div>
                 {{--
                 @foreach($problems as $problemStatement)
-                    <div class="panel panel-default">
+                    <!-- <div class="panel panel-default">
                         <div class="panel-heading">
                         
                             <button class="btn btn-primary" onclick="window.location.href='problem/show/{{$problemStatement->id}}'">Attempt Problem</button>
@@ -50,7 +110,7 @@
                             <p>{{$problemStatement->comments}}</p>
 
                         </div>
-                    </div>
+                    </div> -->
                 @endforeach
 --}}
             </div>
