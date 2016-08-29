@@ -1,13 +1,12 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="css/postlogin.css">
-<link rel="stylesheet" href="css/register.css">
+<link rel="stylesheet" href="{{url('css/register.css')}}">
 <style>
 
 </style>
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col m7 l7 s10 push-m3 push-l3 push-s1ex" style="margin-top:-30px;">
+            <div class="col m7 l7 s10 push-m3 push-l3 push-s1ex">
                 <form action="/register" method="POST">
                     {{csrf_field()}}
                     <div class="input-field form-group{{ $errors->has('name') ? ' has-error' : '' }}">

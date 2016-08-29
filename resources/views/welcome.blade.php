@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="home"></div>
+<br><br>
+<br><br>
+<br>
 <div class="container-fluid">
   <div class="row">
     <div class="col m6 l6 s10 push-l3 push-m3 push-s1 custom-pull-up">

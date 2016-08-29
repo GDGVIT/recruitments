@@ -1,11 +1,11 @@
 body
 {
-  background-color: #eaeaea;
+  background-color: #eaeaea !important;
   font-family: Montserrat;
 }
 .home-nav
 {
-  background-color: #528FF5;
+  background-color: #528FF5 !important;
   box-shadow: none;
 }
 .input-label
