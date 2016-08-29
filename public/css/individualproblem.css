@@ -1,0 +1,104 @@
+.individual-question-card, .individual-question-submission{
+  background: white;
+  padding: 0.1%;
+  padding-bottom: 1%;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  border-radius: 3px;
+  min-width: 95vw;
+  max-width: 95vw;
+  position: relative;
+  margin-left: 2.5%;
+  box-shadow: 0px 3px 3px rgba(180,180,180,0.5);
+}
+.individual-card-header{
+  border-bottom: 1px solid rgba(200,200,200,0.5);
+  padding-bottom: 0px;
+}
+.question-difficulty{
+  margin-top: 1.4%;
+}
+.question-content{
+  padding: 0.5%;
+}
+
+.individual-question-submission{
+  padding-top: 15px;
+  padding-bottom: 0;
+  margin-top: 1%!important;
+}
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+  border-color: #528ff5;
+}
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after{
+  background: #528ff5;
+}
+input[type=text]{
+  max-width: 80%;
+}
+input[type=text]:focus{
+  border-bottom-color: #528ff5!important;
+  box-shadow: 0 1px 0 0 #528ff5!important;
+}
+input[type=file]{
+  display: none;
+}
+.file-upload{
+  border: 2px solid #528ff5;
+  outline: none;
+  color: #528ff5;
+  background: white;
+  padding: 1% 5%;
+  position: relative!important;
+  top: 3%!important;
+}
+.file-upload:hover{
+  background: #528ff5;
+  color: white;
+  transition: 0.3s;
+}
+.custom-submit{
+  background: #528ff5;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 0.5% 5%;
+  border-radius: 2px;
+  position: relative;
+  top: 10vh;
+  left: -6vw;
+}
+.custom-submit:focus{
+  background: #528ff5;
+}
+.custom-submit:hover{
+  box-shadow: 0px 5px 5px rgba(180,180,180,0.5);
+  transition: 0.3s;
+}
+@media only screen and (min-device-width: 300px) and (max-device-width: 600px){
+  .fa-arrow-left{
+    font-size: 0.8rem;
+    margin-right: 1%;
+  }
+  .question-difficulty{
+    font-size: 1.8rem;
+  }
+  .question-description{
+    font-size: 0.8rem;
+  }
+  label{
+    font-size: 1.8rem!important;
+  }
+  .file-upload{
+    font-size: 1.5rem;
+  }
+  .custom-submit{
+    top: 4vh;
+    left: -8vw;
+    font-size: 1.5rem;
+  }
+  .individual-card-header
+  {
+    font-size: 80%;
+  }
+}

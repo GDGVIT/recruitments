@@ -1,0 +1,92 @@
+.user-card
+{
+  background: white;
+  padding: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 1.5%;
+  border-radius: 3px;
+  position: relative;
+  box-shadow: 0px 3px 3px rgba(180,180,180,0.5);
+  cursor:pointer;
+}
+.user-card-header{
+  border-bottom: 1px solid rgba(200,200,200,0.5);
+  padding-bottom: 8px;
+  font-family: 'Ubuntu';
+  font-size: 1.2rem;
+  line-height: 20px;
+}
+.user-card-header span{
+  font-size: 85%;
+}
+.user-card-data
+{
+  padding-top: 8px;
+}
+.problems-nav-options
+{
+  margin-top: 18px !important;
+  font-size: 1rem !important;
+  line-height: 20px;
+}
+@media(max-width:600px)
+{
+  .user-card
+  {
+    margin-bottom: 20px;
+  }
+  .problems-nav-options
+  {
+    margin-top: 20px !important;
+    font-size: 0.8rem !important;
+    line-height: 10px;
+  }
+  .problems-nav img
+  {
+    width: 50% !important;
+  }
+}
+@media only screen and (min-device-width: 700px) and (max-device-width: 1023px){
+  .problems-nav a{
+    font-size: 1.2rem;
+    margin-top: 1.9%;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1349px){
+  .problems-nav a{
+    font-size: 1.0rem;
+    margin-top: 1.8%;
+  }
+}
+
+@media only screen and (min-device-width: 1600px) and (max-device-width: 2000px){
+  .problems-nav a{
+    font-size: 1.4rem !important;
+    margin-top: 2% !important;
+  }
+}
+.collapsible-body
+{
+  padding-bottom: 10px;
+}
+.collapsible-body p
+{
+  margin-left: 0;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-bottom: 2px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.collapsible-body .custom-button
+{
+  font-size: 80%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 30px;
+  cursor: pointer;
+}

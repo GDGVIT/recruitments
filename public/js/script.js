@@ -1,11 +1,13 @@
 $(document).ready(function(){
+  $('#second-content').css('display','none');
+  $('#third-content').css('display','none');
   $('#modal-trigger').click(function(){
     swal({
       title: '',
       showConfirmButton: false,
       padding: 80,
       background: 'rgb(51,51,51)',
-      text: '<a href="/login" style="color: white;margin-right: 10%;"><button class="custom-button">Login</button></a><a href="/register"><button class="register-button">Register</button></a>'
+      text: '<a href="login.html" style="color: white;margin-right: 10%;"><button class="custom-button">Login</button></a><a href="register.html"><button class="register-button">Register</button></a>'
     });
   });
   $('.links a').click(function(){
@@ -30,4 +32,11 @@ $(document).ready(function(){
       $(this).addClass('active-link');
     }
   });
+  $.fn.scrollStopped = function(callback) {
+    var that = this, $this = $(that);
+    $this.scroll(function(ev) {
+      clearTimeout($this.data('scrollTimeout'));
+      $this.data('scrollTimeout', setTimeout(callback.bind(that), 100, ev));
+    });
+  };
 });

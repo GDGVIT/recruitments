@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>GDG Recruitments 2016</title>
-    <link rel="stylesheet" href="{{ url ('css/materialize.min.css')}}">
-    <link rel="stylesheet" href="{{ url ('css/postlogin.css')}}">
-
-    <!-- Fonts -->
-    
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet ' type='text/css'>
+    <link rel="stylesheet" href="{{url('css/materialize.min.css')}}"">
+    <link rel="stylesheet" href="{{url('css/home.css')}}"">
+   <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet ' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{url('css/style.css')}}">
+
+    <script src="{{url('js/jquery.js')}}"></script>
+    <script src="{{url('js/materialize.min.js')}}"></script>
+    <script src="{{url('js/sweetalert2.min.js')}}"></script>
     <style>
         body {
             font-family: 'Lato';
@@ -31,67 +31,71 @@
         }
     </style>
 </head>
-<body id="app-layout">
-    <nav>
-  <div class="nav-wrapper">
-    <a href="{{ url('/') }}" class="brand-logo hide-on-med-and-up">GDG VIT Vellore</a>
-     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <div class="row">
-      <div class="col m10 l10 s12 push-l1 m1">
-        <ul class="left hide-on-med-and-down">
-        @if(\Illuminate\Support\Facades\Auth::user())
-          <li class="navbar-tabs" id="nav-logo"><a href="{{ url('/home') }}">GDG VIT Vellore</a></li>
-
+<body id="home-body">
+<div class="home-container">
+<div class="navbar-fixed">
+  <nav class="home-nav">
+    <div class="nav-wrapper">
+      <a href="{{ url('/') }}" class="hide-on-med-and-up nav-logo-mob"><img src="images/gdglogo.png"></a>
+       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <div class="row">
+        <div class="col m10 l10 s12 push-l1 m1">
+          <ul class="left hide-on-med-and-down">
+          @if(\Illuminate\Support\Facades\Auth::user())
+            <li class="navbar-tabs nav-logo"><a href="{{url('/home')}}"><img src="images/gdglogo.png"></a></li>
+            
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <!-- Dropdown Trigger -->
+            <li class="navbar-tabs"><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
+            <li class="navbar-tabs"><a href="{{url('/logout')}}">Logout</a></li>
+          </ul>
+          @else
+          <li class="navbar-tabs nav-logo"><a href="{{url('/')}}"><img src="images/gdglogo.png"></a></li>
+            
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <!-- Dropdown Trigger -->
+            <li class="navbar-tabs"><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
+            <li class="navbar-tabs"><a href="{{url('/register')}}">Register</a></li>
+          </ul>
            @endif
-        </ul>
-        <ul class="right hide-on-med-and-down">
-          <!-- Dropdown Trigger -->
-            @if(\Illuminate\Support\Facades\Auth::user())
-                <a class="dropdown-button" id="uname-dropdown" href="{{ url('/logout') }}" data-activates="dropdown1"><li class="navbar-tabs">Logout</li></a>
-                <a class="dropdown-button" id="uname-dropdown" href="{{ url('/user/profile') }}" data-activates="dropdown1"><li class="navbar-tabs">Hey, {{ Auth::user()->name }}</li></a>
-
-            @if(\Illuminate\Support\Facades\Auth::user()->role==1)
-          <li class="navbar-tabs"><a class="dropdown-button" href="#!" data-activates="dropdown2">Admin Panel</a></li>
-           @endif
-                @endif
-        </ul>
+        </div>
       </div>
-    </div>
 
-    <ul class="side-nav" id="mobile-demo">
-     @if(\Illuminate\Support\Facades\Auth::user())
+      <ul class="side-nav" id="mobile-demo">
+           <li><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
+           @if(\Illuminate\Support\Facades\Auth::user())
 
-        @if(\Illuminate\Support\Facades\Auth::user()->role==1)
-        <li><a onclick='$("#admin-panel-nav").toggleClass("invisible");'>Admin Panel</a>
-          <ul class="invisible" id="admin-panel-nav">
-            <li><a href="{{ url('/admin/show/users') }}">Show all Users</a></li>
-            <li><a href="{{ url('/admin/problem/add') }}">Add Problem</a></li>
-            <li><a href="{{ url('/admin/dashboard') }}">Admin Dashboard</a></li>
-            <li><a href="{{ url('/admin/users/shortlist') }}">Shortlist</a></li>
-          </ul>
-        </li>
-        @endif
-        <li><a onclick='$("#logout-nav").toggleClass("invisible");'>{{ Auth::user()->name }}</a>
-          <ul class="invisible" id="logout-nav">
-            <li><a href="{{ url('/logout') }}">Logout</a></li>
-          </ul>
-        </li>
+          <li><a href="{{url('/home')}}">Home</a></li>
 
-        @endif
+          <li><a href="{{url('/problems')}}">Problems</a></li>
+          <li><a href="{{url('/user/dashboard')}}">Dashboard</a></li>
+          <li><a href="{{url('/user/profile')}}">Profile</a></li>
+          <li><a href="{{url('/logout')}}">Logout</a></li>
+
+           @else
+
+          <li><a href="{{url('/register')}}">Register</a></li>
+          <li><a href="{{url('/login')}}">Login</a></li>
+          @endif
       </ul>
-  </div>
-</nav>
+    </div>
+  </nav>
+</div>
+<div class="home"></div>
+<br><br>
+<br><br>
 <br>
-<br>
+
   
     @yield('content')
 
-    <!-- JavaScripts -->
-    <script src="{{ url('js/jquery.js')}}"></script>
-    <script src="{{ url('js/materialize.min.js')}}"></script>
-    <script src="{{ url('js/sweetalert2.min.js')}}"></script>
-    <script src="{{ url('js/smoothscroll.js')}}"></script>
-    <script src="{{ url('js/visible.min.js')}}"></script>
-    <script src="{{ url('js/script.js')}}"></script>
+    <script>
+
+    $('select').material_select();
+    $(".button-collapse").sideNav();
+
+  </script>
 </body>
 </html>

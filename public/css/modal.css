@@ -1,0 +1,56 @@
+#change-modal-trigger{
+  color: white;
+  margin-top: 1.5%;
+  position: relative;
+  left: -5%;
+}
+@media only screen and (min-device-width: 300px) and (max-device-width: 600px){
+  #change-modal-trigger{
+    font-size: 1.8rem;
+    margin-top: 2.5%;
+  }
+}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1349px){
+  #change-modal-trigger{
+    margin-top: 2.5%;
+  }
+}
+@media only screen and (min-device-width: 1600px) and (max-device-width: 2000px){
+  #change-modal-trigger{
+    margin-top: 2%;
+  }
+}
+
+#change-modal{
+  text-align: center;
+}
+#change-modal h4{
+  font-family: 'Ubuntu';
+}
+#change-modal .input-field{
+  display: inline;
+  margin-right: 1%;
+}
+#change-modal [type="checkbox"].filled-in:checked+label:after{
+  background: #528ff5;
+  border-color: #528ff5;
+}
+#change-modal .custom-submit{
+  background: #528ff5;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 0.5% 5%;
+  border-radius: 2px;
+  margin-top: 2%;
+  position: relative;
+  top: 0vh;
+  left: 0px;
+}
+#change-modal .custom-submit:focus{
+  background: #528ff5;
+}
+#change-modal .custom-submit:hover{
+  box-shadow: 0px 5px 5px rgba(180,180,180,0.5);
+  transition: 0.3s;
+}

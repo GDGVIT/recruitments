@@ -1,0 +1,59 @@
+body
+{
+  background-color: #eaeaea;
+  font-family: Montserrat;
+}
+.home-nav
+{
+  background-color: #528FF5;
+  box-shadow: none;
+}
+.input-label
+{
+  font-family: Ubuntu;
+  color: rgb(70,70,70);
+  margin-left: 2px;
+  padding-bottom: 2px;
+}
+.select-dropdown li, .select-dropdown li span{
+  background: white;
+  color: rgb(70,70,70)!important;
+}
+.select-wrapper input{
+  color: rgb(145,145,145)!important;
+  text-indent: 10px;
+}
+.select-wrapper .caret{
+  color: rgb(145,145,145)!important;
+}
+.select-dropdown li, .select-dropdown li span:hover{
+  background: rgb(240,240,240);
+  transition: 0.3s;
+}
+.select-dropdown li.disabled span{
+  background: rgb(240,240,240);
+  color: rgb(145,145,145)!important;
+}
+
+
+.input-field input, .materialize-textarea{
+  background: white !important;
+  margin-bottom: 0;
+  border-radius: 2px;
+  border: 1px solid rgb(140,140,140) !important;
+  text-indent: 10px;
+}
+.materialize-textarea{
+  margin-bottom:0 !important;
+}
+.input-field input:focus, .materialize-textarea:focus{
+  border-bottom: 1px solid rgb(140,140,140)!important;
+  box-shadow: 0 1px 0 0 white!important;
+}
+@media(max-width:600px)
+{
+  .push-s1ex
+  {
+    margin-left: 13% !important;
+  }
+}

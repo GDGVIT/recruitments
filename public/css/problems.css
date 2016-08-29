@@ -1,0 +1,162 @@
+body{
+  font-family: 'Montserrat';
+  background: #e8e8e8;
+}
+.problems-nav{
+  background: #528FF5;
+}
+.problems-nav-options{
+  background: #528FF5;
+  box-shadow: none;
+  position: relative;
+  left: -5%;
+  line-height: 20px;
+  margin-top: 18px;
+}
+.problems-nav-options.active{
+  background: #528FF5;
+  box-shadow: none;
+}
+
+.dropdown-content li a{
+  color: #528FF5;
+  font-size: 1rem;
+}
+.problems-tabs{
+  margin-top: -20px!important;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.problems-tabs .tabs li a{
+  color: black;
+}
+.problems-tabs .tabs li a:hover, .problems-tabs .tabs li a.active{
+  color: #528FF5;
+}
+.problems-tabs .tabs .indicator{
+  background: #528FF5;
+  height: 3px;
+}
+
+.problems-tabs .questions{
+  background: #e8e8e8;
+  padding-top: 2%;
+}
+
+.question-card{
+  padding: 0.1%;
+  padding-bottom: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background: white;
+  border-radius: 5px;
+  min-width: 95vw;
+  margin: 2% 0%;
+  position: relative;
+  margin-left: -31.5%;
+  box-shadow: 0px 3px 3px rgba(180,180,180,0.5);
+}
+.question-card:hover{
+  cursor: pointer;
+}
+.question-card-header{
+  font-family: 'Ubuntu';
+  font-size: 1.2rem;
+}
+.question-description{
+  font-family: 'Lato';
+  font-size: 1.1rem;
+}
+.question-card hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid rgba(220,220,220,0.5);
+    margin: 0.8rem 0;
+    padding: 0;
+}
+.question-difficulty, .question-unanswered{
+  color: rgb(175,174,174);
+  font-size: 1.0rem;
+}
+.question-answered{
+  color: #528ff5;
+  font-size: 1.1rem;
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 600px){
+  .problems-nav{
+    min-height: 5vh;
+  }
+  .problems-nav img{
+    width: 30%!important;
+  }
+  .problems-nav a{
+    font-size: 1.6rem;
+    margin-top: 30px;
+  }
+  .problems-tabs{
+    font-size: 1.3rem;
+  }
+  .question-answered{
+    font-size: 1.5rem;
+  }
+  .dropdown-content li a{
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-device-width: 700px) and (max-device-width: 1023px){
+  .problems-nav img{
+    width: 25%!important;
+  }
+  .problems-nav a{
+    font-size: 1.2rem;
+    margin-top: 1.9%;
+  }
+  .problems-tabs{
+    font-size: 1.0rem;
+  }
+  .question-answered{
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1349px){
+  .problems-nav img{
+    width: 20%!important;
+  }
+  .problems-nav a{
+    font-size: 1.0rem;
+    margin-top: 1.8%;
+  }
+  .problems-tabs{
+    font-size: 1.0rem;
+  }
+  .question-answered{
+    font-size: 1.1rem;
+  }
+
+}
+
+@media only screen and (min-device-width: 1600px) and (max-device-width: 2000px){
+  .problems-nav img{
+    width: 18%!important;
+  }
+  .problems-nav a{
+    font-size: 1.4rem;
+    margin-top: 2%;
+  }
+  .problems-tabs{
+    font-size: 1.2rem;
+  }
+  .question-card-header{
+    font-size: 1.5rem!important;
+  }
+  .question-description{
+    font-size: 1.4rem!important;
+  }
+  .question-answered{
+    font-size: 1.1rem;
+  }
+}

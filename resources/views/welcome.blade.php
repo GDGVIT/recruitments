@@ -2,71 +2,54 @@
 
 @section('content')
 
-     <link rel="stylesheet" href="css/sweetalert2.css">
-<div class="row main-content">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col m6 l6 s10 push-l3 push-m3 push-s1 custom-pull-up">
+      <div class="center">
+        <div class="home-head">
+          Practice coding. Compete. Find jobs.<br><span class="home-head-sub">Join over 1 million programmers and improve your skills.</span>
+        </div>
+        <div class="row">
+          <div class="login-form">
+              <div class="col s12 m5 l5 push-l4 push-m4">
+                <form action="{{url('/login')}}" method="POST">
+                <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
 
+                  <div class="input-field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <input type="email" name="email" id="email" placeholder="Email Id" value="{{ old('email') }}">
 
-      <div class="left-content col s6 m6 l6">
-      <div class="links">
-        <a href="#" data-to="first-content" data-number="0" class="active-link"><img src="images/Button Selected.png"></a>
-        <a href="#" data-to="second-content" data-number="1"><img src="images/Scroll Down.png"></a>
-        <a href="#" data-to="third-content" data-number="2"><img src="images/Scroll Down.png"></a>
-      </div>
-        <div class="content">
-
-          <div class="first-content" id="first-content">
-            <div class="text-center"><h3>Welcome to GDG-VIT Recruitments</h3></div>
-            <div class="row"><div class="text-center"><img src="images/logo-big.png"></div></div>
-            <p style="padding: 10%;font-weight: 300;font-size: 110%;text-align: center">
-              If you would like to join <b>GDG VIT</b> you simply have
-              to apply through this portal and fill out the necessary details.
-              The first round will be conducted online and you will be informed about the subsequent rounds.
-
-              <form method="POST" action="{{ url('/notify') }}">
-                  {{ csrf_field() }}
-                  <div class="input-field form-group{{ $errors->has('contact') ? ' has-error' : '' }}">
-                      <input type="text" name="contact" id="contact">
-                      <label for="contact">Contact</label>
                   </div>
-                  @if ($errors->has('contact'))
+                  @if ($errors->has('email'))
                       <span class="help-block">
-                  <strong>{{ $errors->first('contact') }}</strong>
-              </span>
+                          <strong >{{ $errors->first('email') }}</strong>
+                      </span>
                   @endif
-                  <div class="row"><div class="col s12 m12 l12 push-m4 push-l4 push-s4"><button class="custom-button" type="submit">Notify Me!</button></div></div>
-              </form>
-            </p><br><br>
-            <div class="row">
-              <button class="custom-button col push-l4 push-s4 push-m4" id="modal-trigger">Let's Start</button>
-            </div>
-          </div>
-          <div class="second-content" id="second-content">
-            <div class="row"><div class="text-center"><img src="images/logo-big.png"></div></div>
-            <p style="padding: 10%;font-weight: 300;font-size: 110%;text-align: center">
-              We are a chapter that is focussed on prototyping and developing open source products and solutions that are helpful to the community.
-We conduct events to generate awareness about Google's initiatives and bring out the best in the students.
-            </p><br><br>
-          </div>
-          <div class="third-content" id="third-content">
-            <div class="row"><div class="text-center"><img src="images/logo-big.png"></div></div>
-            <p style="padding: 10%;font-weight: 300;font-size: 110%;text-align: center">
-              To contact us, simply drop a message to our <a href="http://facebook.com/gdgvitvellore">Facebook page</a>  or, give us an email at <br><a href="mailto::gdgvitvellore@gmail.com" style="color: white" target="_blank">gdgvitvellore@gmail.com</a>
-              <br>Or, call us at <br>77086 15051<br>OR<br>99526 68689
-            </p>
-              <a href="https://www.facebook.com/gdgvitvellore/?fref=ts" target="_blank"><button class="custom-facebook text-center">f</button></a>
+                  <div class="input-field form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                  </div>
+                  @if ($errors->has('password'))
+                      <span class="help-block">
+                          <strong >{{ $errors->first('password') }}</strong>
+                      </span>
+                  @endif
+                  <div class="input-field" id="remember-holder">
+                    <input type="checkbox" class="filled-in"  name="remember" id="remember">
+                    <label for="remember">Remember Me?
+                  </div>
+                  <div class="input-field" id="forgot-password">
+                    <a href="forgotpassword.html">Forgot password?</a>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 m12 l12" style="padding:0;">
+                      <button class="custom-button" id="login-form-submit" type="submit">Login</button>
+                    </div>
+                  </div>
+            </form>
           </div>
         </div>
       </div>
-        <div class="right-content col s6 m6 l6 fixed">
-          <img src="images/illustration.png">
-        </div>
-      </div>
-
-      <div class="modal" id="login-modal">
-        <div class="modal-content">
-          <a href="{{ url('/login') }}" style="color: white"><button class="custom-button">Login</button></a>
-          <a href="{{ url('/register') }}"><button class="register-button">Register</button></a>
-        </div>
-      </div>
-
+    </div>
+  </div>
+</div>
+</div>
 @endsection
