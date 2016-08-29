@@ -7,13 +7,13 @@
     <div class="col m6 l6 s10 push-l3 push-m3 push-s1 custom-pull-up">
       <div class="center">
         <div class="home-head">
-          Practice coding. Compete. Find jobs.<br><span class="home-head-sub">Join over 1 million programmers and improve your skills.</span>
+          Love Coding? Join GDG-VIT<br><span class="home-head-sub">Participate and compete with people across your campus</span>
         </div>
         <div class="row">
           <div class="login-form">
               <div class="col s12 m5 l5 push-l4 push-m4">
                 <form action="{{url('/login')}}" method="POST">
-                <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+                  {{csrf_field()}}
 
                   <div class="input-field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <input type="email" name="email" id="email" placeholder="Email Id" value="{{ old('email') }}">
@@ -21,7 +21,7 @@
                   </div>
                   @if ($errors->has('email'))
                       <span class="help-block">
-                          <strong >{{ $errors->first('email') }}</strong>
+                          <strong style="color: red;" >{{ $errors->first('email') }}</strong>
                       </span>
                   @endif
                   <div class="input-field form-group{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -29,7 +29,7 @@
                   </div>
                   @if ($errors->has('password'))
                       <span class="help-block">
-                          <strong >{{ $errors->first('password') }}</strong>
+                          <strong style="color: red;">{{ $errors->first('password') }}</strong>
                       </span>
                   @endif
                   <div class="input-field" id="remember-holder">
