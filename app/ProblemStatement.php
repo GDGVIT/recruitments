@@ -12,7 +12,7 @@ class ProblemStatement extends Model
      * @var array
      */
     protected $fillable = [
-        'domain','problem_statement','display','comments'
+        'domain','problem_statement','display','comments','leve;','category'
          ];
 
 

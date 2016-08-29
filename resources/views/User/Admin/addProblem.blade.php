@@ -33,7 +33,56 @@
                     </span>
                     @endif
                   </div>
+
+                        @if ($errors->has('domain'))
+                            <span class="help-block">
+                        <strong>{{ $errors->first('domain') }}</strong>
+                    </span>
+                        @endif
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col m4 l4 s12">
+                        <div class="prob-field form-group{{ $errors->has('level') ? ' has-error' : '' }}">
+                           Level
+                        </div>
+                    </div>
+                    <div class="col m6 l6 s12">
+                        <div class="input-field">
+                            <select id="add-proj-select" name="level">
+                                <option value=1>Easy</option>
+                                <option value=2>Medium</option>
+                                <option value=3>Hard</option>
+                            </select>
+                        </div>
+                        @if ($errors->has('domain'))
+                            <span class="help-block">
+                        <strong>{{ $errors->first('domain') }}</strong>
+                    </span>
+                        @endif
+                    </div>
+
+                    @if ($errors->has('domain'))
+                        <span class="help-block">
+                        <strong>{{ $errors->first('domain') }}</strong>
+                    </span>
+                    @endif
+                </div>
+                </div>
+
+              <div class="row">
+                  <div class="col m4 l4 s12">
+                      <div class="prob-field form-group{{ $errors->has('category') ? ' has-error' : '' }}">
+                          Category
+                      </div>
+                  </div>
+                  <div class="col m6 l6 s12">
+                      <div class="input-field form-group{{ $errors->has('category') ? ' has-error' : '' }}">
+                          <input type="text" name="category">
+                      </div>
+                  </div>
+              </div>
+
                 <div class="row">
                   <div class="col m4 l4 s12">
                     <div class="prob-field form-group{{ $errors->has('problem_statement') ? ' has-error' : '' }}">

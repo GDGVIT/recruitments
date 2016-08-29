@@ -38,6 +38,8 @@ class ProblemController extends Controller
         $problemStatement->problem_statement = $request->problem_statement;
         $problemStatement->display = 1;
         $problemStatement->comments = $request->comments;
+        $problemStatement->category = $request->category;
+        $problemStatement->level = $request->level;
         $problemStatement->save();
         return back();
 

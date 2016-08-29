@@ -68,7 +68,16 @@ Route::post('/notify','UserController@notifyUser');
 /*
 *API Routes
 */
-
 Route::get('/api/problems/{domainId}','ProblemController@showAllProblemsAPI');
 Route::get('/api/user/problems/count','ProblemController@returnSubmittedProblemsCount');
 // /problem/show/id - Individual Problem
+
+
+/*
+ * Leader Board routes
+ * */
+
+Route::get('/leaderboard/technical','LeaderboardController@technicalLeaderBoard');
+Route::get('/leaderboard/management','LeaderboardController@managementLeaderBoard');
+Route::get('/leaderboard/design','LeaderboardController@designLeaderBoard');
+
