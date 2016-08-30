@@ -105,11 +105,18 @@ class UserController extends Controller
     public function showProblems()
     {
 
-        $technicalProblems=array();
-        $designProblems=array();
-        $managementProblems=array();
+        $technicalProblemsCount = ProblemStatement::where(['domain'=>1,'display'=>1])->count();
+        $managementProblemsCount = ProblemStatement::where(['domain'=>2,'display'=>1])->count();
+        $designProblemsCount = ProblemStatement::where(['domain'=>3,'display'=>1])->count();
         $problemArray = array();
-        $domain = DB::table('user_domains')->where(['user_id'=>Auth::user()->id])->get();
+        $answeredArray = array();
+        $answeredProblems = Submission::where('user_id',Auth::user()->id)->get();
+        foreach ($answeredProblems as $problem)
+        {
+            array_push($answeredArray,$problem->problem_id);
+        }
+        //$domain = DB::table('user_domains')->where(['user_id'=>Auth::user()->id])->get();
+        $domain = [1,2,3];
         foreach ($domain as $item)
         /*{
             $userDomain = $item->domain_id;
@@ -125,14 +132,15 @@ class UserController extends Controller
         }*/
 
         {
-            $problems = ProblemStatement::where(['domain'=>$item->domain_id,'display'=>1])->get();
+            //$problems = ProblemStatement::where(['domain'=>$item->domain_id,'display'=>1])->get();
+            $problems = ProblemStatement::where(['domain'=>$item,'display'=>1])->get();
             array_push($problemArray,$problems);
 //            array_push($problemArray,['problems'=>$problems,'domain'=>$item->domain_id]);
         }
 
-//        return $problemArray;
+        //return $problemArray;
         //$problems = ProblemStatement::where(['domain'=>$domain,'display'=>1])->get();
-        return view('User.showProblems',compact('problemArray'));
+        return view('User.showProblems',compact('problemArray','technicalProblemsCount','managementProblemsCount','designProblemsCount','answeredArray'));
     }
 
     /*

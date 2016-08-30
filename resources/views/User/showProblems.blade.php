@@ -21,100 +21,87 @@
     </div>
     <div class="problems-tabs row">
       <ul class="tabs">
-        <li class="tab col s3"><a class="active" href="#technical" data-value="1">Technical (<span class="number" data-domain="1">18</span>)</a></li>
-        <li class="tab col s3"><a href="#management" data-value="2">Management (<span class="number" data-domain="2">40</span>)</a></li>
-        <li class="tab col s3"><a href="#design" data-value="3">Design (<span class="number" data-domain="3">6</span>)</a></li>
+        <li class="tab col s3"><a class="active" href="#technical" data-value="1">Technical (<span class="number" data-domain="1">{{$technicalProblemsCount}}</span>)</a></li>
+        <li class="tab col s3"><a href="#management" data-value="2">Management (<span class="number" data-domain="2">{{$managementProblemsCount}}</span>)</a></li>
+        <li class="tab col s3"><a href="#design" data-value="3">Design (<span class="number" data-domain="3">{{$designProblemsCount}}</span>)</a></li>
       </ul>
     <div class="container-fluid">
         <div class="row">
             <div class="col m12 l12">
                 <div id="technical" class="col s12 questions" data-for="1">
-                <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
-        </div>
-                @foreach($problemArray as $domainProblems)
-                    @foreach($domainProblems as $problem)
-                    <!-- <div class="panel panel-default">
-                        <div class="panel-heading">
-
-                            <button class="btn btn-primary" onclick="window.location.href='problem/show/{{$problem->id}}'">Attempt Problem</button>
-                        </div>
-                        <div class="question-card">
-                          <p class="question-card-header">Question title</p>
-                          <p class="question-description">{{$problem->problem_statement}}</p>
-                          <hr>
-                          <span class="question-difficulty">{{$problem->comments}}</span><span class="right question-answered">Answered</span>
-                        </div>
-                    </div> -->
+               @foreach($problemArray[0] as $problem)
 
         <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <p class="question-card-header">{{$problem->problem_statement}}</p>
+          <p class="question-description">{{$problem->comments}}</p>
           <hr>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+            @if($problem->level==1)
+          <span class="question-difficulty">Difficulty: Easy</span>
+            @elseif($problem->level==2)
+                <span class="question-difficulty">Difficulty: Medium</span>
+            @else
+                <span class="question-difficulty">Difficulty: Hard</span>
+            @endif
+            <span class="question-difficulty">| {{$problem->category}}</span>
+            @if(in_array($problem->id,$answeredArray))
+                <span class="right question-answered">Answered</span>
+            @else
+                <span class="right question-answered">Unanswered</span>
+
+            @endif
         </div>
-                    @endforeach
-                @endforeach
+                   @endforeach
                 </div>
                 <div id="management" class="col s12 questions" data-for="2">
-                <div class="question-card">
-          <p class="question-card-header">Question title2</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
-        </div>
-                @foreach($problemArray as $domainProblems)
-                    @foreach($domainProblems as $problem)
+                    @foreach($problemArray[1] as $problem)
 
-        <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
-        </div>
+                        <div class="question-card">
+                            <p class="question-card-header">{{$problem->problem_statement}}</p>
+                            <p class="question-description">{{$problem->comments}}</p>
+                            <hr>
+                            @if($problem->level==1)
+                                <span class="question-difficulty">Difficulty: Easy</span>
+                            @elseif($problem->level==2)
+                                <span class="question-difficulty">Difficulty: Medium</span>
+                            @else
+                                <span class="question-difficulty">Difficulty: Hard</span>
+                            @endif
+                            <span class="question-difficulty">| {{$problem->category}}</span>
+                            @if(in_array($problem->id,$answeredArray))
+                                <span class="right question-answered">Answered</span>
+                            @else
+                                <span class="right question-answered">Unanswered</span>
+
+                            @endif
+                        </div>
                     @endforeach
-                @endforeach
                 </div>
                 <div id="design" class="col s12 questions" data-for="3">
-                <div class="question-card">
-          <p class="question-card-header">Question title3</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
-        </div>
-                @foreach($problemArray as $domainProblems)
-                    @foreach($domainProblems as $problem)
+               @foreach($problemArray[2] as $problem)
 
-        <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
-        </div>
+                        <div class="question-card">
+                            <p class="question-card-header">{{$problem->problem_statement}}</p>
+                            <p class="question-description">{{$problem->comments}}</p>
+                            <hr>
+                            @if($problem->level==1)
+                                <span class="question-difficulty">Difficulty: Easy</span>
+                            @elseif($problem->level==2)
+                                <span class="question-difficulty">Difficulty: Medium</span>
+                            @else
+                                <span class="question-difficulty">Difficulty: Hard</span>
+                            @endif
+                            <span class="question-difficulty">| {{$problem->category}}</span>
+                            @if(in_array($problem->id,$answeredArray))
+                                <span class="right question-answered">Answered</span>
+                            @else
+                                <span class="right question-answered">Unanswered</span>
+
+                            @endif
+
+                        </div>
                     @endforeach
-                @endforeach
                 </div>
-                {{--
-                @foreach($problems as $problemStatement)
-                    <!-- <div class="panel panel-default">
-                        <div class="panel-heading">
-                        
-                            <button class="btn btn-primary" onclick="window.location.href='problem/show/{{$problemStatement->id}}'">Attempt Problem</button>
-                        </div>
 
-                        <div class="panel-body">
-                            <h3><b>Problem Statement</b></h3>
-                            <p>{{$problemStatement->problem_statement}}</p>
-                            <h3><b>Comments</b></h3>
-                            <p>{{$problemStatement->comments}}</p>
-
-                        </div>
-                    </div> -->
-                @endforeach
---}}
             </div>
         </div>
     </div>
