@@ -42,9 +42,9 @@ $(document).ready(function(){
   $('.tabs li a').on('click',function(){
     cardPopulater($(this).attr('data-value'));
   });
-
+/*
   $(document).on('click','.question-card',function(){
     window.location.assign('individualproblem.html');
-  });
+  });*/
 
 });
