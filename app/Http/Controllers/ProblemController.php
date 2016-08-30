@@ -63,13 +63,9 @@ class ProblemController extends Controller
     public function showIndividualProblem($id)
     {
         $problemStatement = ProblemStatement::where('id',$id)->first();
-        // return view('User.showIndividualProblem',compact('problemStatement'));
-        if(!$problemStatement)
-        {
-          $problemStatement = [];
-        }
-
-        return $problemStatement;
+        $isAnswered = Submission::where(['user_id'=>Auth::user()->id,'problem_id'=>$problemStatement->id])->count();
+        return view('User.showIndividualProblem',compact('problemStatement','isAnswered'));
+        
     }
 
     /*

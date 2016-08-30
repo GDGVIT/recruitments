@@ -1,6 +1,6 @@
 @extends('layouts.app')
 <link rel="stylesheet" href="{{url('css/problems.css')}}">
-    <link rel="stylesheet" href="{{url('css/individualproblem.css')}">
+    <link rel="stylesheet" href="{{url('css/individualproblem.css')}}">
 @section('content')
  <div class="problems-nav row">
       <a href="/home"><img src="images/gdglogo.png" alt="GDG VIT Vellore" style="width: 15%;"></a>
@@ -30,11 +30,22 @@
         <div class="individual-card-header">
           <a href="{{url('/problems')}}" style="color: black;font-size: 2rem;-webkit-text-stroke: 3px white;position: relative; top: 5px"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
           &nbsp;&nbsp;Back to question list
-          <span class="right question-difficulty">Difficulty: Easy | Not Answered</span>
+            @if($isAnswered)
+                <span class="right question-difficulty">&nbsp; Answered</span>
+            @else
+                <span class="right question-difficulty">&nbsp; Not Answered</span>
+            @endif
+            @if($problemStatement->level==1)
+                <span class="right question-difficulty">Difficulty: Easy | </span>
+            @elseif($problemStatement->level==2)
+                <span class="right question-difficulty">Difficulty: Medium | </span>
+            @else
+                <span class="right question-difficulty">Difficulty: Hard | </span>
+            @endif
         </div>
         <div class="question-content">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <p class="question-card-header">{{$problemStatement->problem_statement}}</p>
+          <p class="question-description">{{$problemStatement->comments}}</p>
         </div>
       </div>
       <div class="individual-question-submission row">
@@ -67,15 +78,15 @@
         <h4 style="text-align: center">Change Domain</h4>
         <div class="input-field">
           <input type="checkbox" class="filled-in" name="change-technical" id="change-technical">
-          <label for="change-technical">Technical
+          <label for="change-technical">Technical</label>
         </div>
         <div class="input-field">
           <input type="checkbox" class="filled-in" name="change-management" id="change-management">
-          <label for="change-management">Management
+          <label for="change-management">Management</label>
         </div>
         <div class="input-field">
           <input type="checkbox" class="filled-in" name="change-technical" id="change-design">
-          <label for="change-design">Design
+          <label for="change-design">Design</label>
         </div>
         <form action="http://localhost:8000/user/add/domain" method="POST">
           <input type="hidden" name="domains">
