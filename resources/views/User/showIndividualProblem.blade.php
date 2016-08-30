@@ -28,7 +28,7 @@
     <div class="question-card-container">
       <div class="individual-question-card">
         <div class="individual-card-header">
-          <a href="problems.html" style="color: black;font-size: 2rem;-webkit-text-stroke: 3px white;position: relative; top: 5px"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+          <a href="{{url('/problems')}}" style="color: black;font-size: 2rem;-webkit-text-stroke: 3px white;position: relative; top: 5px"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
           &nbsp;&nbsp;Back to question list
           <span class="right question-difficulty">Difficulty: Easy | Not Answered</span>
         </div>
@@ -78,20 +78,14 @@
           <label for="change-design">Design
         </div>
         <form action="http://localhost:8000/user/add/domain" method="POST">
-          <input type="text" name="domains" style="display: none">
+          <input type="hidden" name="domains">
         </form>
         <br>
         <button class="custom-submit" type="submit">Submit</button>
       </div>
     </div>
   </body>
-  <script type="text/javascript">
-      $("input[name=submitting-file]").on('change', function(event) {
-          
-          $("#link").prop("disabled" , true);
-          /* Act on the event */
-      });
-  </script>
+ 
    <!--  <div class="container">
         <div class="row">
             <div class="col m10 offset-m1">

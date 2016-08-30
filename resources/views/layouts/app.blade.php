@@ -68,5 +68,12 @@
     $(".button-collapse").sideNav();
 
   </script>
+   <script type="text/javascript">
+      $("input[name=submitting-file]").on('change', function(event) {
+          
+          $("#link").prop("disabled" , true);
+          /* Act on the event */
+      });
+  </script>
 </body>
 </html>
