@@ -12,10 +12,10 @@ $(document).ready(function(){
     }
   });*/
   /*Populate Tech Cards*/
-  cardPopulater(1);
+ /* cardPopulater(1);*/
 
   /*Utility Card Populating Function*/
-  function cardPopulater(id){
+/*  function cardPopulater(id){
     var domainId = id;
     $.ajax({
       type: 'GET',
@@ -33,11 +33,11 @@ $(document).ready(function(){
           var difficulty = 'Easy';
 
           /*Populating a Card*/
-          $('<div class="question-card"><p class="question-card-header">'+questionTitle+'</p><p class="question-description">'+questionDescription+'</p><hr><span class="question-difficulty">Difficulty: '+difficulty+'</span><span class="right question-answered">'+answered+'</span></div>').appendTo($('div[data-for='+domainId+']'));
+        /*  $('<div class="question-card"><p class="question-card-header">'+questionTitle+'</p><p class="question-description">'+questionDescription+'</p><hr><span class="question-difficulty">Difficulty: '+difficulty+'</span><span class="right question-answered">'+answered+'</span></div>').appendTo($('div[data-for='+domainId+']'));
         }
       }
     });
-  }
+  }*/
 
   $('.tabs li a').on('click',function(){
     cardPopulater($(this).attr('data-value'));

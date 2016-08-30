@@ -1,21 +1,21 @@
 body{
   font-family: 'Montserrat';
-  background: #e8e8e8;
+  background: #e8e8e8 !important;
 }
 .problems-nav{
   background: #528FF5;
 }
 .problems-nav-options{
-  background: #528FF5;
-  box-shadow: none;
+  background: #528FF5 !important;
+  box-shadow: none !important;
   position: relative;
   left: -5%;
   line-height: 20px;
   margin-top: 18px;
 }
 .problems-nav-options.active{
-  background: #528FF5;
-  box-shadow: none;
+  background: #528FF5 !important;
+  box-shadow: none !important;
 }
 
 .dropdown-content li a{
@@ -50,10 +50,8 @@ body{
   padding-right: 5%;
   background: white;
   border-radius: 5px;
-  min-width: 95vw;
   margin: 2% 0%;
   position: relative;
-  margin-left: -31.5%;
   box-shadow: 0px 3px 3px rgba(180,180,180,0.5);
 }
 .question-card:hover{

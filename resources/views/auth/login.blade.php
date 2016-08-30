@@ -60,14 +60,15 @@
   <div class="row">
     <div class="col m6 l6 s10 push-l3 push-m3 push-s1 custom-pull-up">
       <div class="center">
-        <div class="home-head">
+        <div class="home-head">   
           Love Coding? Join GDG-VIT<br><span class="home-head-sub">Participate and compete with people across your campus</span>
         </div>
         <div class="row">
           <div class="login-form">
               <div class="col s12 m5 l5 push-l4 push-m4">
                 <form action="{{url('/login')}}" method="POST">
-                  {{csrf_field()}}
+                 
+                 <input type="hidden" name="_token" value="{{csrf_token()}}"> 
 
                   <div class="input-field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <input type="email" name="email" id="email" placeholder="Email Id" value="{{ old('email') }}">
@@ -108,65 +109,3 @@
 </div>
 
 @endsection
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i> Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->

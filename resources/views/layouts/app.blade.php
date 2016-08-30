@@ -33,7 +33,30 @@
     </style>
 </head>
 <body>
-
+<script src="js/problemsLoader.js"></script>
+<script src="js/domainSelector.js"></script>
+<script src="https://use.fontawesome.com/8aa6edd1c8.js"></script>
+  <script>
+ $(document).ready(function() {
+    $('#change-modal-trigger').click(function(){
+    $('#change-modal').openModal();
+  });
+  $('.modal-trigger').leanModal();
+  });
+  
+  </script>
+   <script>
+    $('.problems-nav-options').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: true, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: true, // Displays dropdown below the button
+      alignment: 'left' // Displays dropdown with edge aligned to the left of button
+    });
+  
+  </script>
 
 
   

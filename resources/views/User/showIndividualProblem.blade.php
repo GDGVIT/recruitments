@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+<link rel="stylesheet" href="{{url('css/problems.css')}}">
+    <link rel="stylesheet" href="{{url('css/individualproblem.css')}">
 @section('content')
  <div class="problems-nav row">
       <a href="/home"><img src="images/gdglogo.png" alt="GDG VIT Vellore" style="width: 15%;"></a>
@@ -156,4 +157,6 @@
             </div>
         </div>
     </div> -->
+     <script src="{{url('js/individualproblem.js')}}"></script>
+    <script src="{{url('js/domainSelector.js')}}"></script>
 @endsection

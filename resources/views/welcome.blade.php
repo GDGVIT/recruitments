@@ -56,6 +56,13 @@
 <br><br>
 <br><br>
 <br>
+<style type="text/css">
+  .buttons{
+    top:100px;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+</style>
 <div class="container-fluid">
   <div class="row">
     <div class="col m6 l6 s10 push-l3 push-m3 push-s1 custom-pull-up">
@@ -65,10 +72,13 @@
         </div>
         <div class="row">
           <div class="login-form">
-              <div class="col s12 m5 l5 push-l4 push-m4">
-                <form action="{{url('/login')}}" method="POST">
-                  {{csrf_field()}}
-
+              <div class="col s12 m12 l12">
+              <div class="buttons">
+                 <a class="custom-button" href="{{url('/register')}}" id="login-form-submit" type="submit">Get Started Here</a>
+              <a class="custom-button" href="{{url('/login')}}" id="login-form-submit" type="submit">Login</a>
+              </div>
+             
+               <!--  <form action="{{url('/login')}}" method="POST">
                   <div class="input-field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <input type="email" name="email" id="email" placeholder="Email Id" value="{{ old('email') }}">
 
@@ -98,7 +108,7 @@
                       <button class="custom-button" id="login-form-submit" type="submit">Login</button>
                     </div>
                   </div>
-            </form>
+            </form> -->
           </div>
         </div>
       </div>
@@ -106,4 +116,5 @@
   </div>
 </div>
 </div>
+
 @endsection

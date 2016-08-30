@@ -1,16 +1,9 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="css/problems.css">
+<link rel="stylesheet" href="{{url('css/problems.css')}}">
 
-<link href="css/modal.css" rel="stylesheet">
-<script src="js/problemsLoader.js"></script>
-<script src="js/domainSelector.js"></script>
-<script src="https://use.fontawesome.com/8aa6edd1c8.js"></script>
-  <script>
-  $('#change-modal-trigger').click(function(){
-    $('#change-modal').openModal();
-  });
-  $('.modal-trigger').leanModal();
-  </script>
+<link href="{{url('css/modal.css')}}" rel="stylesheet">
+
+
 @section('content')
     <div class="problems-nav row">
       <a href="/"><img src="images/gdglogo.png" alt="GDG VIT Vellore" style="width: 15%;"></a>
@@ -24,15 +17,6 @@
         <li><a href="/logout">Logout</a></li>
       </ul>
 
-      <div id="instructions-modal" class="modal">
-        <div class="modal-content">
-          <h4>Instructions</h4>
-          <p>Here go the instructions for the recruitment process</p>
-        </div>
-        <div class="modal-footer">
-          <a class=" modal-action modal-close btn-flat">Close</a>
-        </div>
-      </div>
 
     </div>
     <div class="problems-tabs row">
@@ -41,10 +25,16 @@
         <li class="tab col s3"><a href="#management" data-value="2">Management (<span class="number" data-domain="2">40</span>)</a></li>
         <li class="tab col s3"><a href="#design" data-value="3">Design (<span class="number" data-domain="3">6</span>)</a></li>
       </ul>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col m10 offset-m1">
+            <div class="col m12 l12">
                 <div id="technical" class="col s12 questions" data-for="1">
+                <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+        </div>
                 @foreach($problemArray as $domainProblems)
                     @foreach($domainProblems as $problem)
                     <!-- <div class="panel panel-default">
@@ -70,6 +60,12 @@
                 @endforeach
                 </div>
                 <div id="management" class="col s12 questions" data-for="2">
+                <div class="question-card">
+          <p class="question-card-header">Question title2</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+        </div>
                 @foreach($problemArray as $domainProblems)
                     @foreach($domainProblems as $problem)
 
@@ -83,6 +79,12 @@
                 @endforeach
                 </div>
                 <div id="design" class="col s12 questions" data-for="3">
+                <div class="question-card">
+          <p class="question-card-header">Question title3</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+        </div>
                 @foreach($problemArray as $domainProblems)
                     @foreach($domainProblems as $problem)
 
@@ -116,7 +118,7 @@
             </div>
         </div>
     </div>
-    <div id="change-modal" class="modal">
+   <div id="change-modal" class="modal">
       <div class="modal-content">
         <h4 style="text-align: center">Change Domain</h4>
         <div class="input-field">
@@ -138,4 +140,13 @@
         <button class="custom-submit">Submit</button>
       </div>
     </div>
+    <div id="instructions-modal" class="modal">
+        <div class="modal-content">
+          <h4>Instructions</h4>
+          <p>Here go the instructions for the recruitment process</p>
+        </div>
+        <div class="modal-footer">
+          <a class=" modal-action modal-close btn-flat">Close</a>
+        </div>
+      </div>
 @endsection
