@@ -50,16 +50,19 @@
               <div class="collapsible-body">
                 @foreach($technicalSubmissions as $submission)
                 <div class="user-solution" style="padding:1em;">
-                  <span><h4>Problem Statement</h4>&nbsp;</span>{{$submission->problem_statement}}.<br><br>
-                  <a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a><br><br>
+                  <h5>{{$submission->problem_statement}}.</h5><br><br>
+                  <div style="display:flex">
+                       <div><a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a></div>
                     
-                    <form action = "/admin/award/marks" method="GET" >
+                    <div style="margin-left:10px;"><form action = "/admin/award/marks" method="GET" >
                         {{csrf_field()}}
                         <input type="hidden" name="userId" value="{{$submission->user_id}}">
                         <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
                         
                         <a  class="custom-button" href="#" type="submit">Award Marks</a>
-                    </form>
+                    </form></div>
+                  </div>
+                 
                     
                 </div>
                   @endforeach
@@ -72,15 +75,19 @@
                   @foreach($managementSubmissions as $submission)
                       <div class="user-solution" style="padding:1em;">
                           <span><h4>Problem Statement</h4>&nbsp;</span>{{$submission->problem_statement}}.<br><br>
-                          <a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a><br><br>
+                          <div style="display:flex">
+                               <div ><a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a></div>
                           
-                          <form action = "/admin/award/marks" method="GET" >
+                          <div style="margin-left:10px;" ><form action = "/admin/award/marks" method="GET" >
                               {{csrf_field()}}
                               <input type="hidden" name="userId" value="{{$submission->user_id}}">
                               <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
                               
                               <a  class="custom-button" href="#" type="submit" >Award Marks</a>
                           </form>
+                          </div>
+                          </div>
+                         
                       </div>
                   @endforeach
               </div>
@@ -91,14 +98,17 @@
                   @foreach($designSubmissions as $submission)
                       <div class="user-solution" style="padding:1em;">
                           <span><h4>Problem Statement</h4>&nbsp;</span>{{$submission->problem_statement}}.<br><br>
-                          <a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a><br><br>
-                          <form action = "/admin/award/marks" method="GET" >
+                          <div style="display:flex">
+                              <div><a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a></div>
+                          <div style="margin-left:10px;"><form action = "/admin/award/marks" method="GET" >
                               {{csrf_field()}}
                               <input type="hidden" name="userId" value="{{$submission->user_id}}">
                               <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
                               <a  class="custom-button"  href="#" type="submit" >Award Marks</a>
                               
-                          </form>
+                          </form></div>
+                          </div>
+                          
                           
                       </div>
                   @endforeach
