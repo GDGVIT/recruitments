@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @extends('layouts.afterloginnav')
 <link rel="stylesheet" href="{{url('css/showuser.css')}}">
-
+<link rel="stylesheet" href="{{url('css/problems.css')}}">
 @section('content')
     
     <div class="row">
@@ -9,7 +9,7 @@
     <div class="row user-row">
       @foreach($users as $user)
 
-      <div class="col m3 l3 s12">
+      <div class="col m3 l3 s12" style="margin-top:20px;">
         <div class="user-container">
           <div class="user-card">
             <div class="user-card-header">
