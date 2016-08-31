@@ -16,29 +16,33 @@ body{
   background: #528FF5 !important;
   box-shadow: none !important;
 }
-
+.dropdown-content {
+    background-color: #fff;
+    margin: 0;
+    display: none;
+    min-width: 180px !important;
+  }
 .dropdown-content li a{
-  color: #528FF5;
+  color: #528FF5 !important;
   font-size: 1rem;
 }
 .problems-tabs{
-  margin-top: -20px!important;
   padding-left: 20%;
   padding-right: 20%;
 }
 .problems-tabs .tabs li a{
-  color: black;
+  color: black !important;
 }
 .problems-tabs .tabs li a:hover, .problems-tabs .tabs li a.active{
-  color: #528FF5;
+  color: #528FF5 !important;
 }
 .problems-tabs .tabs .indicator{
-  background: #528FF5;
-  height: 3px;
+  background: #528FF5 !important;
+  height: 3px !important;
 }
 
 .problems-tabs .questions{
-  background: #e8e8e8;
+  background: #e8e8e8 !important;
   padding-top: 2%;
 }
 
@@ -51,7 +55,7 @@ body{
   border-radius: 5px;
   margin: 2% 0%;
   position: relative;
-  box-shadow: 0px 3px 3px rgba(180,180,180,0.5);
+  box-shadow: 0px 3px 3px rgba(180,180,180,0.5) !important;
 }
 .question-card:hover{
   cursor: pointer;
@@ -68,7 +72,7 @@ body{
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid rgba(220,220,220,0.5);
+    border-top: 1px solid rgba(220,220,220,0.5) !important;
     margin: 0.8rem 0;
     padding: 0;
 }
