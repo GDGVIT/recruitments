@@ -50,7 +50,12 @@
               <div class="collapsible-body">
                 @foreach($technicalSubmissions as $submission)
                 <div class="user-solution" style="padding:1em;">
-                  <h5>{{$submission->problem_statement}}.</h5><br><br>
+
+                  <h5>
+                      @if($submission->checked==1.00)
+                          <i class="fa fa-check" aria-hidden="true" style="color: green"></i>
+                      @endif
+                          {{$submission->problem_statement}}.</h5><br><br>
                   <div style="display:flex">
                        <div><a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a></div>
                     

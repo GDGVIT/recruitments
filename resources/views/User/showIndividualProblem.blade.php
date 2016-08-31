@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="individual-question-submission row">
-        <form method="POST" action="/problem/upload">
+        <form method="POST" action="/problem/upload" enctype="multipart/form-data">
         {{csrf_field()}}
           <div class="col s6 m6 l6"  style="border-right: 1px solid rgba(200,200,200,0.5);">
             <div class="input-field link" style="text-align: center">
