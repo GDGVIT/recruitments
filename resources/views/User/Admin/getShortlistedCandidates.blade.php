@@ -20,7 +20,7 @@
                     <tbody>
                     @foreach($people as $candidate)
                     <tr>
-                        <td>{{$candidate->name}}</td>
+                        <td><a href="/admin/show/user/{{$candidate->id}}">{{$candidate->name}}</a></td>
                         <td>{{$candidate->regno}}</td>
                         <td>{{$candidate->marks}}</td>
                     </tr>
