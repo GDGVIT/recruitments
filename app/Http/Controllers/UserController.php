@@ -183,8 +183,9 @@ class UserController extends Controller
             ->where('problem_statements.domain','=',3)
             ->where('submissions.user_id','=',$user->id)
             ->get();
-        
-        return view('User.Admin.showUserSubmissions',compact('technicalSubmissions','managementSubmissions','designSubmissions'));
+        $userName = $user->name;
+        $registrationNumber = $user->regno;
+        return view('User.Admin.showUserSubmissions',compact('technicalSubmissions','managementSubmissions','designSubmissions','userName','registrationNumber'));
     }
 
 

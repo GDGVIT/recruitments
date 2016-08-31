@@ -17,7 +17,7 @@
             </div>
             <div class="user-card-data">
               Questions attempted :&nbsp<span>{{\App\User::find($user->id)->submissions->count()}}</span><br>
-              <a href="sdf">Show details</a>
+              <a href="/admin/show/user/{{\App\User::find($user->id)->id}}">Show details</a>
 
             </div>
           </div>

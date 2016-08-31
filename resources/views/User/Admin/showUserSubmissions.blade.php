@@ -42,7 +42,7 @@
       <div class="row">
         <div class="col m10 l10 s10 push-m1 push-l1 push-s1">
           <div class="user-name">
-            {{\Illuminate\Support\Facades\Auth::user()->name}}<br><span>{{\Illuminate\Support\Facades\Auth::user()->regno}}</span>
+            {{$userName}}<br><span>{{$registrationNumber}}</span>
           </div>
           <ul class="collapsible popout" data-collapsible="accordion">
             <li>
