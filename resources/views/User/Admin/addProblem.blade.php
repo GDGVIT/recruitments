@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+<link rel="stylesheet" href="{{url('css/problems.css')}}">
+@extends('layouts.afterloginnav')
 @section('content')
 <div class="container">
     <div class="row">
@@ -9,14 +10,14 @@
           <div class="col m12 l12">
             <div class="data-card">
               <div class="card-head">
-                Add Problem
+               <h3>Add Problem</h3> 
               </div>
               {{ csrf_field() }}
               <div class="card-body">
                 <div class="row">
                   <div class="col m4 l4 s12">
                     <div class="prob-field form-group{{ $errors->has('domain') ? ' has-error' : '' }}">
-                      Domain
+                      <h4>Domain</h4>
                     </div>
                   </div>
                   <div class="col m6 l6 s12">
@@ -44,7 +45,7 @@
                 <div class="row">
                     <div class="col m4 l4 s12">
                         <div class="prob-field form-group{{ $errors->has('level') ? ' has-error' : '' }}">
-                           Level
+                           <h4>Level</h4>
                         </div>
                     </div>
                     <div class="col m6 l6 s12">
@@ -73,7 +74,7 @@
               <div class="row">
                   <div class="col m4 l4 s12">
                       <div class="prob-field form-group{{ $errors->has('category') ? ' has-error' : '' }}">
-                          Category
+                          <h4>Category</h4>
                       </div>
                   </div>
                   <div class="col m6 l6 s12">
@@ -86,12 +87,12 @@
                 <div class="row">
                   <div class="col m4 l4 s12">
                     <div class="prob-field form-group{{ $errors->has('problem_statement') ? ' has-error' : '' }}">
-                      Problem Statement
+                      <h4>Problem Statement</h4>
                     </div>
                   </div>
                   <div class="col m6 l6 s12">
                     <div class="input-field">
-                        <textarea id="problemstatement-textarea" class="materialize-textarea" name="problem_statement"></textarea>
+                        <textarea id="problemstatement-textarea" placeholder="Problem Statement" class="materialize-textarea" name="problem_statement"></textarea>
                     </div>
                     @if ($errors->has('problem_statement'))
                         <span class="help-block">
@@ -103,12 +104,12 @@
                 <div class="row">
                   <div class="col m4 l4 s12">
                     <div class="prob-field">
-                      Comment
+                      <h4>Comment</h4>
                     </div>
                   </div>
                   <div class="col m6 l6 s12">
                     <div class="input-field">
-                      <textarea id="comment-textarea" class="materialize-textarea" name="comments"></textarea>
+                      <textarea id="comment-textarea" placeholder="Comment" class="materialize-textarea" name="comments"></textarea>
                     </div>
                     @if ($errors->has('comments'))
                         <span class="help-block">

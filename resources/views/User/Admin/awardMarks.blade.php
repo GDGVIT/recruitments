@@ -1,5 +1,8 @@
 @extends('layouts.app')
+<link rel="stylesheet" href="{{url('css/problems.css')}}">
 
+
+@extends('layouts.afterloginnav')
 @section('content')
    <div class="container">
     <div class="row">
