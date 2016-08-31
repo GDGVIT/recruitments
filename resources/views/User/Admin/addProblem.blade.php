@@ -10,14 +10,14 @@
           <div class="col m12 l12">
             <div class="data-card">
               <div class="card-head">
-               <h3>Add Problem</h3> 
+               <h4>Add Problem</h4> 
               </div>
               {{ csrf_field() }}
               <div class="card-body">
                 <div class="row">
                   <div class="col m4 l4 s12">
                     <div class="prob-field form-group{{ $errors->has('domain') ? ' has-error' : '' }}">
-                      <h4>Domain</h4>
+                      <h5>Domain</h5>
                     </div>
                   </div>
                   <div class="col m6 l6 s12">
@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="col m4 l4 s12">
                         <div class="prob-field form-group{{ $errors->has('level') ? ' has-error' : '' }}">
-                           <h4>Level</h4>
+                           <h5>Level</h5>
                         </div>
                     </div>
                     <div class="col m6 l6 s12">
@@ -74,12 +74,12 @@
               <div class="row">
                   <div class="col m4 l4 s12">
                       <div class="prob-field form-group{{ $errors->has('category') ? ' has-error' : '' }}">
-                          <h4>Category</h4>
+                          <h5>Category</h5>
                       </div>
                   </div>
                   <div class="col m6 l6 s12">
                       <div class="input-field form-group{{ $errors->has('category') ? ' has-error' : '' }}">
-                          <input type="text" name="category">
+                          <input type="text" placeholder="Mention Proper Category!!" name="category">
                       </div>
                   </div>
               </div>
@@ -87,7 +87,7 @@
                 <div class="row">
                   <div class="col m4 l4 s12">
                     <div class="prob-field form-group{{ $errors->has('problem_statement') ? ' has-error' : '' }}">
-                      <h4>Problem Statement</h4>
+                      <h5>Problem Statement</h5>
                     </div>
                   </div>
                   <div class="col m6 l6 s12">
@@ -104,7 +104,7 @@
                 <div class="row">
                   <div class="col m4 l4 s12">
                     <div class="prob-field">
-                      <h4>Comment</h4>
+                      <h5>Comment</h5>
                     </div>
                   </div>
                   <div class="col m6 l6 s12">

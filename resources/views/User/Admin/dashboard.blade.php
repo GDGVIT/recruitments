@@ -10,7 +10,7 @@
                     <div class="question-header">Registrations ({{$technicalRegistrations+$designRegistrations+$managementRegistrations}})</div>
 
                     <div class="question-description">
-                        <div id="barchart_div" style="width: 900px; height: 500px;"></div>
+                        <div id="barchart_div"></div>
 
 
                     </div>
@@ -23,7 +23,7 @@
 
                     <div class="question-description">
 
-                        <div id="piechart_div" style="width: 900px; height: 500px;"></div>
+                        <div id="piechart_div" ></div>
                     </div>
                 </div>
             </div>
