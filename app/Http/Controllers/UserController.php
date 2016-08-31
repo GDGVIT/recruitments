@@ -259,7 +259,13 @@ class UserController extends Controller
     {
         $domain = $request->domain;
         $number = $request->number;
-        $people = User::where('domain',$domain)->orderBy('marks', 'desc')->take($number)->get();
+        $people = DB::table('users')
+                    ->join('user_domains','users.id','=','user_domains.user_id')
+                    ->where('user_domains.domain_id','=',$domain)
+                    ->orderBy('marks','DESC')
+                    ->take($number)
+                    ->get();
+        //$people = User::where('domain',$domain)->orderBy('marks', 'desc')->take($number)->get();
         return view('User.Admin.getShortlistedCandidates',compact('people'));
 
     }
