@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @extends('layouts.afterloginnav')
+<link rel="stylesheet" href="{{url('css/problems.css')}}">
 @section('content')
 <style>
   .custom-button:focus{
@@ -35,7 +36,8 @@
     font-size: 70%;
   }
   </style>
-  
+  <br>
+  <br>
     <div class="container-fluid">
       <div class="row">
         <div class="col m10 l10 s10 push-m1 push-l1 push-s1">
@@ -47,16 +49,18 @@
               <div class="collapsible-header">Technical</div>
               <div class="collapsible-body">
                 @foreach($technicalSubmissions as $submission)
-                <div class="user-solution">
-                  <p><span>Problem Statement.&nbsp</span>{{$submission->problem_statement}}.</p>
-                  <a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a>
-                    <br>
-                    <form action = "/admin/award/marks" method="GET">
+                <div class="user-solution" style="padding:1em;">
+                  <span><h4>Problem Statement</h4>&nbsp;</span>{{$submission->problem_statement}}.<br><br>
+                  <a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a><br><br>
+                    
+                    <form action = "/admin/award/marks" method="GET" >
                         {{csrf_field()}}
                         <input type="hidden" name="userId" value="{{$submission->user_id}}">
                         <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
-                        <button class="btn btn-primary" type="submit" >Award Marks</button>
+                        
+                        <a  class="custom-button" href="#" type="submit">Award Marks</a>
                     </form>
+                    
                 </div>
                   @endforeach
 
@@ -66,15 +70,16 @@
               <div class="collapsible-header">Management</div>
               <div class="collapsible-body">
                   @foreach($managementSubmissions as $submission)
-                      <div class="user-solution">
-                          <p><span>Problem Statement.&nbsp</span>{{$submission->problem_statement}}.</p>
-                          <a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a>
-                          <br>
-                          <form action = "/admin/award/marks" method="GET">
+                      <div class="user-solution" style="padding:1em;">
+                          <span><h4>Problem Statement</h4>&nbsp;</span>{{$submission->problem_statement}}.<br><br>
+                          <a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a><br><br>
+                          
+                          <form action = "/admin/award/marks" method="GET" >
                               {{csrf_field()}}
                               <input type="hidden" name="userId" value="{{$submission->user_id}}">
                               <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
-                              <button class="btn btn-primary" type="submit" >Award Marks</button>
+                              
+                              <a  class="custom-button" href="#" type="submit" >Award Marks</a>
                           </form>
                       </div>
                   @endforeach
@@ -84,22 +89,17 @@
               <div class="collapsible-header">Design</div>
               <div class="collapsible-body">
                   @foreach($designSubmissions as $submission)
-                      <div class="user-solution">
-                          <p><span>Problem Statement.&nbsp</span>{{$submission->problem_statement}}.</p>
-                          <a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a>
-                          <form action = "/admin/award/marks" method="GET">
+                      <div class="user-solution" style="padding:1em;">
+                          <span><h4>Problem Statement</h4>&nbsp;</span>{{$submission->problem_statement}}.<br><br>
+                          <a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a><br><br>
+                          <form action = "/admin/award/marks" method="GET" >
                               {{csrf_field()}}
                               <input type="hidden" name="userId" value="{{$submission->user_id}}">
                               <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
-                              <button class="btn btn-primary" type="submit" >Award Marks</button>
-                              <br>
-                              <form action = "/admin/award/marks" method="GET">
-                                  {{csrf_field()}}
-                                  <input type="hidden" name="userId" value="{{$submission->user_id}}">
-                                  <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
-                                  <button class="btn btn-primary" type="submit" >Award Marks</button>
-                              </form>
+                              <a  class="custom-button"  href="#" type="submit" >Award Marks</a>
+                              
                           </form>
+                          
                       </div>
                   @endforeach
               </div>
