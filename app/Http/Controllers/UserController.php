@@ -22,7 +22,15 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth',['except'=>['send','notifyUser']]);
-        $this->middleware('isAdmin', ['only' => ['showUsers','adminDashboard']]);
+        $this->middleware('isAdmin', ['only' => ['showUsers',
+            'adminDashboard',
+            'viewUserSubmissions',
+            'awardMarks',
+            'award',
+            'shortlist',
+            'getShortlistedCandidates',
+            'showUserProfile'
+        ]]);
 
     }
 
