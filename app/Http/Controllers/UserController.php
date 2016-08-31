@@ -63,27 +63,7 @@ class UserController extends Controller
     {
         $user = Auth::user();
 
-        /*
-         * User Domain
-         * */
-
-        $domain = $user->domain;
-        if($domain==1)
-        {
-            $domain = 'Technical';
-        }
-        elseif ($domain==2)
-        {
-            $domain = 'Management';
-        }
-        elseif($domain==3)
-        {
-            $domain = 'Design';
-        }
-        else
-        {
-            return view('errors.503');
-        }
+       
 
 
         /*
@@ -103,7 +83,7 @@ class UserController extends Controller
 
         $attemptedProblems = $user->submissions;
 
-        return view('User.dashboard',compact('user','domain','checkedProblems','unCheckedProblems','attemptedProblems'));
+        return view('User.dashboard',compact('user','checkedProblems','unCheckedProblems','attemptedProblems'));
     }
 
     /*
