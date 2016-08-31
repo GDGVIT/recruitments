@@ -19,30 +19,58 @@
             
                 <div id="technical" class="col s12 questions" data-for="1">
                 <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <p class="question-card-header">{{$recentTechnicalQuestion->problem_statement}}</p>
+          <p class="question-description">{{$recentTechnicalQuestion->comments}}</p>
+                    <a href="{{url("/problem/show/$recentTechnicalQuestion->id")}}">Attempt Problem</a>
           <hr>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+                    @if($recentTechnicalQuestion->level==1)
+                            <span class="question-difficulty">Easy | </span>
+                    @elseif($recentTechnicalQuestion->level==2)
+
+                            <span class="question-difficulty">Medium | </span>
+                    @else
+
+                        <span class="question-difficulty">Hard | </span>
+                    @endif
+                    <span class="question-difficulty">{{$recentTechnicalQuestion->category}}</span>
         </div>
                
                 </div>
                 <div id="management" class="col s12 questions" data-for="2">
                 <div class="question-card">
-          <p class="question-card-header">Question title2</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <p class="question-card-header">{{$recentManagementQuestion->problem_statement}}</p>
+          <p class="question-description">{{$recentManagementQuestion->comments}}</p>
+                    <a href="{{url("/problem/show/$recentManagementQuestion->id")}}">Attempt Problem</a>
           <hr>
-          <span class="question-difficulty"><a href="#" >Attempt Problem</a></span>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+                    @if($recentManagementQuestion->level==1)
+                            <span class="question-difficulty">Easy | </span>
+                    @elseif($recentManagementQuestion->level==2)
+
+                            <span class="question-difficulty">Medium | </span>
+                    @else
+
+                        <span class="question-difficulty">Hard | </span>
+                    @endif
+                    <span class="question-difficulty">{{$recentManagementQuestion->category}}</span>
         </div>
                 
                 </div>
                 <div id="design" class="col s12 questions" data-for="3">
-                <div class="question-card">
-          <p class="question-card-header">Question title3</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+                 <div class="question-card">
+          <p class="question-card-header">{{$recentDesignQuestion->problem_statement}}</p>
+          <p class="question-description">{{$recentDesignQuestion->comments}}</p>
+                    <a href="{{url("/problem/show/$recentDesignQuestion->id")}}">Attempt Problem</a>
           <hr>
-          <span class="question-difficulty"><a href="#" >Attempt Problem</a></span>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+                    @if($recentDesignQuestion->level==1)
+                            <span class="question-difficulty">Easy | </span>
+                    @elseif($recentDesignQuestion->level==2)
+
+                            <span class="question-difficulty">Medium | </span>
+                    @else
+
+                        <span class="question-difficulty">Hard | </span>
+                    @endif
+                    <span class="question-difficulty">{{$recentDesignQuestion->category}}</span>
         </div>
                 
                 </div>
@@ -55,66 +83,25 @@
         <thead>
           <tr>
               <th data-field="id">Name</th>
-              <th data-field="questions">Questions Solved</th>
               <th data-field="marks">Marks Earned</th>
-              <th data-field="online">Online</th>
+
           </tr>
         </thead>
 
         <tbody>
+        @foreach($leadingStudents as $user)
           <tr>
-            <td>Alvin</td>
-            <td>14</td>
-            <td>197</td>
-            <td><div class="online"></div></td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->marks}}</td>
           </tr>
-          <tr>
-            <td>Alvin</td>
-            <td>14</td>
-            <td>197</td>
-            <td><div class="offline"></div></td>
-          </tr>
-          <tr>
-            <td>Alvin</td>
-            <td>14</td>
-            <td>197</td>
-            <td><div class="offline"></div></td>
-          </tr>
-          <tr>
-            <td>Alvin</td>
-            <td>14</td>
-            <td>197</td>
-            <td><div class="online"></div></td>
-          </tr>
+        @endforeach
+
         </tbody>
       </table>
             </div>
              
         </div>
     </div>
-    </div>
-   <!--  <div id="change-modal" class="modal">
-      <div class="modal-content">
-        <h4 style="text-align: center">Change Domain</h4>
-        <div class="input-field">
-          <input type="checkbox" class="filled-in" name="change-technical" id="change-technical">
-          <label for="change-technical">Technical
-        </div>
-        <div class="input-field">
-          <input type="checkbox" class="filled-in" name="change-management" id="change-management">
-          <label for="change-management">Management
-        </div>
-        <div class="input-field">
-          <input type="checkbox" class="filled-in" name="change-technical" id="change-design">
-          <label for="change-design">Design
-        </div>
-        <form action="http://localhost:8000/user/add/domain" method="POST">
-          <input type="text" name="domains" style="display: none">
-        </form>
-        <br>
-        <button class="custom-submit">Submit</button>
-      </div>
-    </div> -->
      <div id="instructions-modal" class="modal">
         <div class="modal-content">
           <h4>Instructions</h4>
