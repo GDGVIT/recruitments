@@ -1,124 +1,140 @@
 @extends('layouts.app')
-@extends('layouts.afterloginnav')
 <link rel="stylesheet" href="{{url('css/problems.css')}}">
+
+<link href="{{url('css/modal.css')}}" rel="stylesheet">
+
+@extends('layouts.afterloginnav')
 @section('content')
-    <style>
-        .delete{
-            color: darkred;
-        }
-        .undelete {
-            color: green;
-        }
-    </style>
+
+
     <div class="problems-tabs row">
-      <ul class="tabs">
-        <li class="tab col s3"><a class="active" href="#technical" data-value="1">Technical (<span class="number" data-domain="1">18</span>)</a></li>
-        <li class="tab col s3"><a href="#management" data-value="2">Management (<span class="number" data-domain="2">40</span>)</a></li>
-        <li class="tab col s3"><a href="#design" data-value="3">Design (<span class="number" data-domain="3">6</span>)</a></li>
-      </ul>
-      <div id="technical" class="col s12 questions" data-for="1">
-        <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
-        </div>
-        <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Medium</span><span class="right question-answered">Answered</span>
-        </div>
-        <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Hard</span><span class="right question-unanswered">Not Answered</span>
-        </div>
-      </div>
-      <div id="management" class="col s12 questions" data-for="2">
-        <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
-        </div>
-        <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Medium</span><span class="right question-answered">Answered</span>
-        </div>
-        <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Hard</span><span class="right question-unanswered">Not Answered</span>
-        </div>
-      </div>
-      <div id="design" class="col s12 questions" data-for="3">
-        <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
-        </div>
-        <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Medium</span><span class="right question-answered">Answered</span>
-        </div>
-        <div class="question-card">
-          <p class="question-card-header">Question title</p>
-          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
-          <hr>
-          <span class="question-difficulty">Difficulty: Hard</span><span class="right question-unanswered">Not Answered</span>
-        </div>
-      </div>
-    </div>
-  <!--   <div class="container">
-        <div class="row">
-            <div class="col m10 offset-m1">
-                @if(count($problemStatements)>0)
-                    @foreach($problemStatements as $problemStatement)
-                    <div class="panel panel-default">
-                        @if($problemStatement->domain==1)
-                            <div class="panel-heading">Technical
-                             </div>
-                        @elseif($problemStatement->domain==2)
-                            <div class="panel-heading">Management</div>
-                        @elseif($problemStatement->domain==3)
-                            <div class="panel-heading">Design</div>
-                        @else
-                            <p>No Domain</p>
-                        @endif
+        <ul class="tabs">
+            <li class="tab col s3"><a class="active" href="#technical" data-value="1">Technical (<span class="number" data-domain="1">{{$technicalProblemsCount}}</span>)</a></li>
+            <li class="tab col s3"><a href="#management" data-value="2">Management (<span class="number" data-domain="2">{{$managementProblemsCount}}</span>)</a></li>
+            <li class="tab col s3"><a href="#design" data-value="3">Design (<span class="number" data-domain="3">{{$designProblemsCount}}</span>)</a></li>
+        </ul>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col m12 l12">
+                    <div id="technical" class="col s12 questions" data-for="1">
+                        @foreach($problemArray[0] as $problem)
 
-                        <div class="panel-body">
+                            <div class="question-card">
+                                <p class="question-card-header">
+                                    @if($problem->display)
+                                        <a href="/admin/problem/delete/{{$problem->id}}">(<i class="fa fa-times  delete"></i>)</a>
+                                    @else
+                                        <a href="/admin/problem/undelete/{{$problem->id}}" >(<i class="fa fa-check  undelete">)</i></a>
+                                    @endif
+                                    {{$problem->problem_statement}}
+                                </p>
+                                <p class="question-description">{{$problem->comments}}</p>
+                                
+                                <hr>
+                                @if($problem->level==1)
+                                    <span class="question-difficulty">Difficulty: Easy</span>
+                                @elseif($problem->level==2)
+                                    <span class="question-difficulty">Difficulty: Medium</span>
+                                @else
+                                    <span class="question-difficulty">Difficulty: Hard</span>
+                                @endif
+                                <span class="question-difficulty">| {{$problem->category}}</span>
 
-                        <h3><b>Problem Statement</b></h3>
-                        <p>{{$problemStatement->problem_statement}}</p>
-                        <h3><b>Comments</b></h3>
-                        <p>{{$problemStatement->comments}}</p>
-                            @if($problemStatement->display)
-                                <a href="/admin/problem/delete/{{$problemStatement->id}}" <i class="fa fa-times fa-2x delete"></i></a>
-                            @else
-                                <a href="/admin/problem/undelete/{{$problemStatement->id}}" <i class="fa fa-check fa-2x undelete"></i></a>
-                            @endif
-                        </div>
 
+
+                            </div>
+
+
+                        @endforeach
                     </div>
-                    @endforeach
-                @else
-                <div>
-                    <p style="color: red">No problems for your domain is available</p>
-                </div>
-                @endif
-                {{--
-                This <p> tag is not working... Have to fix it back..
-                --}}
+                    <div id="management" class="col s12 questions" data-for="2">
+                        @foreach($problemArray[1] as $problem)
 
+                            <div class="question-card">
+                                <p class="question-card-header">
+                                    @if($problem->display)
+                                        <a href="/admin/problem/delete/{{$problem->id}}" >(<i class="fa fa-times  delete"></i>)</a>
+                                    @else
+                                        <a href="/admin/problem/undelete/{{$problem->id}}" >(<i class="fa fa-check  undelete"></i>)</a>
+                                    @endif
+                                    {{$problem->problem_statement}}</p>
+                                <p class="question-description">{{$problem->comments}}</p>
+                                
+                                <hr>
+                                @if($problem->level==1)
+                                    <span class="question-difficulty">Difficulty: Easy</span>
+                                @elseif($problem->level==2)
+                                    <span class="question-difficulty">Difficulty: Medium</span>
+                                @else
+                                    <span class="question-difficulty">Difficulty: Hard</span>
+                                @endif
+                                <span class="question-difficulty">| {{$problem->category}}</span>
+                     </div>
+
+                        @endforeach
+                    </div>
+                    <div id="design" class="col s12 questions" data-for="3">
+                        @foreach($problemArray[2] as $problem)
+
+                            <div class="question-card">
+                                <p class="question-card-header">
+                                    @if($problem->display)
+                                        <a href="/admin/problem/delete/{{$problem->id}}" >(<i class="fa fa-times  delete"></i>)</a>
+                                    @else
+                                        <a href="/admin/problem/undelete/{{$problem->id}}">( <i class="fa fa-check  undelete"></i>)</a>
+                                    @endif
+                                    {{$problem->problem_statement}}</p>
+                                <p class="question-description">{{$problem->comments}}</p>
+                                
+                                <hr>
+                                @if($problem->level==1)
+                                    <span class="question-difficulty">Difficulty: Easy</span>
+                                @elseif($problem->level==2)
+                                    <span class="question-difficulty">Difficulty: Medium</span>
+                                @else
+                                    <span class="question-difficulty">Difficulty: Hard</span>
+                                @endif
+                                <span class="question-difficulty">| {{$problem->category}}</span>
+
+
+                                
+                            </div>
+
+                        @endforeach
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div> -->
+        <div id="change-modal" class="modal">
+            <div class="modal-content">
+                <h4 style="text-align: center">Change Domain</h4>
+                <div class="input-field">
+                    <input type="checkbox" class="filled-in" name="change-technical" id="change-technical">
+                    <label for="change-technical">Technical
+                </div>
+                <div class="input-field">
+                    <input type="checkbox" class="filled-in" name="change-management" id="change-management">
+                    <label for="change-management">Management
+                </div>
+                <div class="input-field">
+                    <input type="checkbox" class="filled-in" name="change-technical" id="change-design">
+                    <label for="change-design">Design
+                </div>
+                <form action="http://localhost:8000/user/add/domain" method="POST">
+                    <input type="text" name="domains" style="display: none">
+                </form>
+                <br>
+                <button class="custom-submit">Submit</button>
+            </div>
+        </div>
+        <div id="instructions-modal" class="modal">
+            <div class="modal-content">
+                <h4>Instructions</h4>
+                <p>Here go the instructions for the recruitment process</p>
+            </div>
+            <div class="modal-footer">
+                <a class=" modal-action modal-close btn-flat">Close</a>
+            </div>
+        </div>
 @endsection

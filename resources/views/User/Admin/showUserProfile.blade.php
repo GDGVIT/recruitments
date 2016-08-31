@@ -7,7 +7,7 @@
         <div class="row">
 
             <div class="col m10 offset-m1">
-                <div class="question-card">
+                <div class="card">
                     <div class="card-title-main" style="    padding: 20px;">
                         <span class="card-title"><h4>{{$user->name}}</h4></span>
                     </div>

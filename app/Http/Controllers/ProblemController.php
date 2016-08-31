@@ -52,8 +52,28 @@ class ProblemController extends Controller
 
     public function showAll()
     {
-        $problemStatements = ProblemStatement::all();
-        return view('User.Admin.showAllProblems',compact('problemStatements'));
+        $technicalProblemsCount = ProblemStatement::where('domain',1)->count();
+        $managementProblemsCount = ProblemStatement::where('domain',2)->count();
+        $designProblemsCount = ProblemStatement::where('domain',3)->count();
+        $problemArray = array();
+        $answeredArray = array();
+        $answeredProblems = Submission::where('user_id',Auth::user()->id)->get();
+        foreach ($answeredProblems as $problem)
+        {
+            array_push($answeredArray,$problem->problem_id);
+        }
+
+        $domain = [1,2,3];
+        foreach ($domain as $item)
+
+        {
+
+            $problems = ProblemStatement::where('domain',$item)->get();
+            array_push($problemArray,$problems);
+        }
+
+        return view('User.Admin.showAllProblems',compact('problemArray','technicalProblemsCount','managementProblemsCount','designProblemsCount','answeredArray'));
+
     }
 
     /*
