@@ -7,151 +7,24 @@
     <div class="row">
       <div class="col m10 l10 s10 push-s1 push-l1 push-m1">
     <div class="row user-row">
+      @foreach($users as $user)
+
       <div class="col m3 l3 s12">
         <div class="user-container">
           <div class="user-card">
             <div class="user-card-header">
-              Rajat Mukati<br><span>15BCE0001</span>
+             {{$user->name}}<br><span>{{$user->regno}}</span>
             </div>
             <div class="user-card-data">
-              Technical:&nbsp<span>0</span><br>
-              Management:&nbsp<span>20</span><br>
-              Design:&nbsp<span>8</span><br>
+              Questions attempted :&nbsp<span>{{\App\User::find($user->id)->submissions->count()}}</span><br>
+              <a href="sdf">Show details</a>
+
             </div>
           </div>
         </div>
       </div>
-      <div class="col m3 l3 s12">
-        <div class="user-container">
-          <div class="user-card">
-            <div class="user-card-header">
-              Rajat Mukati<br><span>15BCE0001</span>
-            </div>
-            <div class="user-card-data">
-              Technical:&nbsp<span>0</span><br>
-              Management:&nbsp<span>20</span><br>
-              Design:&nbsp<span>8</span><br>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col m3 l3 s12">
-        <div class="user-container">
-          <div class="user-card">
-            <div class="user-card-header">
-              Rajat Mukati<br><span>15BCE0001</span>
-            </div>
-            <div class="user-card-data">
-              Technical:&nbsp<span>0</span><br>
-              Management:&nbsp<span>20</span><br>
-              Design:&nbsp<span>8</span><br>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col m3 l3 s12">
-        <div class="user-container">
-          <div class="user-card">
-            <div class="user-card-header">
-              Rajat Mukati<br><span>15BCE0001</span>
-            </div>
-            <div class="user-card-data">
-              Technical:&nbsp<span>0</span><br>
-              Management:&nbsp<span>20</span><br>
-              Design:&nbsp<span>8</span><br>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row user-row">
-      <div class="col m3 l3 s12">
-        <div class="user-container">
-          <div class="user-card">
-            <div class="user-card-header">
-              Rajat Mukati<br><span>15BCE0001</span>
-            </div>
-            <div class="user-card-data">
-              Technical:&nbsp<span>0</span><br>
-              Management:&nbsp<span>20</span><br>
-              Design:&nbsp<span>8</span><br>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col m3 l3 s12">
-        <div class="user-container">
-          <div class="user-card">
-            <div class="user-card-header">
-              Rajat Mukati<br><span>15BCE0001</span>
-            </div>
-            <div class="user-card-data">
-              Technical:&nbsp<span>0</span><br>
-              Management:&nbsp<span>20</span><br>
-              Design:&nbsp<span>8</span><br>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col m3 l3 s12">
-        <div class="user-container">
-          <div class="user-card">
-            <div class="user-card-header">
-              Rajat Mukati<br><span>15BCE0001</span>
-            </div>
-            <div class="user-card-data">
-              Technical:&nbsp<span>0</span><br>
-              Management:&nbsp<span>20</span><br>
-              Design:&nbsp<span>8</span><br>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col m3 l3 s12">
-        <div class="user-container">
-          <div class="user-card">
-            <div class="user-card-header">
-              Rajat Mukati<br><span>15BCE0001</span>
-            </div>
-            <div class="user-card-data">
-              Technical:&nbsp<span>0</span><br>
-              Management:&nbsp<span>20</span><br>
-              Design:&nbsp<span>8</span><br>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row user-row">
-      <div class="col m3 l3 s12">
-        <div class="user-container">
-          <div class="user-card">
-            <div class="user-card-header">
-              Rajat Mukati<br><span>15BCE0001</span>
-            </div>
-            <div class="user-card-data">
-              Technical:&nbsp<span>0</span><br>
-              Management:&nbsp<span>20</span><br>
-              Design:&nbsp<span>8</span><br>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col m3 l3 s12">
-        <div class="user-container">
-          <div class="user-card">
-            <div class="user-card-header">
-              Rajat Mukati<br><span>15BCE0001</span>
-            </div>
-            <div class="user-card-data">
-              Technical:&nbsp<span>0</span><br>
-              Management:&nbsp<span>20</span><br>
-              Design:&nbsp<span>8</span><br>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
+      @endforeach
+
       </div>
       </div>
       

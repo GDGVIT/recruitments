@@ -164,9 +164,27 @@ class UserController extends Controller
     public function viewUserSubmissions($id)
     {
         $user = User::where('id',$id)->first();
+
         $submissions = $user->submissions;
-        $userName = $user->name;
-        return view('User.Admin.showUserSubmissions',compact('submissions','userName'));
+        $technicalSubmissions = DB::table('submissions')
+                                ->join('problem_statements','submissions.problem_id','=','problem_statements.id')
+                                ->where('problem_statements.domain','=',1)
+                                ->where('submissions.user_id','=',$user->id)
+                                ->get();
+
+        $managementSubmissions = DB::table('submissions')
+            ->join('problem_statements','submissions.problem_id','=','problem_statements.id')
+            ->where('problem_statements.domain','=',2)
+            ->where('submissions.user_id','=',$user->id)
+            ->get();
+
+        $designSubmissions = DB::table('submissions')
+            ->join('problem_statements','submissions.problem_id','=','problem_statements.id')
+            ->where('problem_statements.domain','=',3)
+            ->where('submissions.user_id','=',$user->id)
+            ->get();
+        
+        return view('User.Admin.showUserSubmissions',compact('technicalSubmissions','managementSubmissions','designSubmissions'));
     }
 
 
@@ -324,6 +342,17 @@ class UserController extends Controller
      * Notify Users Function
      * */
 
+    /*
+     * Show User Profile by ID
+     * */
+    
+    public function showUserProfile($id)
+    {
+     $user = User::find($id);
+        return view('User.Admin.showUserProfile',compact('user'));
+    }
+    
+    
     public function notifyUser(Request $request)
     {
         $contact = $request->contact;
