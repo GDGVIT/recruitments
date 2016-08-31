@@ -23,7 +23,7 @@
           @else
           <li class="navbar-tabs nav-logo"><a href="{{url('/')}}"><img src="images/gdglogo.png"></a></li>
             
-          </ul>
+          
           <ul class="right hide-on-med-and-down">
             <!-- Dropdown Trigger -->
            
@@ -42,7 +42,6 @@
           <li><a href="{{url('/home')}}">Home</a></li>
 
           <li><a href="{{url('/problems')}}">Problems</a></li>
-          <li><a href="{{url('/user/dashboard')}}">Dashboard</a></li>
           <li><a href="{{url('/user/profile')}}">Profile</a></li>
           <li><a href="{{url('/logout')}}">Logout</a></li>
 
@@ -54,10 +53,9 @@
       </ul>
     </div>
   </nav>
-  <ul id='dropdown1' class='dropdown-content'>
+  <ul id='dropdown1' class='dropdown-content' style="min-width:120px;">
                     <li><a href="/user/profile">Profile</a></li>
                     <li><a href="{{url('/problems')}}">Problems</a></li>
-                    <li><a href="{{url('/user/dashboard')}}">Dashboard</a></li>
                     <li><a class="modal-trigger" href="#instructions-modal">Instructions</a></li>
                     <li><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
                     <li><a href="/logout">Logout</a></li>
@@ -89,37 +87,6 @@
               <a class="custom-button" href="{{url('/login')}}" id="login-form-submit" type="submit">Login</a>
               </div>
              
-               <!--  <form action="{{url('/login')}}" method="POST">
-                  <div class="input-field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <input type="email" name="email" id="email" placeholder="Email Id" value="{{ old('email') }}">
-
-                  </div>
-                  @if ($errors->has('email'))
-                      <span class="help-block">
-                          <strong style="color: red;" >{{ $errors->first('email') }}</strong>
-                      </span>
-                  @endif
-                  <div class="input-field form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input type="password" id="password" name="password" placeholder="Password">
-                  </div>
-                  @if ($errors->has('password'))
-                      <span class="help-block">
-                          <strong style="color: red;">{{ $errors->first('password') }}</strong>
-                      </span>
-                  @endif
-                  <div class="input-field" id="remember-holder">
-                    <input type="checkbox" class="filled-in"  name="remember" id="remember">
-                    <label for="remember">Remember Me?
-                  </div>
-                  <div class="input-field" id="forgot-password">
-                    <a href="forgotpassword.html">Forgot password?</a>
-                  </div>
-                  <div class="row">
-                    <div class="col s12 m12 l12" style="padding:0;">
-                      <button class="custom-button" id="login-form-submit" type="submit">Login</button>
-                    </div>
-                  </div>
-            </form> -->
           </div>
         </div>
       </div>
