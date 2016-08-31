@@ -13,13 +13,13 @@
           <div class="col m12 l12">
             <div class="data-card">
               <div class="card-head">
-                Award Marks
+                <h3>Award Marks</h3>
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col m4 l4 s12">
                     <div class="prob-field form-group{{ $errors->has('marks') ? ' has-error' : '' }}">
-                      Marks
+                     <h5> Marks</h5>
                     </div>
                   </div>
                   <div class="col m6 l6 s12">
