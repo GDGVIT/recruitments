@@ -37,7 +37,7 @@
                             <b>Selected - No status</b>
                         @endif
                         <br>
-                        <h5>Marks Awarded :<b> {{$totalMarks}}</b></h5>
+                        <h5>Marks Awarded :<b> {{$user->marks}}</b></h5>
                     </div>
                     <div class="card-action">
                         <a href="{{$user->linkedin}}"><i class="fa fa-linkedin fa-1x  " style="color:#5c6bc0 "></i></a>

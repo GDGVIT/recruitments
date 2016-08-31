@@ -183,7 +183,7 @@ class UserController extends Controller
             ->where('problem_statements.domain','=',3)
             ->where('submissions.user_id','=',$user->id)
             ->get();
-        
+
         $userName = $user->name;
         $registrationNumber = $user->regno;
         return view('User.Admin.showUserSubmissions',compact('technicalSubmissions','managementSubmissions','designSubmissions','userName','registrationNumber'));
@@ -357,7 +357,8 @@ class UserController extends Controller
     public function showUserProfile($id)
     {
      $user = User::find($id);
-        return view('User.Admin.showUserProfile',compact('user'));
+        $domains = DB::table('user_domains')->where('user_id',$user->id)->get();
+        return view('User.Admin.showUserProfile',compact('user','domains'));
     }
     
     

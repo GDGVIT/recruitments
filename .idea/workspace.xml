@@ -4,8 +4,7 @@
     <list default="true" id="d926e56e-b71f-4028-9961-fa948c407e35" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/User/Admin/showUserSubmissions.blade.php" afterPath="$PROJECT_DIR$/resources/views/User/Admin/showUserSubmissions.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/User/showIndividualProblem.blade.php" afterPath="$PROJECT_DIR$/resources/views/User/showIndividualProblem.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/User/Admin/showUserProfile.blade.php" afterPath="$PROJECT_DIR$/resources/views/User/Admin/showUserProfile.blade.php" />
     </list>
     <ignored path="recruitments.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showIndividualProblem.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="showIndividualProblem.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/User/showIndividualProblem.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -50,21 +49,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <file leaf-file-name="showUserProfile.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/User/Admin/showUserProfile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+            <state relative-caret-position="324">
+              <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guestHome.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/guestHome.blade.php">
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -85,8 +84,8 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="185" column="8" selection-start-line="185" selection-start-column="8" selection-end-line="185" selection-end-column="8" />
+            <state relative-caret-position="285">
+              <caret line="360" column="72" selection-start-line="360" selection-start-column="72" selection-end-line="360" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -183,15 +182,15 @@
         <option value="$PROJECT_DIR$/resources/views/User/showProblems.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/afterloginnav.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/User/Admin/showUserProfile.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/User/Admin/getShortlistedCandidates.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/guestHome.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/User/Admin/showAllUsers.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/User/Admin/showUserSubmissions.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/User/showIndividualProblem.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/resources/views/User/Admin/showUserProfile.blade.php" />
       </list>
     </option>
   </component>
@@ -495,7 +494,7 @@
       <workItem from="1472495085715" duration="5228000" />
       <workItem from="1472504732906" duration="3562000" />
       <workItem from="1472546473600" duration="10901000" />
-      <workItem from="1472668310900" duration="11364000" />
+      <workItem from="1472668310900" duration="11596000" />
     </task>
     <task id="LOCAL-00001" summary="user schema">
       <created>1470207378642</created>
@@ -508,7 +507,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112687000" />
+    <option name="totallyTimeSpent" value="112919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -893,23 +892,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/guestHome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="185" column="8" selection-start-line="185" selection-start-column="8" selection-end-line="185" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/User/Admin/showUserProfile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -957,6 +940,22 @@
             <element signature="e#458#554#0#HTML" expanded="true" />
             <element signature="e#2816#2838#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="360" column="72" selection-start-line="360" selection-start-column="72" selection-end-line="360" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/User/Admin/showUserProfile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
