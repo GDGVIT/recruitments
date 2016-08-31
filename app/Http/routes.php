@@ -14,7 +14,7 @@
 Route::get('/', function () {
     if (\Illuminate\Support\Facades\Auth::user())
     {
-        return view('home');
+        return view('guestHome');
     }
     else
     return view('welcome');
