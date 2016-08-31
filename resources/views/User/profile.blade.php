@@ -9,13 +9,13 @@
             <div class="col m10 offset-m1">
                 <div class="card">
                     <div class="card-title-main" style="padding-left: 20px;padding-top:10px;padding-bottom:10px;">
-                        <span class="card-title"><h4>{{$user->name}}</h4></span>
+                        <span class="card-title"><h4 style="text-align:center">{{$user->name}}</h4></span>
                     </div>
                     <hr>
                     <div class="card-content">
                         
-                        <h5>Regno :<b>{{$user->regno}}</b></h5>
-                        <h5>Domain :</h5>
+                        <h6><b>Regno :</b><b>{{$user->regno}}</b></h6>
+                        <h6><b>Domain :</b></h6>
                         
                             @foreach($domains as $domain)
                             <ul>
@@ -29,15 +29,15 @@
                             </ul>
                             @endforeach
                         <hr>
-                        <h5>Why GDG :</h5><div style="text-overflow: ellipsis;overflow: hidden;min-height: 90px;"> {{$user->why_gdg}}</div><hr>
-                        <h5>Experience :</h5><div style="text-overflow: ellipsis; overflow: hidden;min-height: 90px;"> {{$user->experience}}</div><hr>
+                        <h6><b>Why GDG :</b></h6><div style="text-overflow: ellipsis;overflow: hidden;min-height: 90px;"> {{$user->why_gdg}}</div><hr>
+                        <h6><b>Experience :</b></h6><div style="text-overflow: ellipsis; overflow: hidden;min-height: 90px;"> {{$user->experience}}</div><hr>
                         @if($user->selected)
-                            <h5><b style="color:green">Selected for the next round</b></h5>
+                            <h6><b style="color:green">Selected for the next round</b></h6>
                         @else
-                            <h5><b>Selected - No status</b></h5>
+                            <h6><b>Selected - No status</b></h6>
                         @endif
                         <br>
-                        <h5>Marks Awarded :<b> {{$totalMarks}}</b></h5>
+                        <h6><b>Marks Awarded : {{$totalMarks}}</b></h6>
                     </div>
                     <div class="card-action">
                         <a href="{{$user->linkedin}}"><i class="fa fa-linkedin fa-2x  " style="color:#5c6bc0 "></i></a>
