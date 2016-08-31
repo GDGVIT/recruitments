@@ -1,13 +1,14 @@
 @extends('layouts.app')
-
+@extends('layouts.afterloginnav')
+<link rel="stylesheet" href="{{url('css/problems.css')}}">
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col m10 offset-m1">
 
                 <div class="col-md-12">
                     <p style="color: green;">Following people are shortlisted</p>
-                <table class="table table-hover">
+                <table class="striped responsive-table">
                     <thead>
                     <tr>
                         <th>Name</th>

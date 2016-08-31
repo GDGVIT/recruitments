@@ -33,9 +33,12 @@
     </style>
 </head>
 <body>
-<script src="{{url('js/problemsLoader.js')}}"></script>
-<script src="{{url('js/domainSelector.js')}}"></script>
-<script src="https://use.fontawesome.com/8aa6edd1c8.js"></script>
+<script  type="text/javascript" src="{{url('js/problemsLoader.js')}}"></script>
+<script  type="text/javascript" src="{{url('js/domainSelector.js')}}"></script>
+<script type="text/javascript" src="{{url('js/smoothscroll.js')}}"></script>
+<script type="text/javascript" src="{{url('js/jquery-visible.min.js')}}"></script>
+<script type="text/javascript"  src="{{url('js/individualproblem.js')}}"></script>
+<script  type="text/javascript" src="https://use.fontawesome.com/8aa6edd1c8.js"></script>
   <script>
  $(document).ready(function() {
     $('#change-modal-trigger').click(function(){

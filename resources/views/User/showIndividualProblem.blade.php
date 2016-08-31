@@ -2,26 +2,9 @@
 <link rel="stylesheet" href="{{url('css/problems.css')}}">
     <link rel="stylesheet" href="{{url('css/individualproblem.css')}}">
 @section('content')
-    <nav>
-        <div class="nav-wrapper problems-nav">
-            <a href="/"><img src="{{url('images/gdglogo.png')}}" alt="GDG VIT Vellore" style="width: 15%;"></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#"  id="change-modal-trigger" style="color: white">Change Domain</a></li>
-                <li><a href="/problems" class="right" style="color: white">Problems</a></li>
-                <li><a class='dropdown-button problems-nav-options' href='#' data-activates='dropdown1'><b>{{\Illuminate\Support\Facades\Auth::user()->name}}</b><span class="caret"></span></a>
-                </li>
 
-            </ul>
-        </div>
-    </nav>
-    <!-- Dropdown Structure -->
-    <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="/user/profile">Profile</a></li>
-        <li><a class="modal-trigger" href="#instructions-modal">Instructions</a></li>
-        <li><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
-        <li><a href="/logout">Logout</a></li>
-
-    </ul>
+    <link rel="stylesheet" href="{{url('css/individualproblem.css')}}">
+   @extends('layouts.afterloginnav')
     <div class="question-card-container">
       <div class="individual-question-card">
         <div class="individual-card-header">
@@ -46,9 +29,11 @@
         </div>
       </div>
       <div class="individual-question-submission row">
-        <form method="POST" action="/">
+        <form method="POST" action="/problem/upload">
+        {{csrf_field()}}
           <div class="col s6 m6 l6"  style="border-right: 1px solid rgba(200,200,200,0.5);">
             <div class="input-field link" style="text-align: center">
+            <input type="hidden" name="questionId" value="{{$problemStatement->id}}">
               <input type="radio" name="submitting-link" id="submitting-link" class="with-gap">
               <label for="submitting-link">Add link for solution
             </div>
@@ -59,6 +44,7 @@
           <div class="col s6 m6 l6">
             <div class="input-field file" style="text-align: center">
               <input type="radio" name="submitting-link" id="submitting-file" class="with-gap">
+              <input type="hidden" name="questionId" value="{{$problemStatement->id}}">
               <label for="submitting-file">Upload the solution file
               </div>
               <div style="text-align: center;margin-top: 5%">
@@ -66,11 +52,11 @@
                 <input type="file" name="submission" style="display: none;">
               </div>
             </div>
-            <button class="custom-submit">Submit</button>
+            <button class="custom-submit" type="submit">Submit</button>
         </form>
       </div>
     </div>
-    <div id="change-modal" class="modal">
+    <!-- <div id="change-modal" class="modal">
       <div class="modal-content">
         <h4 style="text-align: center">Change Domain</h4>
         <div class="input-field">
@@ -91,7 +77,7 @@
         <br>
         <button class="custom-submit" type="submit">Submit</button>
       </div>
-    </div>
+    </div> -->
   </body>
  
    <!--  <div class="container">

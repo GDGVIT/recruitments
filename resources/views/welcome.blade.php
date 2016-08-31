@@ -16,8 +16,9 @@
           </ul>
           <ul class="right hide-on-med-and-down">
             <!-- Dropdown Trigger -->
+             <li><a class='dropdown-button problems-nav-options' href='#' data-activates='dropdown1'><b>{{\Illuminate\Support\Facades\Auth::user()->name}}</b><span class="caret"></span></a></li>
             <li class="navbar-tabs"><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
-            <li class="navbar-tabs"><a href="{{url('/logout')}}">Logout</a></li>
+           
           </ul>
           @else
           <li class="navbar-tabs nav-logo"><a href="{{url('/')}}"><img src="images/gdglogo.png"></a></li>
@@ -25,6 +26,8 @@
           </ul>
           <ul class="right hide-on-med-and-down">
             <!-- Dropdown Trigger -->
+           
+            
             <li class="navbar-tabs"><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
             <li class="navbar-tabs"><a href="{{url('/register')}}">Register</a></li>
           </ul>
@@ -51,6 +54,14 @@
       </ul>
     </div>
   </nav>
+  <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="/user/profile">Profile</a></li>
+                    <li><a href="{{url('/problems')}}">Problems</a></li>
+                    <li><a href="{{url('/user/dashboard')}}">Dashboard</a></li>
+                    <li><a class="modal-trigger" href="#instructions-modal">Instructions</a></li>
+                    <li><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
+                    <li><a href="/logout">Logout</a></li>
+    </ul>
 </div>
 <div class="home"></div>
 <br><br>

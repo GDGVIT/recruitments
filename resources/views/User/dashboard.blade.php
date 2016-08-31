@@ -1,7 +1,11 @@
 @extends('layouts.app')
-
+@extends('layouts.afterloginnav')
 @section('content')
+<link rel="stylesheet" href="{{url('css/problems.css')}}">
     <div class="container">
+        
+    </div>
+  <!--   <div class="container">
         <div class="row">
 
             <div class="col m6 ">
@@ -72,7 +76,7 @@
             </div>
 
 
-    </div>
+    </div> -->
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">

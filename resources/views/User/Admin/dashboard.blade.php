@@ -1,14 +1,15 @@
 @extends('layouts.app')
-
+@extends('layouts.afterloginnav')
+<link rel="stylesheet" href="{{url('css/problems.css')}}">
 @section('content')
     <div class="container">
         <div class="row">
 
-            <div class="col m6 ">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Registrations ({{$technicalRegistrations+$designRegistrations+$managementRegistrations}})</div>
+            <div class="col m6 s12">
+                <div class="question-card">
+                    <div class="question-header">Registrations ({{$technicalRegistrations+$designRegistrations+$managementRegistrations}})</div>
 
-                    <div class="panel-body">
+                    <div class="question-description">
                         <div id="barchart_div" style="width: 900px; height: 500px;"></div>
 
 
@@ -16,11 +17,11 @@
                 </div>
             </div>
 
-            <div class="col m6 ">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Submissions ({{$checkedSubmissions+$uncheckedSubmissions}})</div>
+            <div class="col m6 s12">
+                <div class="question-card">
+                    <div class="question-header">Submissions ({{$checkedSubmissions+$uncheckedSubmissions}})</div>
 
-                    <div class="panel-body">
+                    <div class="question-description">
 
                         <div id="piechart_div" style="width: 900px; height: 500px;"></div>
                     </div>

@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+@extends('layouts.afterloginnav')
+<link rel="stylesheet" href="{{url('css/problems.css')}}">
 @section('content')
     <style>
         .delete{
@@ -9,8 +10,74 @@
             color: green;
         }
     </style>
-    
-    <div class="container">
+    <div class="problems-tabs row">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#technical" data-value="1">Technical (<span class="number" data-domain="1">18</span>)</a></li>
+        <li class="tab col s3"><a href="#management" data-value="2">Management (<span class="number" data-domain="2">40</span>)</a></li>
+        <li class="tab col s3"><a href="#design" data-value="3">Design (<span class="number" data-domain="3">6</span>)</a></li>
+      </ul>
+      <div id="technical" class="col s12 questions" data-for="1">
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+        </div>
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Medium</span><span class="right question-answered">Answered</span>
+        </div>
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Hard</span><span class="right question-unanswered">Not Answered</span>
+        </div>
+      </div>
+      <div id="management" class="col s12 questions" data-for="2">
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+        </div>
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Medium</span><span class="right question-answered">Answered</span>
+        </div>
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Hard</span><span class="right question-unanswered">Not Answered</span>
+        </div>
+      </div>
+      <div id="design" class="col s12 questions" data-for="3">
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Easy</span><span class="right question-answered">Answered</span>
+        </div>
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Medium</span><span class="right question-answered">Answered</span>
+        </div>
+        <div class="question-card">
+          <p class="question-card-header">Question title</p>
+          <p class="question-description">Some txt in this box to fill space and know how the text formatting looks with the bold question at the top. This will not be neccessarily available in all the cards and blah blah blah. Nothing more to fill this card but need to test it with more lines so as to understand the aesthetic of this card. Alright so this much will be enough or maybe one more line!</p>
+          <hr>
+          <span class="question-difficulty">Difficulty: Hard</span><span class="right question-unanswered">Not Answered</span>
+        </div>
+      </div>
+    </div>
+  <!--   <div class="container">
         <div class="row">
             <div class="col m10 offset-m1">
                 @if(count($problemStatements)>0)
@@ -53,5 +120,5 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
 @endsection

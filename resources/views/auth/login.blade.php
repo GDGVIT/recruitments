@@ -71,7 +71,7 @@
                  <input type="hidden" name="_token" value="{{csrf_token()}}"> 
 
                   <div class="input-field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <input type="email" name="email" id="email" placeholder="Email Id" value="{{ old('email') }}">
+                    <input type="email" name="email" id="email" placeholder="Email Id" value="{{ old('email') }}" style="background:#fff;">
 
                   </div>
                   @if ($errors->has('email'))
@@ -80,7 +80,7 @@
                       </span>
                   @endif
                   <div class="input-field form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input type="password" id="password" name="password" placeholder="Password">
+                    <input type="password" id="password" name="password" placeholder="Password"  style="background:#fff;">
                   </div>
                   @if ($errors->has('password'))
                       <span class="help-block">
@@ -88,7 +88,7 @@
                       </span>
                   @endif
                   <div class="input-field" id="remember-holder">
-                    <input type="checkbox" class="filled-in"  name="remember" id="remember">
+                    <input type="checkbox" class="filled-in"  name="remember" id="remember" style="background:#fff;">
                     <label for="remember">Remember Me?
                   </div>
                   <div class="input-field" id="forgot-password">

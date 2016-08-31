@@ -138,7 +138,8 @@ body{
 
 @media only screen and (min-device-width: 1600px) and (max-device-width: 2000px){
   .problems-nav img{
-    width: 18%!important;
+    width: 15% !important;
+    margin-top: -19px;
   }
   .problems-nav a{
     font-size: 1.4rem;

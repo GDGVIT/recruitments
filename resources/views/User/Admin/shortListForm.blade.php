@@ -1,19 +1,20 @@
 @extends('layouts.app')
-
+@extends('layouts.afterloginnav')
+<link rel="stylesheet" href="{{url('css/problems.css')}}">
 @section('content')
-    <div class="container">
+    <div class="container-fliud">
         <div class="row">
-            <div class="col m8 offset-md-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Shortlist Prople</div>
-                    <div class="panel-body">
+            <div class="col m8 offset-m2">
+                <div class="question-card">
+                    <div class="question-header">Shortlist Prople</div>
+                    <div class="question-description">
 
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/users/shortlist') }}">
                             {{ csrf_field() }}
 
 
                             <div class="form-group{{ $errors->has('people') ? ' has-error' : '' }}">
-                                <label for="people" class="col-md-4 control-label">Number of People you want to shortlist</label>
+                                <label for="people" class="col m4 control-label">Number of People you want to shortlist</label>
 
 
                                 <div class="col m6">

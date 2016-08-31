@@ -10,6 +10,18 @@
   background-color: rgba(255,255,255,0);
   box-shadow: none;
 }
+.online{
+  width: 20px;
+  height: 20px;
+  background: green;
+  border-radius: 50%;
+}
+.offline{
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
 /*
 .dropdown-button
 {

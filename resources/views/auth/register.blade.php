@@ -43,7 +43,7 @@
           <li><a href="{{url('/user/dashboard')}}">Dashboard</a></li>
           <li><a href="{{url('/user/profile')}}">Profile</a></li>
           <li><a href="{{url('/logout')}}">Logout</a></li>
-
+          
            @else
 
           <li><a href="{{url('/register')}}">Register</a></li>
