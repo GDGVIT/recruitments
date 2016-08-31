@@ -54,12 +54,13 @@
                   <div style="display:flex">
                        <div><a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a></div>
                     
-                    <div style="margin-left:10px;"><form action = "/admin/award/marks" method="GET" >
+                    <div style="margin-left:10px;">
+                        <form action = "/admin/award/marks" method="GET">
                         {{csrf_field()}}
                         <input type="hidden" name="userId" value="{{$submission->user_id}}">
                         <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
                         
-                        <a  class="custom-button" href="#" type="submit">Award Marks</a>
+                        <a  class="custom-button" href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
                     </form></div>
                   </div>
                  
@@ -83,7 +84,7 @@
                               <input type="hidden" name="userId" value="{{$submission->user_id}}">
                               <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
                               
-                              <a  class="custom-button" href="#" type="submit" >Award Marks</a>
+                              <a  class="custom-button" href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
                           </form>
                           </div>
                           </div>
@@ -104,7 +105,7 @@
                               {{csrf_field()}}
                               <input type="hidden" name="userId" value="{{$submission->user_id}}">
                               <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
-                              <a  class="custom-button"  href="#" type="submit" >Award Marks</a>
+                              <a  class="custom-button"  href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
                               
                           </form></div>
                           </div>
