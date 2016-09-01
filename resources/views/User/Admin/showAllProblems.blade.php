@@ -6,7 +6,6 @@
 @extends('layouts.afterloginnav')
 @section('content')
 
-
     <div class="problems-tabs row">
         <ul class="tabs">
             <li class="tab col s3"><a class="active" href="#technical" data-value="1">Technical (<span class="number" data-domain="1">{{$technicalProblemsCount}}</span>)</a></li>
@@ -29,7 +28,7 @@
                                     {{$problem->problem_statement}}
                                 </p>
                                 <p class="question-description">{{$problem->comments}}</p>
-                                
+
                                 <hr>
                                 @if($problem->level==1)
                                     <span class="question-difficulty">Difficulty: Easy</span>
@@ -59,7 +58,7 @@
                                     @endif
                                     {{$problem->problem_statement}}</p>
                                 <p class="question-description">{{$problem->comments}}</p>
-                                
+
                                 <hr>
                                 @if($problem->level==1)
                                     <span class="question-difficulty">Difficulty: Easy</span>
@@ -85,7 +84,7 @@
                                     @endif
                                     {{$problem->problem_statement}}</p>
                                 <p class="question-description">{{$problem->comments}}</p>
-                                
+
                                 <hr>
                                 @if($problem->level==1)
                                     <span class="question-difficulty">Difficulty: Easy</span>
@@ -97,7 +96,7 @@
                                 <span class="question-difficulty">| {{$problem->category}}</span>
 
 
-                                
+
                             </div>
 
                         @endforeach
@@ -138,7 +137,7 @@
 
 
             <br>
-            On top of all this we are looking for people who are having a zeal towards learning new things. 
+            On top of all this we are looking for people who are having a zeal towards learning new things.
 
             <h3>FAQ’s</h3>
 
@@ -158,14 +157,15 @@
             Drop us an email on gdgvitvellore@gmail.com and we will send you a suitable problem statement for your domain. <br>
 
            <b> Are there any restrictions on who can participate?</b><br>
-              Yes, this time we will be recruiting only Second (2) Years only.<br> 
+              Yes, this time we will be recruiting only Second (2) Years only.<br>
 
            <b> I am not a second year, how can I particiapte?</b><br>
-            We will not be able to recruit you if you are not a second year, but we will most certainly consider you for the next recruitment if you have the required skill.<br> 
+            We will not be able to recruit you if you are not a second year, but we will most certainly consider you for the next recruitment if you have the required skill.<br>
           </p>
         </div>
         <div class="modal-footer">
           <a class=" modal-action modal-close btn-flat">Close</a>
         </div>
       </div>
+
 @endsection

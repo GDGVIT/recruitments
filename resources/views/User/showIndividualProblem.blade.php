@@ -85,4 +85,5 @@
 
      <script src="{{url('js/individualproblem.js')}}"></script>
     <script src="{{url('js/domainSelector.js')}}"></script>
+
 @endsection

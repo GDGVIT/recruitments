@@ -31,7 +31,7 @@
                 @endif
                 <li><a href="/user/profile">Profile</a></li>
 
-                <li><a href="#"  id="change-modal-trigger" style="color: white">Choose Domain</a></li>
+                <li><a href="#" id="change-modal-trigger-mobile" style="color: black;font-size: 0.9rem;">Choose Domain</a></li>
 
                 <li><a href="/problems">Problems</a></li>
 

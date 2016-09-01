@@ -77,19 +77,19 @@
                                @if($submission->checked!=1.00)
                             <a  class="custom-button" href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
 
-                        @endif 
-                        
+                        @endif
+
                         </form></div>
                         <div style="    margin-left: 10px;
     margin-top: -23px;">
                           @if($submission->checked==1.00)
-                            
+
                               <span><h5 class="circle-button"><b>{{$submission->marks}}</b></h5></span>
 
-                        @endif 
+                        @endif
                         </div>
-                          
-                    
+
+
                   </div>
 
 
@@ -103,8 +103,8 @@
               <div class="collapsible-body">
                   @foreach($managementSubmissions as $submission)
                       <div class="user-solution" style="padding:1em;">
-                       
-                          <span><h5> 
+
+                          <span><h5>
                           @if($submission->checked==1.00)
                           <i class="fa fa-check" aria-hidden="true" style="color: green"></i>
                          @endif
@@ -121,18 +121,18 @@
                                 @if($submission->checked!=1.00)
                                    <a  class="custom-button" href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
 
-                               @endif 
+                               @endif
                               </form></div>
                               <div style="    margin-left: 10px;
     margin-top: -23px;">
                                 @if($submission->checked==1.00)
-                            
+
                               <span><h5 class="circle-button"><b>{{$submission->marks}}</b></h5></span>
 
-                               @endif 
+                               @endif
                               </div>
-                              
-                         
+
+
                           </div>
 
                       </div>
@@ -145,7 +145,7 @@
                   @foreach($designSubmissions as $submission)
                       <div class="user-solution" style="padding:1em;">
 
-                          <span><h5> 
+                          <span><h5>
                           @if($submission->checked==1.00)
                           <i class="fa fa-check" aria-hidden="true" style="color: green"></i>
                          @endif
@@ -165,13 +165,13 @@
                               <div style="    margin-left: 10px;
     margin-top: -23px;">
                                  @if($submission->checked==1.00)
-                            
+
                               <span><h5 class="circle-button"><b>{{$submission->marks}}</b></h5></span>
 
-                                   @endif 
+                                   @endif
                               </div>
-                                 
-                         
+
+
                           </div>
 
 
@@ -184,4 +184,11 @@
       </div>
     </div>
 
+    <script>
+      $(document).ready(function(){
+        $('#change-modal-trigger-mobile').click(function(){
+          $('#change-modal').openModal();
+        });
+      });
+    </script>
 @endsection

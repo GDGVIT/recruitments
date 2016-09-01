@@ -68,10 +68,11 @@
         {{ csrf_field() }}
 
           <input type="text"  id="#domain" name="domains" style="display: none">
-        
+
         </form>
         <br>
         <button class="custom-submit">Submit</button>
       </div>
     </div>
+
 @endsection
