@@ -71,6 +71,9 @@
     margin: 0 auto;
     margin-top: 100px;
   }
+  #u_0_2 span{
+    color: white !important;
+  }
 </style>
 <div class="container-fluid">
   <div class="row">
@@ -85,9 +88,9 @@
               <div class="col s12 m12 l12">
              	<p style="color:white">Google Developers Groups was established in VIT on 28th July 2014. The group now has 60 Developers. Our agenda is to introduce new technologies to the students, develop new ideas and polish skills in every possible field including management our faculty coordinator is Prof .P Senthilnathan and has guided us along this journey.</p>
              	<a href="http://gdgvitvellore.com" class="custom-button">View More</a>
+              <iframe style="left: 396px !important;" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fgdgvitvellore&width=91&layout=button_count&action=like&size=large&show_faces=false&share=false&height=21&appId" width="91" height="41" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
           </div>
           <br><br>
-          <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fgdgvitvellore&width=300&layout=standard&action=like&size=large&show_faces=true&share=false&height=80&appId" width="300" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
           </div>
         </div>
       </div>
