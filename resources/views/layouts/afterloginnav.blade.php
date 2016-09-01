@@ -30,7 +30,11 @@
 
                 @endif
                 <li><a href="/user/profile">Profile</a></li>
+
                 <li><a href="#"  id="change-modal-trigger" style="color: white">Choose Domain</a></li>
+
+                <li><a href="/problems">Problems</a></li>
+
                 <li><a class="modal-trigger" href="#instructions-modal">Instructions</a></li>
                 <li><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
                 <li><a href="/logout">Logout</a></li>
@@ -48,7 +52,10 @@
     <!-- Dropdown Structure -->
     <ul id='dropdown1' class='dropdown-content'>
         <li><a href="/user/profile">Profile</a></li>
+
          <li><a href="#"  id="change-modal-trigger" style="color: white">Choose Domain</a></li>
+
+
         <li><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
         <li><a href="/logout">Logout</a></li>
 
