@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   $.ajax({
       type: 'GET',
-      url: 'http://localhost:8000/api/user/domains',
+      url: '/api/user/domains',
       success: function(response){
 
         var selected = [];
