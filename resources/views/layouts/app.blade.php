@@ -65,9 +65,12 @@ input[type="checkbox"].filled-in:checked + label:after {
     $('#change-modal-trigger').click(function(){
     $('#change-modal').openModal();
   });
+  $('#change-modal-trigger-mobile').click(function(){
+  $('#change-modal').openModal();
+});
   $('.modal-trigger').leanModal();
   });
-  
+
   </script>
    <script>
     $('.problems-nav-options').dropdown({
@@ -79,11 +82,11 @@ input[type="checkbox"].filled-in:checked + label:after {
       belowOrigin: true, // Displays dropdown below the button
       alignment: 'left' // Displays dropdown with edge aligned to the left of button
     });
-  
+
   </script>
 
 
-  
+
     @yield('content')
 
     <script>
@@ -94,12 +97,12 @@ input[type="checkbox"].filled-in:checked + label:after {
   </script>
   <script type="text/javascript">
   $("#custom-submit").prop("disabled",true);
-  $("input[name=url]").on("change", function(){ 
+  $("input[name=url]").on("change", function(){
     var url = $(this).val();
 
     if (url.includes("http://") != 0 || url.includes("https://") != 0){
-     $("#custom-submit").prop("disabled",false);  
-   }else  { 
+     $("#custom-submit").prop("disabled",false);
+   }else  {
     $("#custom-submit").prop("disabled",true);
   }
 
@@ -110,10 +113,10 @@ input[type="checkbox"].filled-in:checked + label:after {
       $("#custom-submit").prop("disabled",true);
     }
     else{
-       $("#custom-submit").prop("disabled",false); 
+       $("#custom-submit").prop("disabled",false);
     }
   })
-    
+
   </script>
 </body>
 </html>
