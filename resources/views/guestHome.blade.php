@@ -87,7 +87,7 @@
              	<a href="http://gdgvitvellore.com" class="custom-button">View More</a>
           </div>
           <br><br>
-          <iframe style="margin-top:20px;" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgdgvitvellore&tabs&width=240&height=154&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=1668653593388184" width="340" height="154" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+          <iframe style="margin-top:100px;" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgdgvitvellore&tabs&width=240&height=154&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=1668653593388184" width="340" height="154" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" id="facebook-frame"></iframe>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
 
 
             <br>
-            On top of all this we are looking for people who are having a zeal towards learning new things. 
+            On top of all this we are looking for people who are having a zeal towards learning new things.
 
             <h3>FAQ’s</h3>
 
@@ -128,10 +128,10 @@
             Drop us an email on gdgvitvellore@gmail.com and we will send you a suitable problem statement for your domain. <br>
 
            <b> Are there any restrictions on who can participate?</b><br>
-              Yes, this time we will be recruiting only Second (2) Years only.<br> 
+              Yes, this time we will be recruiting only Second (2) Years only.<br>
 
            <b> I am not a second year, how can I particiapte?</b><br>
-            We will not be able to recruit you if you are not a second year, but we will most certainly consider you for the next recruitment if you have the required skill.<br> 
+            We will not be able to recruit you if you are not a second year, but we will most certainly consider you for the next recruitment if you have the required skill.<br>
           </p>
         </div>
         <div class="modal-footer">
