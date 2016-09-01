@@ -49,4 +49,29 @@
             </div>
         </div>
     </div>
+    <div id="change-modal" class="modal">
+      <div class="modal-content">
+        <h4 style="text-align: center">Change Domain</h4>
+        <div class="input-field">
+          <input type="checkbox" class="filled-in" name="change-technical" id="change-technical">
+          <label for="change-technical">Technical
+        </div>
+        <div class="input-field">
+          <input type="checkbox" class="filled-in" name="change-management" id="change-management">
+          <label for="change-management">Management
+        </div>
+        <div class="input-field">
+          <input type="checkbox" class="filled-in" name="change-technical" id="change-design">
+          <label for="change-design">Design
+        </div>
+        <form action="http://localhost:8000/user/add/domain" method="POST">
+        {{ csrf_field() }}
+
+          <input type="text"  id="#domain" name="domains" style="display: none">
+        
+        </form>
+        <br>
+        <button class="custom-submit">Submit</button>
+      </div>
+    </div>
 @endsection

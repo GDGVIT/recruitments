@@ -15,7 +15,7 @@
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link rel="stylesheet" href="{{url('css/modal.css')}}">
     <script src="{{url('js/jquery.js')}}"></script>
     <script src="{{url('js/materialize.min.js')}}"></script>
     <script src="{{url('js/sweetalert2.min.js')}}"></script>
@@ -33,6 +33,24 @@
         button[disabled], html input[disabled] {
             cursor:no-drop;
         }
+        [type="checkbox"].filled-in:checked+label:before {
+    top: 0;
+    left: 1px;
+    width: 8px;
+    height: 13px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #528ff5 !important;
+    border-bottom: 2px solid #528ff5 !important;
+    -webkit-transform: rotateZ(37deg);
+    transform: rotateZ(37deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+input[type="checkbox"].filled-in:checked + label:after {
+    border: 2px solid #528ff5!important;
+    background-color: transparent!important;
+}
     </style>
 </head>
 <body>

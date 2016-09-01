@@ -54,11 +54,33 @@
             </div><br>
             <input type="text" name="upload-type" style="display: none">
             <button class="custom-submit" id="custom-submit" type="submit">Submit</button>
+            <button class="custom-submit" id="custom-submit" type="submit">Submit</button>
         </form>
       </div>
     </div>
 
-   
+   <div id="change-modal" class="modal">
+      <div class="modal-content">
+        <h4 style="text-align: center">Change Domain</h4>
+        <div class="input-field">
+          <input type="checkbox" class="filled-in " name="change-technical" id="change-technical">
+          <label for="change-technical">Technical
+        </div>
+        <div class="input-field">
+          <input type="checkbox" class="filled-in " name="change-management" id="change-management">
+          <label for="change-management">Management
+        </div>
+        <div class="input-field">
+          <input type="checkbox" class="filled-in " name="change-technical" id="change-design">
+          <label for="change-design">Design
+        </div>
+        <form action="http://localhost:8000/user/add/domain" method="POST">
+          <input type="text" name="domains" style="display: none">
+        </form>
+        <br>
+        <button class="custom-submit">Submit</button>
+      </div>
+    </div>
   </body>
 
      <script src="{{url('js/individualproblem.js')}}"></script>

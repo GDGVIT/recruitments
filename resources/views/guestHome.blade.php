@@ -100,7 +100,38 @@
      <div id="instructions-modal" class="modal">
         <div class="modal-content">
           <h4>Instructions</h4>
-          <p>Here go the instructions for the recruitment process</p>
+          <p>
+          <b>Instructions for all the participants</b>
+           <ul><li> Make sure your work is genuine and not copied from other sources</li>
+            <li>We will be scrutinising your github profiles, so make sure you have all your interesting projects on there. </li></ul>
+
+
+            <br>
+            On top of all this we are looking for people who are having a zeal towards learning new things. 
+
+            <h3>FAQ’s</h3>
+
+           <b> Can I attempt any other domain after choosing one domain?</b><br>
+              Yes, you can attempt questions from any of the domains<br>
+
+           <b> Can I attempt more than problem statement</b><br>
+              There is no restriction on the number of problems you can attempt.<br>
+
+           <b> What is the deadline for submission of the projects/ reports/ designs/ articles?</b><br>
+              The last date for submission of the<br>
+
+           <b> When and how will I be notified of results?</b><br>
+              We will be sending all the participants that get through to the next round through an     SMS whereas all the participants that did not make it will be receiving an email.<br>
+
+           <b> What if I don’t find any questions from my domain?</b><br>
+            Drop us an email on gdgvitvellore@gmail.com and we will send you a suitable problem statement for your domain. <br>
+
+           <b> Are there any restrictions on who can participate?</b><br>
+              Yes, this time we will be recruiting only Second (2) Years only.<br> 
+
+           <b> I am not a second year, how can I particiapte?</b><br>
+            We will not be able to recruit you if you are not a second year, but we will most certainly consider you for the next recruitment if you have the required skill.<br> 
+          </p>
         </div>
         <div class="modal-footer">
           <a class=" modal-action modal-close btn-flat">Close</a>

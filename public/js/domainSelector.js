@@ -1,4 +1,33 @@
 $(document).ready(function(){
+
+  $.ajax({
+      type: 'GET',
+      url: 'http://localhost:8000/api/user/domains',
+      success: function(response){
+
+        var selected = [];
+        if(response.length > 0){
+          selected = response;
+
+         for( i = 0 ; i<response.length ; i++){
+          if(selected[i] == 1){
+            $("#change-technical").prop("checked" , true);
+          }
+          else if (selected[i] == 2){
+            $("#change-management").prop("checked" , true);
+          }
+          else if (selected[i] == 3){
+            $("#change-design").prop("checked" , true);
+          }
+
+
+          }
+
+         }
+        }
+      });
+ 
+
   $('#change-modal .custom-submit').click(function(){
     var domains = "";
     var selected = [];
@@ -11,7 +40,10 @@ $(document).ready(function(){
     if($('#change-modal #change-design').prop('checked')){
       domains += '3,';
     }
-    $('#change-modal form input').val(domains.substring(0, domains.length-1));
+    
+    selected = domains.substring(0, domains.length-1);
+    console.log(domains);
+    $('input[name=domains]').attr("value" , selected);
     $('#change-modal form').submit();
   });
 });

@@ -72,6 +72,7 @@ Route::post('/notify','UserController@notifyUser');
 */
 Route::get('/api/problems/{domainId}','ProblemController@showAllProblemsAPI');
 Route::get('/api/user/problems/count','ProblemController@returnSubmittedProblemsCount');
+Route::get('/api/user/domains','UserController@returnDomains');
 // /problem/show/id - Individual Problem
 
 

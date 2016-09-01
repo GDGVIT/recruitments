@@ -321,13 +321,16 @@ class UserController extends Controller
      * */
     public function addDomains(Request $request)
     {
+
         $myString = $request->domains;
         $myArray = explode(',', $myString);
+
+        DB::table('user_domains')->where('user_id',Auth::user()->id)->delete();
         foreach ($myArray as $item) {
             $domain = ((int)$item);
             DB::table('user_domains')->insert(['user_id'=>Auth::user()->id,'domain_id'=>$domain]);
         }
-        return 'All domains added successfully';
+        return back();
     }
     public function addDomainsView()
     {
@@ -337,6 +340,25 @@ class UserController extends Controller
     /*
      * Notify Users Function
      * */
+
+
+
+    /*
+        API to return domain of auth user
+    */
+
+        public function returnDomains()
+        {
+            $userData = DB::table('users')
+                    ->join('user_domains','users.id','=','user_domains.user_id')
+                    ->get();
+            $userDomains = array();
+            foreach ($userData as $user) {
+                array_push($userDomains, $user->domain_id);
+            }
+            return $userDomains;
+
+        }
 
     /*
      * Show User Profile by ID
