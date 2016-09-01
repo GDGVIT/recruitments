@@ -51,7 +51,7 @@
                 <div id="management" class="col s12 questions" data-for="2">
                   <ul class="collapsible popout" data-collapsible="accordion">
                     <li>
-                      <div class="collapsible-header" style="text-align:center;"><b>Click here for general instructions</b></div>
+                      <div class="collapsible-header" style="text-align:center;"><b>Click here for instructions for sponsorships</b></div>
                       <div class="collapsible-body">
 
                         <div class="user-solution" style="padding:1em;">
@@ -103,14 +103,8 @@
                             
                             @endif
                             <hr>
-                            @if($problem->level==1)
-                                <span class="question-difficulty">Easy</span>
-                            @elseif($problem->level==2)
-                                <span class="question-difficulty">Medium</span>
-                            @else
-                                <span class="question-difficulty">Hard</span>
-                            @endif
-                            <span class="question-difficulty">| {{$problem->category}}</span>
+                            
+                            <span class="question-difficulty"> {{$problem->category}}</span>
 
                             @if(in_array($problem->id,$answeredArray))
                                 <span class="right question-answered">Answered</span>
