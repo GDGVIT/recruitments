@@ -87,7 +87,8 @@
              	<a href="http://gdgvitvellore.com" class="custom-button">View More</a>
           </div>
           <br><br>
-          <iframe style="margin-top:100px;" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgdgvitvellore&tabs&width=240&height=154&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=1668653593388184" width="340" height="154" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" id="facebook-frame"></iframe>
+          <!--iframe style="margin-top:100px;" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgdgvitvellore&tabs&width=240&height=154&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=1668653593388184" width="340" height="154" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" id="facebook-frame"></iframe-->
+          <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fgdgvitvellore&width=300&layout=standard&action=like&size=large&show_faces=true&share=false&height=80&appId" width="300" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
           </div>
         </div>
       </div>
