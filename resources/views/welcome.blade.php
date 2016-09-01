@@ -74,7 +74,7 @@
 </style>
 <div class="container-fluid">
   <div class="row">
-    <div class="col m6 l6 s10 push-l3 push-m3 push-s1 custom-pull-up">
+    <div class="col m6 l6 s12 push-l3 push-m3  custom-pull-up">
       <div class="center">
         <div class="home-head">
           Want to be a part of awesomeness? Join GDG-VIT<br><span class="home-head-sub">Participate and compete with people across your campus</span>
@@ -84,7 +84,7 @@
               <div class="col s12 m12 l12">
               <div class="buttons">
                  <a class="custom-button" href="{{url('/register')}}" id="login-form-submit" type="submit">Get Started Here</a>
-              <a class="custom-button" href="{{url('/login')}}" id="login-form-submit" type="submit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLogin&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+                 <a class="custom-button" href="{{url('/login')}}" id="login-form-submit" type="submit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLogin&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
               </div>
 
           </div>
