@@ -51,7 +51,7 @@
                 <div id="management" class="col s12 questions" data-for="2">
                   <ul class="collapsible popout" data-collapsible="accordion">
                     <li>
-                      <div class="collapsible-header" style="text-align:center;"><b>Click here for general instructions</b></div>
+                      <div class="collapsible-header" style="text-align:center;"><b>Click here for instructions for sponsorships</b></div>
                       <div class="collapsible-body">
 
                         <div class="user-solution" style="padding:1em;">
