@@ -79,7 +79,7 @@
             <br>
             <h3 style="text-align:center">Leader Board</h3>
             <div class="question-card">
-              <table class="bordered striped responsive-table">
+              <table class="bordered striped">
         <thead>
           <tr>
               <th data-field="id">Name</th>
