@@ -173,7 +173,7 @@
           <input type="checkbox" class="filled-in" name="change-technical" id="change-design">
           <label for="change-design">Design
         </div>
-        <form action="http://localhost:8000/user/add/domain" method="POST">
+        <form action="/user/add/domain" method="POST">
           <input type="text" name="domains" style="display: none">
         </form>
         <br>
