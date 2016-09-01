@@ -208,19 +208,14 @@ input[type="checkbox"].filled-in:checked + label:after{
     margin-left: 20px;
   }
 }
-iframe{
-  position: relative;
-  top: 50px;
-  left: 155px;
-  width: 100%;
-}
 @media only screen and (min-device-width: 300px) and (max-device-width: 600px){
-
-  iframe{
-    position: relative;
-    top: 50px;
-    left: -10px;
-    width: 100%;
+  .login-form{
+    padding: 0px;
+  }
+  .frame-holder{
+    width: 10%!important;
+    position: relative!important;
+    margin-top: 5000px!important;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px){
@@ -249,8 +244,8 @@ iframe{
 
   iframe{
     position: relative;
-    top: 30px;
-    left: 300px;
-    width: 100%;
+    top: 0px;
+    left: 500px;
+    width: 150%;
   }
 }
