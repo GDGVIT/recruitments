@@ -83,7 +83,7 @@
           Want to be a part of awesomeness? Join GDG-VIT<br><span class="home-head-sub">Participate and compete with people across your campus</span>
         </div>
         <div class="row">
-          <div class="login-form">
+          <div class="login-form" id="guest">
               <div class="col s12 m12 l12">
               <div class="col s12 m12 l12">
              	<p style="color:white">Google Developers Groups was established in VIT on 28th July 2014. The group now has 60 Developers. Our agenda is to introduce new technologies to the students, develop new ideas and polish skills in every possible field including management our faculty coordinator is Prof .P Senthilnathan and has guided us along this journey.</p>

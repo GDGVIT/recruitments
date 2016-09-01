@@ -208,7 +208,7 @@ input[type="checkbox"].filled-in:checked + label:after{
     margin-left: 20px;
   }
 }
-@media only screen and (min-device-width: 300px) and (max-device-width: 600px){
+@media only screen and (min-device-width: 300px) and (max-device-width: 374px){
   .login-form{
     padding: 0px;
   }
@@ -216,28 +216,44 @@ input[type="checkbox"].filled-in:checked + label:after{
     width: 10%!important;
     position: relative!important;
     margin-top: -60px!important;
-    margin-left: 45px;
+    margin-left: 25%;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 424px){
+  .frame-holder{
+    width: 10%!important;
+    position: relative!important;
+    margin-top: -60px!important;
+    margin-left: 30%;
+  }
+}
+@media only screen and (min-device-width: 425px) and (max-device-width: 600px){
+  .frame-holder{
+    width: 10%!important;
+    position: relative!important;
+    margin-top: -60px!important;
+    margin-left: 33%;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px){
   .login-form{
-    margin-top: -20%;
+    margin-top: 0%;
   }
   iframe{
     position: relative;
-    top: 30px;
-    left: 10px;
+    top: -60px;
+    left: 115px;
     width: 100%;
   }
 }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1349px){
   .login-form{
-    margin-top: -20%;
+    margin-top: -0%;
   }
   iframe{
     position: relative;
-    top: 30px;
-    left: 70px;
+    top: -60px;
+    left: 175px;
     width: 100%;
   }
 }
@@ -245,8 +261,8 @@ input[type="checkbox"].filled-in:checked + label:after{
 
   iframe{
     position: relative;
-    top: 0px;
-    left: 500px;
-    width: 150%;
+    top: -60px;
+    left: 400px;
+    width: 100%;
   }
 }
