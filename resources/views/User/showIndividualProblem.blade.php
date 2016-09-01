@@ -9,7 +9,7 @@
       <div class="individual-question-card">
         <div class="individual-card-header">
           <a href="{{url('/problems')}}" style="color: black;font-size: 2rem;-webkit-text-stroke: 5px white;position: relative; top: 5px"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-          &nbsp;&nbsp;Back to question list
+          &nbsp;&nbsp;<span class="back">Back to question list</span>
             @if($isAnswered)
                 <span class="right question-difficulty">&nbsp; Answered</span>
             @else
@@ -43,15 +43,16 @@
           </div>
           <div class="col s6 m6 l6">
             <div class="input-field file" style="text-align: center">
+            <input type="hidden" name="questionId" value="{{$problemStatement->id}}">
               <input type="radio" name="submitting-link" id="submitting-file" class="with-gap">
-              <input type="hidden" name="questionId" value="{{$problemStatement->id}}">
-              <label for="submitting-file">Upload the solution file
+              <label for="submitting-file" id="upload-label">Upload the solution file
               </div>
               <div style="text-align: center;margin-top: 5%">
-                <a href="#" class="file-upload">Upload</a>
-                <input type="file" name="submission" style="display: none;">
+                <a href="#" class="file-upload" onclick="doOpen(event)">Upload</a>
+                <input type="file" name="submission" id="upload_file_button" style="display: none;">
               </div>
-            </div>
+            </div><br>
+            <input type="text" name="upload-type" style="display: none">
             <button class="custom-submit" type="submit">Submit</button>
         </form>
       </div>
@@ -79,7 +80,7 @@
       </div>
     </div> -->
   </body>
- 
+
    <!--  <div class="container">
         <div class="row">
             <div class="col m10 offset-m1">

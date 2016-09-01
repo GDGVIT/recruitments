@@ -90,17 +90,30 @@ body{
     min-height: 5vh;
   }
   .problems-nav img{
-    width: 30%!important;
+    width: 50%!important;
   }
   .problems-nav a{
     font-size: 1.6rem;
     margin-top: 30px;
   }
   .problems-tabs{
-    font-size: 1.3rem;
+    font-size: 1.0rem;
+  }
+  .problems-tabs.row{
+    padding: 5px;
+  }
+  .tabs{
+    font-size: 0.8rem;
+  }
+  .question-card{
+    width: 100%;
+  }
+  .question-difficulty{
+    font-size: 0.8rem;
   }
   .question-answered{
-    font-size: 1.5rem;
+    margin-top: 5px;
+    font-size: 0.8rem;
   }
   .dropdown-content li a{
     font-size: 1.3rem;

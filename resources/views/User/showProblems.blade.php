@@ -15,7 +15,7 @@
       </ul>
     <div class="container-fluid">
         <div class="row">
-            <div class="col m12 l12">
+            <div class="col m12 l12 s12">
                 <div id="technical" class="col s12 questions" data-for="1">
                @foreach($problemArray[0] as $problem)
 
@@ -32,7 +32,7 @@
                     <span class="question-difficulty">Difficulty: Hard</span>
                 @endif
                 <span class="question-difficulty">| {{$problem->category}}</span>
-                
+
                 @if(in_array($problem->id,$answeredArray))
                     <span class="right question-answered">Answered</span>
                 @else
@@ -60,7 +60,7 @@
                                 <span class="question-difficulty">Difficulty: Hard</span>
                             @endif
                             <span class="question-difficulty">| {{$problem->category}}</span>
-                            
+
                             @if(in_array($problem->id,$answeredArray))
                                 <span class="right question-answered">Answered</span>
                             @else
@@ -87,7 +87,7 @@
                                 <span class="question-difficulty">Difficulty: Hard</span>
                             @endif
                             <span class="question-difficulty">| {{$problem->category}}</span>
-                            
+
                             @if(in_array($problem->id,$answeredArray))
                                 <span class="right question-answered">Answered</span>
                             @else

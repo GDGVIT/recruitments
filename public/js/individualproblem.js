@@ -13,7 +13,22 @@ $(document).ready(function(){
     belowOrigin: true, // Displays dropdown below the button
     alignment: 'left' // Displays dropdown with edge aligned to the left of button
   });
-  $('.file-upload').click(function(){
-    $('input[type=file]').click();
+  $('#link').css('visibility','hidden');
+  $('.file-upload').css('visibility','hidden');
+  $('#submitting-link').click(function(){
+    $('#link').css('visibility','visible');
+    $('.file-upload').css('visibility','hidden');
+    $('input[name=upload-type]').val('link');
+  });
+  $('#submitting-file').click(function(){
+    $('#link').css('visibility','hidden');
+    $('.file-upload').css('visibility','visible');
+    $('input[name=upload-type]').val('file');
   });
 });
+function doOpen(event){
+  event = event || window.event;
+  if(event.target.id != 'upload_file_button'){
+      upload_file_button.click();
+  }
+}
