@@ -150,7 +150,9 @@ body{
 .input-field input:-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:    rgb(150,150,150);
 }
-
+.input-field input{
+  text-indent: 10px;
+}
 .input-field input:focus, .materialize-textarea:focus{
   border-bottom: 1px solid white!important;
   box-shadow: 0 1px 0 0 white!important;

@@ -6,7 +6,7 @@
         <div class="row">
 
             <div class="col m6 s12">
-                <div class="question-card">
+                <div class="question-card" style="overflow-x:scroll">
                     <div class="question-header">Registrations ({{$technicalRegistrations+$designRegistrations+$managementRegistrations}})</div>
 
                     <div class="question-description">
@@ -18,7 +18,7 @@
             </div>
 
             <div class="col m6 s12">
-                <div class="question-card">
+                <div class="question-card" style="overflow-x:scroll">
                     <div class="question-header">Submissions ({{$checkedSubmissions+$uncheckedSubmissions}})</div>
 
                     <div class="question-description">

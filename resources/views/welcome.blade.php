@@ -12,22 +12,22 @@
           <ul class="left hide-on-med-and-down">
           @if(\Illuminate\Support\Facades\Auth::user())
             <li class="navbar-tabs nav-logo"><a href="{{url('/home')}}"><img src="images/gdglogo.png"></a></li>
-            
+
           </ul>
           <ul class="right hide-on-med-and-down">
             <!-- Dropdown Trigger -->
              <li><a class='dropdown-button problems-nav-options' href='#' data-activates='dropdown1'><b>{{\Illuminate\Support\Facades\Auth::user()->name}}</b><span class="caret"></span></a></li>
             <li class="navbar-tabs"><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
-           
+
           </ul>
           @else
           <li class="navbar-tabs nav-logo"><a href="{{url('/')}}"><img src="images/gdglogo.png"></a></li>
-            
-          
+
+
           <ul class="right hide-on-med-and-down">
             <!-- Dropdown Trigger -->
-           
-            
+
+
             <li class="navbar-tabs"><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
             <li class="navbar-tabs"><a href="{{url('/register')}}">Register</a></li>
           </ul>
@@ -77,16 +77,16 @@
     <div class="col m6 l6 s10 push-l3 push-m3 push-s1 custom-pull-up">
       <div class="center">
         <div class="home-head">
-          Love Coding? Join GDG-VIT<br><span class="home-head-sub">Participate and compete with people across your campus</span>
+          Want to be a part of awesomeness? Join GDG-VIT<br><span class="home-head-sub">Participate and compete with people across your campus</span>
         </div>
         <div class="row">
           <div class="login-form">
               <div class="col s12 m12 l12">
               <div class="buttons">
                  <a class="custom-button" href="{{url('/register')}}" id="login-form-submit" type="submit">Get Started Here</a>
-              <a class="custom-button" href="{{url('/login')}}" id="login-form-submit" type="submit">Login</a>
+              <a class="custom-button" href="{{url('/login')}}" id="login-form-submit" type="submit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLogin&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
               </div>
-             
+
           </div>
         </div>
       </div>
