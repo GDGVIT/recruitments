@@ -215,7 +215,8 @@ input[type="checkbox"].filled-in:checked + label:after{
   .frame-holder{
     width: 10%!important;
     position: relative!important;
-    margin-top: 5000px!important;
+    margin-top: -60px!important;
+    margin-left: 45px;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px){
