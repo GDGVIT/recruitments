@@ -103,14 +103,8 @@
                             
                             @endif
                             <hr>
-                            @if($problem->level==1)
-                                <span class="question-difficulty">Easy</span>
-                            @elseif($problem->level==2)
-                                <span class="question-difficulty">Medium</span>
-                            @else
-                                <span class="question-difficulty">Hard</span>
-                            @endif
-                            <span class="question-difficulty">| {{$problem->category}}</span>
+                            
+                            <span class="question-difficulty"> {{$problem->category}}</span>
 
                             @if(in_array($problem->id,$answeredArray))
                                 <span class="right question-answered">Answered</span>
