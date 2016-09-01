@@ -31,11 +31,15 @@
                 @endif
                 <li><a href="/user/profile">Profile</a></li>
 
+<<<<<<< HEAD
                 <li><a href="#" id="change-modal-trigger-mobile" style="color: black;font-size: 0.9rem;">Choose Domain</a></li>
+=======
+                <li><a class="modal-trigger " href="#change-modal-trigger" >Choose Domain</a></li>
+>>>>>>> 4239f98c91f08196ef173c90a4df987879c2c391
 
                 <li><a href="/problems">Problems</a></li>
 
-                <li><a class="modal-trigger" href="#instructions-modal">Instructions</a></li>
+                <li><a class="modal-trigger " href="#instructions-modal">Instructions</a></li>
                 <li><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
@@ -53,7 +57,7 @@
     <ul id='dropdown1' class='dropdown-content'>
         <li><a href="/user/profile">Profile</a></li>
 
-         <li><a href="#"  id="change-modal-trigger" style="color: white">Choose Domain</a></li>
+         <li><a  href="#"  id="change-modal" style="color: white">Choose Domain</a></li>
 
 
         <li><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>

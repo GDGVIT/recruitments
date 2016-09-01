@@ -53,8 +53,8 @@
               </div>
             </div><br>
             <input type="text" name="upload-type" style="display: none">
-            <button class="custom-submit" id="custom-submit" type="submit">Submit</button>
-            <button class="custom-submit" id="custom-submit" type="submit">Submit</button>
+            <button class="custom-submit" id="custom-submit" type="submit">Submit</button><!-- 
+            <a href="/problem/{{$problemStatement->id}}/share" target="_blank" class="custom-submit" id="custom-submit" type="submit">Share Problem</a> -->
         </form>
       </div>
     </div>

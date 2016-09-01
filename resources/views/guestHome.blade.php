@@ -86,7 +86,8 @@
              	<p style="color:white">Google Developers Groups was established in VIT on 28th July 2014. The group now has 60 Developers. Our agenda is to introduce new technologies to the students, develop new ideas and polish skills in every possible field including management our faculty coordinator is Prof .P Senthilnathan and has guided us along this journey.</p>
              	<a href="http://gdgvitvellore.com" class="custom-button">View More</a>
           </div>
-
+          <br><br>
+          <iframe style="margin-top:20px;" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgdgvitvellore&tabs&width=240&height=154&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=1668653593388184" width="340" height="154" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
           </div>
         </div>
       </div>
