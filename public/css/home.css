@@ -214,6 +214,15 @@ iframe{
   left: 155px;
   width: 100%;
 }
+@media only screen and (min-device-width: 300px) and (max-device-width: 600px){
+
+  iframe{
+    position: relative;
+    top: 50px;
+    left: -10px;
+    width: 100%;
+  }
+}
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px){
   .login-form{
     margin-top: -20%;
