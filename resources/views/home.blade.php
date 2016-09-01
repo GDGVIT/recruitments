@@ -5,7 +5,7 @@
 
 @extends('layouts.afterloginnav')
 @section('content')
-  
+
     <div class="problems-tabs row">
     <h3 style="text-align:center">Recent Questions</h3>
       <ul class="tabs">
@@ -15,8 +15,8 @@
       </ul>
     <div class="container-fluid">
         <div class="row">
-            <div class="col m12 l12">
-            
+            <div class="col m12 l12 s12">
+
                 <div id="technical" class="col s12 questions" data-for="1">
                 <div class="question-card">
           <p class="question-card-header">{{$recentTechnicalQuestion->problem_statement}}</p>
@@ -34,7 +34,7 @@
                     @endif
                     <span class="question-difficulty">{{$recentTechnicalQuestion->category}}</span>
         </div>
-               
+
                 </div>
                 <div id="management" class="col s12 questions" data-for="2">
                 <div class="question-card">
@@ -53,7 +53,7 @@
                     @endif
                     <span class="question-difficulty">{{$recentManagementQuestion->category}}</span>
         </div>
-                
+
                 </div>
                 <div id="design" class="col s12 questions" data-for="3">
                  <div class="question-card">
@@ -72,13 +72,13 @@
                     @endif
                     <span class="question-difficulty">{{$recentDesignQuestion->category}}</span>
         </div>
-                
+
                 </div>
-               
+
             </div>
             <br>
             <h3 style="text-align:center">Leader Board</h3>
-            <div class="question-card"> 
+            <div class="question-card">
               <table class="bordered striped responsive-table">
         <thead>
           <tr>
@@ -99,7 +99,7 @@
         </tbody>
       </table>
             </div>
-             
+
         </div>
     </div>
      <div id="instructions-modal" class="modal">

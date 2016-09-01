@@ -12,22 +12,22 @@
           <ul class="left hide-on-med-and-down">
           @if(\Illuminate\Support\Facades\Auth::user())
             <li class="navbar-tabs nav-logo"><a href="{{url('/home')}}"><img src="images/gdglogo.png"></a></li>
-            
+
           </ul>
           <ul class="right hide-on-med-and-down">
             <!-- Dropdown Trigger -->
              <li><a class='dropdown-button problems-nav-options' href='#' data-activates='dropdown1'><b>{{\Illuminate\Support\Facades\Auth::user()->name}}</b><span class="caret"></span></a></li>
             <li class="navbar-tabs"><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
-           
+
           </ul>
           @else
           <li class="navbar-tabs nav-logo"><a href="{{url('/')}}"><img src="images/gdglogo.png"></a></li>
-            
-          
+
+
           <ul class="right hide-on-med-and-down">
             <!-- Dropdown Trigger -->
-           
-            
+
+
             <li class="navbar-tabs"><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
             <li class="navbar-tabs"><a href="{{url('/register')}}">Register</a></li>
           </ul>
@@ -77,7 +77,7 @@
     <div class="col m6 l6 s10 push-l3 push-m3 push-s1 custom-pull-up">
       <div class="center">
         <div class="home-head">
-          Love Coding? Join GDG-VIT<br><span class="home-head-sub">Participate and compete with people across your campus</span>
+          Want to be a part of awesomeness? Join GDG-VIT<br><span class="home-head-sub">Participate and compete with people across your campus</span>
         </div>
         <div class="row">
           <div class="login-form">
@@ -86,7 +86,7 @@
              	<p style="color:white">Google Developers Groups was established in VIT on 28th July 2014. The group now has 60 Developers. Our agenda is to introduce new technologies to the students, develop new ideas and polish skills in every possible field including management our faculty coordinator is Prof .P Senthilnathan and has guided us along this journey.</p>
              	<a href="http://gdgvitvellore.com" class="custom-button">View More</a>
           </div>
-             
+
           </div>
         </div>
       </div>

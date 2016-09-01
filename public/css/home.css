@@ -1,7 +1,7 @@
 #home-body
 {
   font-family: 'Montserrat', sans-serif;
- 
+
    height:100vh;
    background-color:black;
 }
@@ -65,7 +65,7 @@
 {
   position: absolute;
   top:0;
-  opacity: 0.5;
+  opacity: 0.4;
   width: 100vw;
   background-image: url(../images/home-back.jpg);
   background-repeat: no-repeat;
@@ -77,7 +77,7 @@
 {
   color:white;
   font-size: 250%;
-  line-height: 27px;
+  line-height: 38px;
   font-family: Lato;
   font-weight: 400;
 }
@@ -190,6 +190,7 @@ input[type="checkbox"].filled-in:checked + label:after{
   .home-head
   {
     font-size: 150%;
+    line-height: 25px;
   }
   .home-head-sub
   {

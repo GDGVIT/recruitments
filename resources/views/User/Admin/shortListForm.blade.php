@@ -14,7 +14,7 @@
 
 
                             <div class="  form-group{{ $errors->has('people') ? ' has-error' : '' }}">
-                                <label for="people" class="col m5 control-label"><h5>Number of People you want to shortlist</h5></label>
+                                <label for="people" class="col m5 control-label"><h5 style="font-size:150%;">Number of People you want to shortlist</h5></label>
 
 
                                 <div class="col m6">
@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                             <div class="  form-group{{ $errors->has('people') ? ' has-error' : '' }}">
-                                <label for="people" class="col m5 control-label"><h5>Domain</h5></label>
+                                <label for="people" class="col m5 control-label"><h5 style="font-size:150%;">Domain</h5></label>
 
 
                                 <div class="col m6">

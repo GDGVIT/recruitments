@@ -8,7 +8,8 @@
 
             <div class="col m10 s12 offset-m1">
                 <div class="card">
-                    <div class="card-title-main" style="    padding-left: 20px;padding-top:10px;padding-bottom:10px;">
+                  Hello
+                    <div class="card-title-main" style="padding-left: 20px;padding-top:10px;padding-bottom:10px;">
                         <span class="card-title"><h4>{{$user->name}}</h4></span>
                     </div>
                     <hr>

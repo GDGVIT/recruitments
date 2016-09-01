@@ -25,11 +25,11 @@
                 <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}" >Attempt Problem</a></span>
                 <hr>
                 @if($problem->level==1)
-                    <span class="question-difficulty">Difficulty: Easy</span>
+                    <span class="question-difficulty">Easy</span>
                 @elseif($problem->level==2)
-                    <span class="question-difficulty">Difficulty: Medium</span>
+                    <span class="question-difficulty">Medium</span>
                 @else
-                    <span class="question-difficulty">Difficulty: Hard</span>
+                    <span class="question-difficulty">Hard</span>
                 @endif
                 <span class="question-difficulty">| {{$problem->category}}</span>
 
@@ -45,6 +45,49 @@
                    @endforeach
                 </div>
                 <div id="management" class="col s12 questions" data-for="2">
+                  <ul class="collapsible popout" data-collapsible="accordion">
+                    <li>
+                      <div class="collapsible-header" style="text-align:center;"><b>Click here for general instructions</b></div>
+                      <div class="collapsible-body">
+
+                        <div class="user-solution" style="padding:1em;">
+                          <h7>
+                            <i class="fa fa-check" aria-hidden="true" style="color: green"></i>
+                                  Write a report on any one of the companies below could be a potential sponsor for Google Developers Group VIT.
+                                  <br><br>It should include the following:
+                                  <br>
+                                  <ul class="instruction-mgmt">
+                                    <li>Brief introduction of the company
+                                    <li>Possible ways of communication with the company for sponsorship
+                                    <li>If the company has an existing sponsorship portal or a University panel
+                                    <li>Detailed analysis on how the company can benefit by sponsoring GDG
+                                  </ul>
+                                    <br>
+                                    <b>  Important aspects that need to kept in mind while writing the report:</b>
+                                      <br>
+                                    <ul class="instruction-mgmt">
+                                      <li>GDG is a Non-Profit Organization (NPO)
+                                      <li>The sponsorship can be in any form i.e., Monetary/In-Kind
+                                    </ul>
+                                    <br>
+                                    Your writing and analytical skills will be tested in this task.
+                                    <br>Good Luck</h7><br><br>
+                          <div style="display:flex">
+
+
+                            <div style="margin-left:10px;">
+
+                          </div>
+                          </div>
+
+
+                        </div>
+
+
+                      </div>
+                    </li>
+                  </ul>
+
                     @foreach($problemArray[1] as $problem)
 
                         <div class="question-card">
@@ -53,11 +96,11 @@
                             <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}" >Attempt Problem</a></span>
                             <hr>
                             @if($problem->level==1)
-                                <span class="question-difficulty">Difficulty: Easy</span>
+                                <span class="question-difficulty">Easy</span>
                             @elseif($problem->level==2)
-                                <span class="question-difficulty">Difficulty: Medium</span>
+                                <span class="question-difficulty">Medium</span>
                             @else
-                                <span class="question-difficulty">Difficulty: Hard</span>
+                                <span class="question-difficulty">Hard</span>
                             @endif
                             <span class="question-difficulty">| {{$problem->category}}</span>
 
@@ -80,11 +123,11 @@
                             <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}">Attempt Problem</a></span>
                             <hr>
                             @if($problem->level==1)
-                                <span class="question-difficulty">Difficulty: Easy</span>
+                                <span class="question-difficulty">Easy</span>
                             @elseif($problem->level==2)
-                                <span class="question-difficulty">Difficulty: Medium</span>
+                                <span class="question-difficulty">Medium</span>
                             @else
-                                <span class="question-difficulty">Difficulty: Hard</span>
+                                <span class="question-difficulty">Hard</span>
                             @endif
                             <span class="question-difficulty">| {{$problem->category}}</span>
 

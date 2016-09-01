@@ -2,21 +2,21 @@
 @extends('layouts.afterloginnav')
 <link rel="stylesheet" href="{{url('css/problems.css')}}">
 @section('content')
-  
+
     <div class="container">
         <div class="row">
 
-            <div class="col m10 offset-m1">
+            <div class="col m10 s12 offset-m1">
                 <div class="card">
                     <div class="card-title-main" style="padding-left: 20px;padding-top:10px;padding-bottom:10px;">
                         <span class="card-title"><h4 style="text-align:center">{{$user->name}}</h4></span>
                     </div>
                     <hr>
                     <div class="card-content">
-                        
+
                         <h6><b>Regno :</b><b>{{$user->regno}}</b></h6>
                         <h6><b>Domain :</b></h6>
-                        
+
                             @foreach($domains as $domain)
                             <ul>
                                 @if($domain->domain_id=='1')

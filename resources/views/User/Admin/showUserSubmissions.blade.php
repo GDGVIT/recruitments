@@ -58,18 +58,19 @@
                           {{$submission->problem_statement}}.</h5><br><br>
                   <div style="display:flex">
                        <div><a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a></div>
-                    
+
                     <div style="margin-left:10px;">
-                        <form action = "/admin/award/marks" method="GET">
+                      <form action = "/admin/award/marks" method="GET">
                         {{csrf_field()}}
                         <input type="hidden" name="userId" value="{{$submission->user_id}}">
                         <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
-                        
+
                         <a  class="custom-button" href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
-                    </form></div>
+                    </form>
                   </div>
-                 
-                    
+                  </div>
+
+
                 </div>
                   @endforeach
 
@@ -83,17 +84,17 @@
                           <span><h4>Problem Statement</h4>&nbsp;</span>{{$submission->problem_statement}}.<br><br>
                           <div style="display:flex">
                                <div ><a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a></div>
-                          
+
                           <div style="margin-left:10px;" ><form action = "/admin/award/marks" method="GET" >
                               {{csrf_field()}}
                               <input type="hidden" name="userId" value="{{$submission->user_id}}">
                               <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
-                              
+
                               <a  class="custom-button" href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
                           </form>
                           </div>
                           </div>
-                         
+
                       </div>
                   @endforeach
               </div>
@@ -111,11 +112,11 @@
                               <input type="hidden" name="userId" value="{{$submission->user_id}}">
                               <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
                               <a  class="custom-button"  href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
-                              
+
                           </form></div>
                           </div>
-                          
-                          
+
+
                       </div>
                   @endforeach
               </div>
