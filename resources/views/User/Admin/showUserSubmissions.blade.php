@@ -35,6 +35,15 @@
     color:rgba(70,70,70);
     font-size: 70%;
   }
+  .circle-button{
+       width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgb(69,133,234);
+    text-align: center;
+    color: #fff;
+    line-height: 46px;
+  }
   </style>
   <br>
   <br>
@@ -55,7 +64,8 @@
                       @if($submission->checked==1.00)
                           <i class="fa fa-check" aria-hidden="true" style="color: green"></i>
                       @endif
-                          {{$submission->problem_statement}}.</h5><br><br>
+                          {{$submission->problem_statement}}.</h5><br>
+                                                  <br>
                   <div style="display:flex">
                        <div><a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a></div>
 
@@ -64,10 +74,22 @@
                         {{csrf_field()}}
                         <input type="hidden" name="userId" value="{{$submission->user_id}}">
                         <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
+                               @if($submission->checked!=1.00)
+                            <a  class="custom-button" href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
 
-                        <a  class="custom-button" href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
-                    </form>
-                  </div>
+                        @endif 
+                        
+                        </form></div>
+                        <div style="    margin-left: 10px;
+    margin-top: -23px;">
+                          @if($submission->checked==1.00)
+                            
+                              <span><h5 class="circle-button"><b>{{$submission->marks}}</b></h5></span>
+
+                        @endif 
+                        </div>
+                          
+                    
                   </div>
 
 
@@ -81,7 +103,14 @@
               <div class="collapsible-body">
                   @foreach($managementSubmissions as $submission)
                       <div class="user-solution" style="padding:1em;">
-                          <span><h4>Problem Statement</h4>&nbsp;</span>{{$submission->problem_statement}}.<br><br>
+                       
+                          <span><h5> 
+                          @if($submission->checked==1.00)
+                          <i class="fa fa-check" aria-hidden="true" style="color: green"></i>
+                         @endif
+                      {{$submission->problem_statement}}.
+                      </h5>
+                      <br><br>
                           <div style="display:flex">
                                <div ><a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a></div>
 
@@ -89,10 +118,21 @@
                               {{csrf_field()}}
                               <input type="hidden" name="userId" value="{{$submission->user_id}}">
                               <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
+                                @if($submission->checked!=1.00)
+                                   <a  class="custom-button" href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
 
-                              <a  class="custom-button" href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
-                          </form>
-                          </div>
+                               @endif 
+                              </form></div>
+                              <div style="    margin-left: 10px;
+    margin-top: -23px;">
+                                @if($submission->checked==1.00)
+                            
+                              <span><h5 class="circle-button"><b>{{$submission->marks}}</b></h5></span>
+
+                               @endif 
+                              </div>
+                              
+                         
                           </div>
 
                       </div>
@@ -104,16 +144,34 @@
               <div class="collapsible-body">
                   @foreach($designSubmissions as $submission)
                       <div class="user-solution" style="padding:1em;">
-                          <span><h4>Problem Statement</h4>&nbsp;</span>{{$submission->problem_statement}}.<br><br>
+
+                          <span><h5> 
+                          @if($submission->checked==1.00)
+                          <i class="fa fa-check" aria-hidden="true" style="color: green"></i>
+                         @endif
+                      {{$submission->problem_statement}}.</h5><br><br>
                           <div style="display:flex">
-                              <div><a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a></div>
+
+                               <div ><a target="_blank" class="custom-button" href="{{$submission->url}}">View Solution</a></div>
                           <div style="margin-left:10px;"><form action = "/admin/award/marks" method="GET" >
                               {{csrf_field()}}
                               <input type="hidden" name="userId" value="{{$submission->user_id}}">
                               <input type="hidden" name="questionId" value="{{$submission->problem_id}}">
-                              <a  class="custom-button"  href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
+                                @if($submission->checked!=1.00)
+                                   <a  class="custom-button" href="#" onclick="$(this).closest('form').submit()">Award Marks</a>
 
-                          </form></div>
+                               @endif
+                              </form></div>
+                              <div style="    margin-left: 10px;
+    margin-top: -23px;">
+                                 @if($submission->checked==1.00)
+                            
+                              <span><h5 class="circle-button"><b>{{$submission->marks}}</b></h5></span>
+
+                                   @endif 
+                              </div>
+                                 
+                         
                           </div>
 
 

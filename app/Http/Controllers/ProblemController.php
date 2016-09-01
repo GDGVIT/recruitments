@@ -17,7 +17,10 @@ class ProblemController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['showAllProblemsAPI', 'returnSubmittedProblemsCount']]);
+        $this->middleware('auth', ['except' => ['showAllProblemsAPI', 
+            'returnSubmittedProblemsCount',
+            'shareProblem'
+            ]]);
         $this->middleware('isAdmin', ['only' => [
             'add',
             'insert',
@@ -145,9 +148,9 @@ class ProblemController extends Controller
 
                 }
             }
-            elseif ($request->file('submission')&&$request->get('url'))
+            elseif ($request->file('submission')&&($request->get('url')))
             {
-                return view('errors.403');
+                return view('errors.bothSelected');
             }
         }
 
@@ -169,6 +172,12 @@ class ProblemController extends Controller
         return back();
     }
 
+
+    public function shareProblem($id)
+    {
+        $problemStatement = ProblemStatement::find($id);
+        return view('User.shareProblem',compact('problemStatement'));
+    }
     /*
      * Undo Soft Delete
      * */

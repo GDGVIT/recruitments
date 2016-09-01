@@ -30,6 +30,9 @@
         .text-center{
             text-align: center;
         }
+        button[disabled], html input[disabled] {
+            cursor:no-drop;
+        }
     </style>
 </head>
 <body>
@@ -71,12 +74,28 @@
     $(".button-collapse").sideNav();
 
   </script>
-   <script type="text/javascript">
-      $("input[name=submitting-file]").on('change', function(event) {
-          
-          $("#link").prop("disabled" , true);
-          /* Act on the event */
-      });
+  <script type="text/javascript">
+  $("#custom-submit").prop("disabled",true);
+  $("input[name=url]").on("change", function(){ 
+    var url = $(this).val();
+
+    if (url.includes("http://") != 0 || url.includes("https://") != 0){
+     $("#custom-submit").prop("disabled",false);  
+   }else  { 
+    $("#custom-submit").prop("disabled",true);
+  }
+
+})
+  $("input[name=submission]").on("change", function(){
+    var file = $(this).val();
+    if( file == null){
+      $("#custom-submit").prop("disabled",true);
+    }
+    else{
+       $("#custom-submit").prop("disabled",false); 
+    }
+  })
+    
   </script>
 </body>
 </html>

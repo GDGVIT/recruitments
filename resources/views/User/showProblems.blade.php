@@ -22,7 +22,11 @@
             <div class="question-card">
                 <p class="question-card-header">{{$problem->problem_statement}}</p>
                 <p class="question-description">{{$problem->comments}}</p>
-                <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}" >Attempt Problem</a></span>
+                 @if(!in_array($problem->id,$answeredArray))
+                                
+                            <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}">Attempt Problem</a></span>
+                            
+                 @endif
                 <hr>
                 @if($problem->level==1)
                     <span class="question-difficulty">Easy</span>
@@ -93,7 +97,11 @@
                         <div class="question-card">
                             <p class="question-card-header">{{$problem->problem_statement}}</p>
                             <p class="question-description">{{$problem->comments}}</p>
-                            <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}" >Attempt Problem</a></span>
+                             @if(!in_array($problem->id,$answeredArray))
+                                
+                            <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}">Attempt Problem</a></span>
+                            
+                            @endif
                             <hr>
                             @if($problem->level==1)
                                 <span class="question-difficulty">Easy</span>
@@ -120,7 +128,11 @@
                         <div class="question-card">
                             <p class="question-card-header">{{$problem->problem_statement}}</p>
                             <p class="question-description">{{$problem->comments}}</p>
+                            @if(!in_array($problem->id,$answeredArray))
+                                
                             <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}">Attempt Problem</a></span>
+                            
+                            @endif
                             <hr>
                             @if($problem->level==1)
                                 <span class="question-difficulty">Easy</span>

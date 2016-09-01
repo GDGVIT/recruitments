@@ -38,6 +38,7 @@ Route::get('user/add/domain','UserController@addDomainsView');
 Route::get('/problems','UserController@showProblems');
 Route::get('/problem/show/{id}','ProblemController@showIndividualProblem');
 Route::post('/problem/upload','ProblemController@uploadSubmission');
+Route::get('/problem/{id}/share','ProblemController@shareProblem');
 
 /*
  * Admin routes
