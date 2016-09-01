@@ -53,7 +53,7 @@
     <ul id='dropdown1' class='dropdown-content'>
         <li><a href="/user/profile">Profile</a></li>
 
-         <li><a  href="#"  id="change-modal-trigger" style="color: white">Choose Domain</a></li>
+         <li><a  href="#"  id="change-modal" style="color: white">Choose Domain</a></li>
 
 
         <li><a href="http://gdgvitvellore.com" target="_blank">Contact Us</a></li>
