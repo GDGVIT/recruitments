@@ -25,7 +25,7 @@
         </div>
         <div class="question-content">
           <p class="question-card-header">{{$problemStatement->problem_statement}}</p>
-          <p class="question-description">{{$problemStatement->comments}}</p>
+          <p class="question-description">{!!$problem->comments!!}</p>
         </div>
       </div>
       <div class="individual-question-submission row">
