@@ -71,6 +71,7 @@
     margin: 0 auto;
     margin-top: 100px;
   }
+
 </style>
 <div class="container-fluid">
   <div class="row">
@@ -88,7 +89,10 @@
               </div>
 
           </div>
-<iframe style="left: 396px !important;" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fgdgvitvellore&width=91&layout=button_count&action=like&size=large&show_faces=false&share=false&height=21&appId" width="91" height="41" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+          <div class="facebook-like-button">
+            <iframe  src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fgdgvitvellore&width=91&layout=button_count&action=like&size=large&show_faces=false&share=false&height=21&appId" width="91" height="41" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+          </div>
+
         </div>
       </div>
     </div>
