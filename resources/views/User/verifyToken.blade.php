@@ -5,7 +5,7 @@
 @section('content')
    <div class="container">
     <div class="row">
-      <form name="#" id="award-form" method="POST" action="{{ url('/send/token') }}">
+      <form name="#" id="award-form" method="POST" action="{{ url('verify/token') }}">
       {{ csrf_field() }}
       <div class="col m8 l8 push-l2 push-l2">
         <div class="row">
@@ -18,7 +18,7 @@
                 <div class="row">
                   <div class="col m4 l4 s12">
                     <div class="prob-field form-group{{ $errors->has('token') ? ' has-error' : '' }}">
-                     <h5> Enter Token</h5>
+                     <h5> Verify Token</h5>
                     </div>
                   </div>
                   <div class="col m6 l6 s12">
@@ -27,7 +27,7 @@
                     </div>
                   </div>
 
-                  <button type = "submit" class="btn btn-primary">Verify Token</button>
+                  <button type = "submit" class="btn btn-primary">Change Password</button>
                 </div>
               </div>
 

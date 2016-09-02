@@ -23,6 +23,8 @@ Route::get('/', function () {
 Route::auth();
 Route::get('/forgot/password','Auth\PasswordController@forgotPasswordPage');
 Route::post('/send/token','Auth\PasswordController@sendResetToken');
+Route::post('/verify/token','Auth\PasswordController@verifyToken');
+Route::post('/change/password','Auth\PasswordController@changePassword');
 Route::get('/home', 'HomeController@index');
 
 /*
