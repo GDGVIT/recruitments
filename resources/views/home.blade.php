@@ -20,7 +20,7 @@
                 <div id="technical" class="col s12 questions" data-for="1">
                 <div class="question-card">
           <p class="question-card-header">{{$recentTechnicalQuestion->problem_statement}}</p>
-          <p class="question-description">{{$recentTechnicalQuestion->comments}}</p>
+          <p class="question-description">{!!$recentTechnicalQuestion->comments!!}</p>
                     <a href="{{url("/problem/show/$recentTechnicalQuestion->id")}}">Attempt Problem</a>
           <hr>
                     @if($recentTechnicalQuestion->level==1)
@@ -39,7 +39,7 @@
                 <div id="management" class="col s12 questions" data-for="2">
                 <div class="question-card">
           <p class="question-card-header">{{$recentManagementQuestion->problem_statement}}</p>
-          <p class="question-description">{{$recentManagementQuestion->comments}}</p>
+          <p class="question-description">{!!$recentManagementQuestion->comments!!}</p>
                     <a href="{{url("/problem/show/$recentManagementQuestion->id")}}">Attempt Problem</a>
           <hr>
                     @if($recentManagementQuestion->level==1)
@@ -58,7 +58,7 @@
                 <div id="design" class="col s12 questions" data-for="3">
                  <div class="question-card">
           <p class="question-card-header">{{$recentDesignQuestion->problem_statement}}</p>
-          <p class="question-description">{{$recentDesignQuestion->comments}}</p>
+          <p class="question-description">{!!$recentDesignQuestion->comments!!}</p>
                     <a href="{{url("/problem/show/$recentDesignQuestion->id")}}">Attempt Problem</a>
           <hr>
                     @if($recentDesignQuestion->level==1)
@@ -120,7 +120,7 @@
         <form action="/user/add/domain" method="POST">
         {{csrf_field()}}
           <input type="text" name="domains" style="display: none">
-      
+
         </form>
         <br>
         <button class="custom-submit">Submit</button>
