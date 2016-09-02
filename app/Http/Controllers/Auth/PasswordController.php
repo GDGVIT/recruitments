@@ -95,6 +95,7 @@ class PasswordController extends Controller
             $user = User::find($userId);
             $user->password = Hash::make($password);
             $user->save();
+            DB::table('passwords')->where('user_id',$userId)->delete();
             return view('User.passwordChangedSuccessfully');
         }
         else{
