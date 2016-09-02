@@ -74,7 +74,7 @@ class AuthController extends Controller
         /*
          * Need to send after the user create transaction is done
          * */
-        app('App\Http\Controllers\UserController')->send($data['contact']);
+        app('App\Http\Controllers\UserController')->send($data['contact'],"Thank You for registering! Start solving problems according to your domain. All the best.");
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

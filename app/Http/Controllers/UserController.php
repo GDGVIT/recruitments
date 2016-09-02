@@ -259,7 +259,7 @@ class UserController extends Controller
         return view('User.Admin.getShortlistedCandidates',compact('people'));
 
     }
-    public function send($contactNumber)
+    public function send($contactNumber, $message)
     {
         //Your authentication key
         $authKey = env('MSG_API_KEY');
@@ -271,7 +271,7 @@ class UserController extends Controller
         $senderId = "GDGVIT";
 
         //Your message to send, Add URL encoding here.
-        $message = urlencode("Thank You for registering! You'll be notified when our portal will be live.");
+        $message = urlencode($message);
 
         //Define route
         $route = "transactional";

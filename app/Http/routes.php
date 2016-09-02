@@ -21,7 +21,8 @@ Route::get('/', function () {
 });
 
 Route::auth();
-
+Route::get('/forgot/password','Auth\PasswordController@forgotPasswordPage');
+Route::post('/send/token','Auth\PasswordController@sendResetToken');
 Route::get('/home', 'HomeController@index');
 
 /*

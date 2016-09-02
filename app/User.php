@@ -32,4 +32,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\ProblemStatement');
     }
+    public function password()
+    {
+        return $this->belongsTo('App\Password');
+    }
 }
