@@ -16,6 +16,15 @@
   background: green;
   border-radius: 50%;
 }
+.facebook-like-button{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /* height: 100px; */
+    top: 50%;
+    width: auto;
+}
 .offline{
   width: 20px;
   height: 20px;
@@ -239,30 +248,14 @@ input[type="checkbox"].filled-in:checked + label:after{
   .login-form{
     margin-top: 0%;
   }
-  iframe{
-    position: relative;
-    top: -60px;
-    left: 115px;
-    width: 100%;
-  }
+  
 }
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1349px){
   .login-form{
     margin-top: -0%;
   }
-  iframe{
-    position: relative;
-    top: -60px;
-    left: 175px;
-    width: 100%;
-  }
+ 
 }
 @media only screen and (min-device-width: 1920px){
 
-  iframe{
-    position: relative;
-    top: -60px;
-    left: 400px;
-    width: 100%;
-  }
 }

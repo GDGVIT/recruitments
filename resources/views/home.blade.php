@@ -120,8 +120,7 @@
         <form action="/user/add/domain" method="POST">
         {{csrf_field()}}
           <input type="text" name="domains" style="display: none">
-        }
-        }
+      
         </form>
         <br>
         <button class="custom-submit">Submit</button>

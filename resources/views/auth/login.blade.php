@@ -67,7 +67,7 @@
           <div class="login-form">
               <div class="col s12 m5 l5 push-l4 push-m4">
                 <form action="{{url('/login')}}" method="POST">
-                 
+                 {{csrf_field()}}
                  <input type="hidden" name="_token" value="{{csrf_token()}}"> 
 
                   <div class="input-field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
