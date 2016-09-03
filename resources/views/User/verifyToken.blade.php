@@ -25,6 +25,9 @@
                     <div class="input-field form-group{{ $errors->has('token') ? ' has-error' : '' }}">
                       <input type="text" name="token">
                     </div>
+                    @if (Session::has('message'))
+                      <div class="alert alert-info" style="color: red;">{{ Session::get('message') }}</div>
+                    @endif
                   </div>
 
                   <button type = "submit" class="btn btn-primary">Change Password</button>

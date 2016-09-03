@@ -121,7 +121,7 @@ class UserController extends Controller
 
         {
             //$problems = ProblemStatement::where(['domain'=>$item->domain_id,'display'=>1])->get();
-            $problems = ProblemStatement::where(['domain'=>$item,'display'=>1])->get();
+            $problems = ProblemStatement::latest('created_at')->where(['domain'=>$item,'display'=>1])->get();
             array_push($problemArray,$problems);
 //            array_push($problemArray,['problems'=>$problems,'domain'=>$item->domain_id]);
         }

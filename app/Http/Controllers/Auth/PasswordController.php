@@ -77,7 +77,8 @@ class PasswordController extends Controller
             $orignalToken = $passwordQuery[0]->activation_code;
             if ($orignalToken == $token) {
                 return view('User.resetPasswordAfterVerification', compact('token'));
-            } else return view('errors.503');
+            } 
+            else return view('errors.503');
         }
         else{
             return view('errors.tokenMismatch');
