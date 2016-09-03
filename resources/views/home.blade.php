@@ -7,6 +7,8 @@
 @section('content')
 
     <div class="problems-tabs row">
+        <p style="color: red; text-align: center;">Please choose your domain. Hover on your profile and select "Choose Domain"</p>
+        <p style="color: red; text-align: center;">We'll accept the submissions before <b>7<sup>th</sup> September, 2016 11:59 PM</b></p>
     <h3 style="text-align:center">Recent Questions</h3>
       <ul class="tabs">
         <li class="tab col s3"><a class="active" href="#technical" data-value="1">Technical <!-- (<span class="number" data-domain="1">18</span>) --></a></li>
