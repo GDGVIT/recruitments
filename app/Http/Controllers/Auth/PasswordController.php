@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Password;
 use Mockery\Generator\StringManipulation\Pass\Pass;
 
@@ -56,7 +58,8 @@ class PasswordController extends Controller
             return view('User.verifyToken');
         }
         else{
-            return view('errors.404');
+            Session::flash('message', "Please check the number");
+            return Redirect::back();
         }
     }
     
