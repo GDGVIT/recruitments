@@ -108,7 +108,7 @@
       </div>
     </div>
       <div id="instructions-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content" style="font-weight: normal!important">
           <h4>Instructions</h4>
           <p>
           <b>Instructions for all the participants</b>
