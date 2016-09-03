@@ -133,7 +133,7 @@
           <h4>Instructions</h4>
           <p>
           <b>Instructions for all the participants</b>
-           <ul><li> Make sure your work is genuine and not copied from other sources</li>
+           <ul><li> Make sure your work is genuine and not copied from other sources<b>-10 marks will be awarded if you are found to copy.</b></li>
             <li>We will be scrutinising your github profiles, so make sure you have all your interesting projects on there. </li></ul>
 
 

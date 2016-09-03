@@ -26,9 +26,9 @@
                 <p class="question-card-header">{{$problem->problem_statement}}</p>
                 <p class="question-description">{!!$problem->comments!!}</p>
                  @if(!in_array($problem->id,$answeredArray))
-                                
+
                             <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}">Attempt Problem</a></span>
-                            
+
                  @endif
                 <hr>
                 @if($problem->level==1)
@@ -101,12 +101,12 @@
                             <p class="question-card-header">{{$problem->problem_statement}}</p>
                             <p class="question-description">{!!$problem->comments!!}</p>
                              @if(!in_array($problem->id,$answeredArray))
-                                
+
                             <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}">Attempt Problem</a></span>
-                            
+
                             @endif
                             <hr>
-                            
+
                             <span class="question-difficulty"> {{$problem->category}}</span>
 
                             @if(in_array($problem->id,$answeredArray))
@@ -126,9 +126,9 @@
                             <p class="question-card-header">{{$problem->problem_statement}}</p>
                             <p class="question-description">{!!$problem->comments!!}</p>
                             @if(!in_array($problem->id,$answeredArray))
-                                
+
                             <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}">Attempt Problem</a></span>
-                            
+
                             @endif
                             <hr>
                             @if($problem->level==1)
@@ -173,7 +173,7 @@
         <form action="/user/add/domain" method="POST">
         {{csrf_field()}}
           <input type="text" name="domains" style="display: none">
-        
+
         </form>
         <br>
         <button class="custom-submit">Submit</button>
@@ -184,12 +184,12 @@
           <h4>Instructions</h4>
           <p>
           <b>Instructions for all the participants</b>
-           <ul><li> Make sure your work is genuine and not copied from other sources</li>
+           <ul><li> Make sure your work is genuine and not copied from other sources<b>-10 marks will be awarded if you are found to copy.</b></li>
             <li>We will be scrutinising your github profiles, so make sure you have all your interesting projects on there. </li></ul>
 
 
             <br>
-            On top of all this we are looking for people who are having a zeal towards learning new things. 
+            On top of all this we are looking for people who are having a zeal towards learning new things.
 
             <h3>FAQ’s</h3>
 
@@ -209,10 +209,10 @@
             Drop us an email on gdgvitvellore@gmail.com and we will send you a suitable problem statement for your domain. <br>
 
            <b> Are there any restrictions on who can participate?</b><br>
-              Yes, this time we will be recruiting only Second (2) Years only.<br> 
+              Yes, this time we will be recruiting only Second (2) Years only.<br>
 
            <b> I am not a second year, how can I particiapte?</b><br>
-            We will not be able to recruit you if you are not a second year, but we will most certainly consider you for the next recruitment if you have the required skill.<br> 
+            We will not be able to recruit you if you are not a second year, but we will most certainly consider you for the next recruitment if you have the required skill.<br>
           </p>
         </div>
         <div class="modal-footer">
