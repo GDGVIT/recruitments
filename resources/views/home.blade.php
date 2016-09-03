@@ -79,28 +79,7 @@
 
             </div>
             <br>
-            <h3 style="text-align:center">Leader Board</h3>
-            <div class="question-card">
-              <table class="bordered striped">
-        <thead>
-          <tr>
-              <th data-field="id">Name</th>
-              <th data-field="marks">Marks Earned</th>
 
-          </tr>
-        </thead>
-
-        <tbody>
-        @foreach($leadingStudents as $user)
-          <tr>
-            <td>{{$user->name}}</td>
-            <td>{{$user->marks}}</td>
-          </tr>
-        @endforeach
-
-        </tbody>
-      </table>
-            </div>
 
         </div>
     </div>
