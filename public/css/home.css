@@ -16,6 +16,9 @@
   background: green;
   border-radius: 50%;
 }
+@keyframes blinker {  
+  50% { opacity: 0.0; }
+}
 .facebook-like-button{
     position: absolute;
     left: 0;
