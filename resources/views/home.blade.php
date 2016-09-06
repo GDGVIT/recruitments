@@ -8,7 +8,7 @@
 
     <div class="problems-tabs row">
         <p style="color: red; text-align: center;">Please choose your domain. Hover on your profile and select "Choose Domain"</p>
-        <p style="color: red; text-align: center;">We'll accept the submissions before <b>7<sup>th</sup> September, 2016 11:59 PM</b></p>
+        <p  style="animation: blinker 1s linear infinite;color: red; text-align: center;">We'll now accept the submissions before <b>8<sup>th</sup> September, 2016 11:59 PM</b></p>
         <p style="color: red; text-align: center;">Click <a href="/problems">here</a> to see all problems</p>
     <h3 style="text-align:center">Recent Questions</h3>
       <ul class="tabs">

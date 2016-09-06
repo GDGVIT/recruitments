@@ -45,7 +45,7 @@
             <div class="input-field file" style="text-align: center">
             <input type="hidden" name="questionId" value="{{$problemStatement->id}}">
               <input type="radio" name="submitting-link" id="submitting-file" class="with-gap">
-              <label for="submitting-file" id="upload-label">Upload the solution file
+              <label for="submitting-file" id="upload-label">Upload the solution file(max. size 25MB)
               </div>
               <div style="text-align: center;margin-top: 5%">
                 <a href="#" class="file-upload" onclick="doOpen(event)">Upload</a>
