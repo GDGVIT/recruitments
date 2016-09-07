@@ -23,6 +23,7 @@ class UserController extends Controller
     {
         $this->middleware('auth',['except'=>['send','notifyUser']]);
         $this->middleware('isAdmin', ['only' => ['showUsers',
+            'sendReminder',
             'adminDashboard',
             'viewUserSubmissions',
             'awardMarks',
@@ -385,6 +386,24 @@ class UserController extends Controller
                 return 'Subscribed successfully';
             }
         }
+    }
+    
+    /*
+     * A function to send a reminder message to all the participants
+     * */
+    public function sendReminder(){
+        
+        $users = User::all();
+        foreach ($users as $user) {
+            $message = "Don't worry if you have not submitted the solution so far. We have received numerous requests for a deadline extension. So we are extending the deadline by one more day i.e., till 23:59 - Thursday (8/9/16)
+
+Good luck!
+Google Developers Group
+VIT University";
+            if($user->contact!="")
+            $this->send($user->contact,$message);
+        }
+        return 'sent successfully';
     }
 
 }
