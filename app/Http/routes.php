@@ -62,6 +62,7 @@ Route::post('/admin/users/shortlist','UserController@getShortlistedCandidates');
 Route::get('/sms', 'UserController@send');
 Route::get('/admin/show/user/{id}','UserController@showUserProfile');
 Route::get('/admin/remind','UserController@sendReminder');
+Route::get('/submissions/all','UserController@showAllSubmissions');
 
 
 /*

@@ -23,6 +23,7 @@ class UserController extends Controller
     {
         $this->middleware('auth',['except'=>['send','notifyUser']]);
         $this->middleware('isAdmin', ['only' => ['showUsers',
+            'showAllSubmissions',
             'sendReminder',
             'adminDashboard',
             'viewUserSubmissions',
@@ -214,7 +215,7 @@ class UserController extends Controller
             $userMarks = $user->marks;
             $user->marks = $userMarks+$marks;
             $user->save();
-            return redirect($url);
+            return redirect(url('/submissions/all'));
         }
         else return 'some issue';
     }
@@ -404,6 +405,26 @@ VIT University";
             $this->send($user->contact,$message);
         }
         return 'sent successfully';
+    }
+
+    /*
+     * Show all submissions
+     * */
+    public function showAllSubmissions(){
+        $technicalSubmissions = DB::table('submissions')
+                        ->join('problem_statements','submissions.problem_id','=','problem_statements.id')
+                        ->where(['checked'=>0.00,'domain'=>1])
+                        ->get();
+        $managementSubmissions = DB::table('submissions')
+            ->join('problem_statements','submissions.problem_id','=','problem_statements.id')
+            ->where(['checked'=>0.00,'domain'=>2])
+            ->get();
+        $designSubmissions = DB::table('submissions')
+            ->join('problem_statements','submissions.problem_id','=','problem_statements.id')
+            ->where(['checked'=>0.00,'domain'=>3])
+            ->get();
+
+        return view('User.Admin.showAllSubmissions',compact('technicalSubmissions','designSubmissions','managementSubmissions'));
     }
 
 }
