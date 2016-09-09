@@ -10,7 +10,7 @@
     <div class="problems-tabs row">
 
         <p style="color: red; text-align: center;">Please choose your domain. Hover on your profile and select "Choose Domain"</p>
-        <p style="animation: blinker 1s linear infinite;color: red; text-align: center;">We'll accept the submissions before <b>8<sup>th</sup> September, 2016 11:59 PM</b></p>
+        <p style="animation: blinker 1s linear infinite;color: red; text-align: center;">We're not accepting solutions anymore. Thanks for participating.</p>
       <ul class="tabs">
         <li class="tab col s3"><a class="active" href="#technical" data-value="1">Technical (<span class="number" data-domain="1">{{$technicalProblemsCount}}</span>)</a></li>
         <li class="tab col s3"><a href="#management" data-value="2">Management (<span class="number" data-domain="2">{{$managementProblemsCount}}</span>)</a></li>
@@ -27,7 +27,7 @@
                 <p class="question-description">{!!$problem->comments!!}</p>
                  @if(!in_array($problem->id,$answeredArray))
 
-                            <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}">Attempt Problem</a></span>
+                            <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}"></a></span>
 
                  @endif
                 <hr>
@@ -102,7 +102,7 @@
                             <p class="question-description">{!!$problem->comments!!}</p>
                              @if(!in_array($problem->id,$answeredArray))
 
-                            <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}">Attempt Problem</a></span>
+                            <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}"></a></span>
 
                             @endif
                             <hr>
@@ -127,7 +127,7 @@
                             <p class="question-description">{!!$problem->comments!!}</p>
                             @if(!in_array($problem->id,$answeredArray))
 
-                            <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}">Attempt Problem</a></span>
+                            <span class="question-difficulty"><a href="/problem/show/{{$problem->id}}"></a></span>
 
                             @endif
                             <hr>
