@@ -24,6 +24,7 @@
 
                  @if(\Illuminate\Support\Facades\Auth::user()->role==1)
                  <li><a href="{{ url('/admin/show/users') }}">Show all users</a></li>
+                 <li><a href="{{ url('/submissions/all') }}">Show all submissions</a></li>
                  <li><a href="{{ url('/admin/problem/add') }}">Add Problem</a></li>
                  <li><a href="{{ url('/admin/dashboard') }}">Admin Dashboard</a></li>
                  <li><a href="{{ url('/admin/users/shortlist') }}">Shortlist</a></li>
