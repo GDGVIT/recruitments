@@ -109,7 +109,7 @@
                           @if($submission->checked==1.00)
                           <i class="fa fa-check" aria-hidden="true" style="color: green"></i>
                          @endif
-                      {{$submission->problem_statement}}.
+                      {{$submission->problem_statement}} [{{$submission->user_id}}].
                       </h5>
                       <br><br>
                           <div style="display:flex">
